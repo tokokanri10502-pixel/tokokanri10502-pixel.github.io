@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>買い物の風景が変わる ── AI時代における販促の構造変化 — 社会派 DEEP Lab</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #C2410C;
+      --primary-light: #FFF7ED;
+      --primary-mid: #F97316;
+      --accent: #0891B2;
+      --accent-light: #E0F2FE;
+      --neutral-dark: #1C1917;
+      --neutral-mid: #78716C;
+      --neutral-light: #FAFAF9;
+      --border: #E7E5E4;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif;
+      line-height: 1.85;
+      color: var(--neutral-dark);
+      background: #fff;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 60px;
+    }
+
+    /* SITE HEADER */
+    .site-header {
+      text-align: center;
+      padding: 20px 16px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .logo {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .site-header .date {
+      font-size: 0.78rem;
+      color: var(--neutral-mid);
+      margin-top: 4px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #7C2D12 0%, #C2410C 55%, #EA580C 100%);
+      color: #fff;
+      padding: 48px 24px 44px;
+      text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .hero .sub {
+      font-size: 0.95rem;
+      opacity: 0.88;
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* SUMMARY BAR */
+    .summary-bar {
+      display: flex;
+      gap: 0;
+      background: var(--neutral-dark);
+      color: #fff;
+    }
+    .summary-bar .item {
+      flex: 1;
+      text-align: center;
+      padding: 18px 12px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .summary-bar .item:last-child { border-right: none; }
+    .summary-bar .num {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FB923C;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .summary-bar .label {
+      font-size: 0.7rem;
+      opacity: 0.75;
+      line-height: 1.4;
+    }
+
+    /* CONTENT */
+    .content { padding: 0 20px; }
+
+    .chapter {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .chapter:last-of-type { border-bottom: none; }
+
+    .chapter-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .chapter-label .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .chapter-label .ch-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+    .chapter h2 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+    .chapter p {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 14px;
+      line-height: 1.85;
+    }
+    .chapter p:last-of-type { margin-bottom: 0; }
+
+    /* CALLOUT */
+    .callout {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 18px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+      color: #7C2D12;
+      font-weight: 500;
+      line-height: 1.75;
+    }
+
+    /* INSIGHT */
+    .insight {
+      background: #FFF7ED;
+      border: 1px solid #FED7AA;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      color: #7C2D12;
+      line-height: 1.8;
+    }
+    .insight .insight-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* STAT GRID */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat-card {
+      background: var(--neutral-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card .big {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .stat-card .desc {
+      font-size: 0.78rem;
+      color: var(--neutral-mid);
+      line-height: 1.5;
+    }
+    .stat-card.accent .big { color: var(--accent); }
+
+    /* BAR CHART */
+    .bar-chart { margin: 20px 0; }
+    .bar-chart .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .bar-chart .bar-label {
+      font-size: 0.78rem;
+      width: 90px;
+      color: var(--neutral-mid);
+      text-align: right;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .bar-chart .bar-track {
+      flex: 1;
+      background: #F5F5F4;
+      border-radius: 4px;
+      height: 28px;
+      overflow: hidden;
+    }
+    .bar-chart .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--primary);
+    }
+    .bar-chart .bar-fill.accent { background: var(--accent); }
+
+    /* SPLIT CARD */
+    .split-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .split-card .half {
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .split-card .half.up {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+    }
+    .split-card .half.down {
+      background: #FFF7ED;
+      border: 1px solid #FED7AA;
+    }
+    .split-card .half-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .split-card .half.up .half-label { color: #15803D; }
+    .split-card .half.down .half-label { color: #C2410C; }
+    .split-card .half-body {
+      font-size: 0.88rem;
+      color: var(--neutral-dark);
+      line-height: 1.6;
+    }
+
+    /* STAGE ITEMS */
+    .stage-list { margin: 20px 0; }
+    .stage-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 20px 20px 24px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .stage-item::before {
+      content: '';
+      position: absolute;
+      left: -1px; top: 0; bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+      background: var(--primary);
+    }
+    .stage-item .stage-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .stage-item h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .stage-item p {
+      font-size: 0.88rem;
+      color: #57534E;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+    .ratio-bar {
+      display: flex;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 10px 0 4px;
+    }
+    .ratio-plan { background: #C2410C; }
+    .ratio-impulse { background: #E7E5E4; }
+    .ratio-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--neutral-mid);
+      margin-bottom: 10px;
+    }
+
+    /* JOURNEY */
+    .journey {
+      display: flex;
+      align-items: stretch;
+      gap: 4px;
+      margin: 20px 0;
+    }
+    .journey .step {
+      flex: 1;
+      background: var(--primary-light);
+      border-radius: 8px;
+      padding: 14px 8px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #7C2D12;
+      line-height: 1.5;
+    }
+    .journey .arrow {
+      display: flex;
+      align-items: center;
+      color: var(--neutral-mid);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* CONCLUSION */
+    .conclusion {
+      background: linear-gradient(135deg, #7C2D12 0%, #C2410C 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 32px 28px;
+      margin: 40px 0 24px;
+    }
+    .conclusion .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      opacity: 0.75;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .conclusion h2 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+    .conclusion .pt {
+      font-size: 0.92rem;
+      opacity: 0.9;
+      line-height: 1.75;
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .conclusion .pt::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      font-size: 0.6rem;
+      top: 0.4em;
+      opacity: 0.7;
+    }
+
+    /* SOURCES */
+    .sources {
+      margin: 0 20px 24px;
+      padding: 20px;
+      background: var(--neutral-light);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .sources h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--neutral-mid);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .sources li {
+      font-size: 0.78rem;
+      color: var(--neutral-mid);
+      line-height: 1.7;
+      margin-left: 1em;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--neutral-mid);
+      padding: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .footer a { color: var(--primary); text-decoration: none; }
+
+    /* MOBILE */
+    @media (max-width: 540px) {
+      .stat-grid { grid-template-columns: 1fr; }
+      .split-card { grid-template-columns: 1fr; }
+      .journey { flex-direction: column; }
+      .journey .arrow { justify-content: center; }
+      .summary-bar { flex-direction: column; }
+      .summary-bar .item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .summary-bar .item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="logo">TOKO WORKS — 社会派 DEEP Lab 特集</div>
+  <div class="date">2026年4月｜萬財塾</div>
+</div>
+
+<div class="hero">
+  <div class="tag">SPECIAL REPORT</div>
+  <h1>買い物の風景が変わる</h1>
+  <p class="sub">AI時代における販促の構造変化<br>チラシから体験へ、4つのSTAGEで読み解く</p>
+</div>
+
+<div class="summary-bar">
+  <div class="item">
+    <span class="num">70%</span>
+    <span class="label">来店前に決めていなかった<br>非計画購買の比率（現在）</span>
+  </div>
+  <div class="item">
+    <span class="num">28.3%</span>
+    <span class="label">エンゲル係数<br>43年ぶりの高水準（2024年）</span>
+  </div>
+  <div class="item">
+    <span class="num">半減</span>
+    <span class="label">魚の消費量<br>40.2kg → 22kg（2001→2022年）</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 序 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <span class="num">序</span>
+      <span class="ch-title">問題提起</span>
+    </div>
+    <h2>「予定外」の70%が、変わろうとしている</h2>
+    <p>現在のスーパーでは、買い物全体の約7割が「来店前には決めていなかったもの」で占められている。焼きたてパンの香りに誘われ、鮮魚売場の手書きPOPに心が動き、旬の果物に思わず手が伸びる──そういった「売場での出会い」が、スーパーの売上を長年支えてきた。</p>
+    <p>しかしその比率が、2つの圧力によって変わろうとしている。ひとつは<strong>AIによる購買の合理化</strong>、もうひとつは<strong>日本人の食感度の低下</strong>。この2つが同時にかかることで、非計画購買は徐々に縮小していく可能性がある。</p>
+    <div class="callout">
+      チラシで来店動機をつくり、売場の五感が7割の「予定外」を生む──その「二段ロケット」が、AI時代に問い直されようとしている。
+    </div>
+    <div class="split-card">
+      <div class="half up">
+        <div class="half-label">▲ 計画購買 30%</div>
+        <div class="half-body">チラシを見て決めた商品・AIが提案したリスト。「買うと決めて」来店する。</div>
+      </div>
+      <div class="half down">
+        <div class="half-label">◎ 非計画購買 70%</div>
+        <div class="half-body">旬の果物に目を留めた・POPの一言に心が動いた。「売場で決めた」もの。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 1 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <span class="num">1</span>
+      <span class="ch-title">食の変化</span>
+    </div>
+    <h2>日本人の「食」に何が起きているか</h2>
+    <p>3つのファクトが、変化の深さを物語っている。エンゲル係数・魚消費量・平均気温の偏差、それぞれが「食の豊かさ」を構造的に侵食しつつある。</p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="big">28.3%</div>
+        <div class="desc">エンゲル係数（2024年）<br>2005年の22.9%から上昇一途<br>43年ぶりの高水準</div>
+      </div>
+      <div class="stat-card">
+        <div class="big">22kg</div>
+        <div class="desc">魚の1人あたり年間消費量<br>ピーク時40.2kgから半減<br>「調理が面倒」「価格が高い」が主因</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="big">+1.44℃</div>
+        <div class="desc">2024年の年平均気温偏差<br>観測史上最高水準<br>猛暑日は30年前の3.9倍</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="big">+42.7%</div>
+        <div class="desc">中食（惣菜・弁当）消費増<br>調理離れ・時短需要の拡大<br>素材を「見て選ぶ」機会が減少</div>
+      </div>
+    </div>
+    <div class="insight">
+      <span class="insight-label">DATA INSIGHT</span>
+      食料品の値上がりに賃金上昇が追いつかず、家計が食費に圧迫される構造が定着。一方で気温上昇はみかんの栽培適地を北上させ、サンマを小型化させ、「旬」の輪郭そのものを消しかけている。食の変化は「好み」ではなく、構造的な問題だ。
+    </div>
+  </div>
+
+  <!-- Chapter 2 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <span class="num">2</span>
+      <span class="ch-title">情報接点の変化</span>
+    </div>
+    <h2>情報接点の地殻変動</h2>
+    <p>食の変化と同時に、生活者が情報を受け取るチャネルそのものが変わっている。新聞折込チラシとスマートフォンの「交代劇」は、2015年頃に転換点を迎えた。</p>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">新聞<br>2000年</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:94%">1.13部/世帯</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">新聞<br>2024年</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:37%">0.45部/世帯</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">スマホ<br>2010年</span>
+        <div class="bar-track">
+          <div class="bar-fill accent" style="width:4%; min-width:30px">4%</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">スマホ<br>2025年</span>
+        <div class="bar-track">
+          <div class="bar-fill accent" style="width:98%">98%</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      チラシが届く家庭が過半数を割り込んだ今、来店前の「入口」はどこにあるのか。2015年の交差点を経て、次の交差点はAIアシスタントになるかもしれない。
+    </div>
+    <p>新聞の世帯あたり部数は2000年の1.13部から2024年には0.45部に、6割超の減少。一方スマートフォンは2010年のわずか4%から2025年に98%へ到達した。70代でも9割以上が所有するいま、情報接点は完全にデジタルへ移行している。</p>
+  </div>
+
+  <!-- Chapter 3 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <span class="num">3</span>
+      <span class="ch-title">4つの時代</span>
+    </div>
+    <h2>購買比率の変化と、媒体の役割</h2>
+    <p>AI進化 × 食感度変化 × 媒体の役割。この3軸で見ると、過去10年・現在・5年後・2030年代という4つのSTAGEに整理できる。</p>
+    <div class="stage-list">
+      <div class="stage-item">
+        <span class="stage-badge">STAGE 1｜2015年頃</span>
+        <h3>「チラシを通して、旬を見つけにお買い物」の時代</h3>
+        <div class="ratio-bar">
+          <div class="ratio-plan" style="width:30%"></div>
+          <div class="ratio-impulse" style="width:70%"></div>
+        </div>
+        <div class="ratio-label"><span>■ 計画 30%</span><span>□ 非計画 70%</span></div>
+        <p>新聞折込チラシが毎朝届き、試食コーナーが賑わい、手書きPOPに足が止まる。エンゲル係数25%で安定し、魚の消費は30kg/人台。「ついで買い」が7割──売場は発見と偶然に満ちた空間だった。AIの圧力はほぼゼロ。</p>
+      </div>
+      <div class="stage-item">
+        <span class="stage-badge">STAGE 2｜2025年（現在）</span>
+        <h3>「チラシが届かず、舌も鈍り始めた」時代</h3>
+        <div class="ratio-bar">
+          <div class="ratio-plan" style="width:35%"></div>
+          <div class="ratio-impulse" style="width:65%"></div>
+        </div>
+        <div class="ratio-label"><span>■ 計画 35%</span><span>□ 非計画 65%</span></div>
+        <p>新聞購読世帯が半数を割り込み、エンゲル係数は43年ぶり高水準。ChatGPTやGeminiが普及しても、買い物への適用はまだ限定的。問題は「ときめいて買う」から「安いから買う」へ、非計画購買の中身が変質し始めていることだ。</p>
+      </div>
+      <div class="stage-item">
+        <span class="stage-badge">STAGE 3｜2026〜2030年</span>
+        <h3>「AIが計画を吸い上げ、旬の輪郭が消える」── しかし、逆張りのチャンス</h3>
+        <div class="ratio-bar">
+          <div class="ratio-plan" style="width:50%"></div>
+          <div class="ratio-impulse" style="width:50%"></div>
+        </div>
+        <div class="ratio-label"><span>■ 計画 50%</span><span>□ 非計画 50%</span></div>
+        <p>Google HomeやAlexaが献立を提案し、スマート冷蔵庫が在庫を管理し始める。「なんとなく買い」の一部がAIに組み込まれ、計画・非計画がちょうど半々の転換点へ。この時期こそ、売場の圧倒的な生鮮力が逆張りの武器になる。</p>
+      </div>
+      <div class="stage-item">
+        <span class="stage-badge">STAGE 4｜2030年代〜</span>
+        <h3>「買い物に行く」が意識的な選択肢になる時代</h3>
+        <div class="ratio-bar">
+          <div class="ratio-plan" style="width:65%"></div>
+          <div class="ratio-impulse" style="width:35%"></div>
+        </div>
+        <div class="ratio-label"><span>■ 計画 65%</span><span>□ 非計画 35%</span></div>
+        <p>定番食材の補充をAIに任せる家庭が増え、「買い物に行く」こと自体が意識的な選択になる。リアル店舗に来る理由は「旬の魚を自分の目で選びたい」「売場で新しいものに出会いたい」という、効率では測れない動機へと変わっていく。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <span class="num">4</span>
+      <span class="ch-title">販促の本質</span>
+    </div>
+    <h2>10年で失われたもの、これから取り戻すべきもの</h2>
+    <p>4つの時代を通して見えてくるのは、数字だけでは語れない「暮らしの手触り」の変化だ。</p>
+    <div class="callout">
+      朝刊と一緒にチラシが届き、鮮魚売場でサンマを見て「ああ、秋だな」と感じた。試食で新しい味に出会い、子どもが「これ食べたい」と指さした。そういう一つひとつが、買い物という行為に「豊かさ」を与えていた。
+    </div>
+    <p>今、静かに失われていること──チラシは届かない。鮮魚売場は素通り。旬がいつかわからない。カゴの中身はいつも同じ。値引きシールだけが判断基準。買い物は「楽しみ」から「タスク」になり、食事は「体験」から「摂取」に近づいている。</p>
+    <div class="insight">
+      <span class="insight-label">これからの問い</span>
+      販促の問いは時代とともに変わってきた。かつては「何を安く売るか」、今は「何を伝えるか」。これからは「どんな気持ちにさせるか」──そしてその先には「何を思い出させるか」という問いが待っている。「この魚、どうやって食べるんですか？」という店員との会話も、焼きたてパンの香りも、AIが代替できない「身体の知」であり、リアルな売場だけが提供できる価値だ。
+    </div>
+    <div class="journey">
+      <div class="step">何を<br>安く売るか</div>
+      <div class="arrow">→</div>
+      <div class="step">何を<br>伝えるか</div>
+      <div class="arrow">→</div>
+      <div class="step">どんな気持ちに<br>させるか</div>
+      <div class="arrow">→</div>
+      <div class="step">何を<br>思い出させるか</div>
+    </div>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="label">CONCLUSION</div>
+    <h2>売場の力は、まだ有効だ</h2>
+    <p class="pt">AI圧力と食感度低下の二重の変化は、スーパーの売場を根本から問い直す。</p>
+    <p class="pt">しかしSTAGE 3の「転換点」は、逆張りのチャンスでもある。AIが合理化するほど、「売場でしか出会えないもの」の価値が相対的に上がる。</p>
+    <p class="pt">「旬を教えるPOP」「対面販売の声かけ」「子どもが驚く野菜との出会い」──これらは効率で測れない価値だ。</p>
+    <p class="pt">生鮮強化の実験店舗が示す青果・鮮魚の売上増は、売場の力がまだ機能するという証拠だ。</p>
+    <p class="pt">問いの質を変えることが、次の10年の差になる。</p>
+  </div>
+
+</div><!-- /content -->
+
+<div class="sources">
+  <h3>参考データ出典</h3>
+  <ul>
+    <li>エンゲル係数：総務省「家計調査年報」</li>
+    <li>魚介類・肉類消費量：農林水産省「食料需給表」</li>
+    <li>年平均気温偏差：気象庁「気候変動監視レポート」</li>
+    <li>新聞世帯あたり部数：日本新聞協会「新聞の発行部数」</li>
+    <li>スマートフォン普及率：NTTドコモ モバイル社会研究所</li>
+    <li>本資料は複数の公開情報をもとに独自に編集・再構成したものです。</li>
+  </ul>
+</div>
+
+<div class="footer">
+  萬財塾 2026年4月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
