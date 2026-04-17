@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOKO Works — 萬財修のプロジェクト一覧</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(229,57,53,0.1);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -40px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(33,150,243,0.08);
+    }
+    .header-label {
+      display: inline-block;
+      background: #e53935;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      padding: 4px 16px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .header h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 12px;
+    }
+    .header h1 span { color: #e53935; }
+    .header-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.5);
+      position: relative;
+      z-index: 1;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+    .category-label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #e53935;
+      margin-bottom: 16px;
+      padding-left: 12px;
+      border-left: 3px solid #e53935;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: #1a1a2e;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 22px 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(229,57,53,0.5);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .card-icon { font-size: 1.6rem; line-height: 1; }
+    .card-title { font-size: 1rem; font-weight: 800; color: #fff; line-height: 1.35; }
+    .card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; flex: 1; }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+    .card-date { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+    .card-tag { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: bold; letter-spacing: 0.04em; }
+    .card-tag.study { background: rgba(229,57,53,0.2); color: #ef9a9a; }
+    .card-tag.app   { background: rgba(33,150,243,0.2); color: #90caf9; }
+    .card-tag.life  { background: rgba(76,175,80,0.2); color: #a5d6a7; }
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="header-label">TOKO WORKS</div>
+  <h1>萬財修の<span>プロジェクト</span>一覧</h1>
+  <p class="header-sub">広島県　取締役制作本部長 / 県立広島大学大学院 客員研究員</p>
+</div>
+<div class="container">
+  <div class="category-label">勉強会・社内共有</div>
+  <div class="cards">
+    <a class="card" href="https://tokokanri10502-pixel.github.io/nihon-hinkon/" target="_blank">
+      <div class="card-icon">📊</div>
+      <div class="card-title">特集｜日本の貧困<br>「一億総中流」の終焉</div>
+      <div class="card-desc">10年前との対比・アンダークラス890万人の実態・格差社会の未来予測を図表で解説</div>
+      <div class="card-meta">
+        <span class="card-date">2026.04.17</span>
+        <span class="card-tag study">勉強会資料</span>
+      </div>
+    </a>
+    <a class="card" href="https://tokokanri10502-pixel.github.io/oshi-katsu/" target="_blank">
+      <div class="card-icon">⚽</div>
+      <div class="card-title">推し活サイト</div>
+      <div class="card-desc">サンフレッチェ広島サポーターとしての活動・情報まとめ</div>
+      <div class="card-meta">
+        <span class="card-date">2026.04.17</span>
+        <span class="card-tag life">ライフ</span>
+      </div>
+    </a>
+  </div>
+  <div class="category-label">アプリ・ツール</div>
+  <div class="cards">
+    <div class="card" style="opacity:0.35; cursor:default; border-style:dashed;">
+      <div class="card-icon">＋</div>
+      <div class="card-title">次のプロジェクト</div>
+      <div class="card-desc">新しいサイトやツールができたらここに追加されます</div>
+      <div class="card-meta">
+        <span class="card-date">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  © 2026 萬財修 / tokokanri10502-pixel.github.io
+</div>
+</body>
+</html>
