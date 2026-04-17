@@ -30,427 +30,163 @@
     }
 
     /* SITE HEADER */
-    .site-header {
-      text-align: center;
-      padding: 20px 16px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .site-header .logo {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: var(--primary);
-      font-weight: 700;
-    }
-    .site-header .date {
-      font-size: 0.78rem;
-      color: var(--neutral-mid);
-      margin-top: 4px;
-    }
+    .site-header { text-align: center; padding: 20px 16px 16px; border-bottom: 1px solid var(--border); }
+    .site-header .logo { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--primary); font-weight: 700; }
+    .site-header .date { font-size: 0.78rem; color: var(--neutral-mid); margin-top: 4px; }
 
     /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #7C2D12 0%, #C2410C 55%, #EA580C 100%);
-      color: #fff;
-      padding: 48px 24px 44px;
-      text-align: center;
-    }
-    .hero .tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 100px;
-      padding: 4px 14px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: 1.75rem;
-      font-weight: 900;
-      line-height: 1.35;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-    .hero .sub {
-      font-size: 0.95rem;
-      opacity: 0.88;
-      line-height: 1.75;
-      max-width: 480px;
-      margin: 0 auto;
-    }
+    .hero { background: linear-gradient(135deg, #7C2D12 0%, #C2410C 55%, #EA580C 100%); color: #fff; padding: 48px 24px 44px; text-align: center; }
+    .hero .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; border: 1px solid rgba(255,255,255,0.6); border-radius: 100px; padding: 4px 14px; margin-bottom: 20px; text-transform: uppercase; }
+    .hero h1 { font-size: 1.75rem; font-weight: 900; line-height: 1.35; margin-bottom: 16px; letter-spacing: -0.01em; }
+    .hero .sub { font-size: 0.95rem; opacity: 0.88; line-height: 1.75; max-width: 480px; margin: 0 auto; }
 
     /* SUMMARY BAR */
-    .summary-bar {
-      display: flex;
-      gap: 0;
-      background: var(--neutral-dark);
-      color: #fff;
-    }
-    .summary-bar .item {
-      flex: 1;
-      text-align: center;
-      padding: 18px 12px;
-      border-right: 1px solid rgba(255,255,255,0.1);
-    }
+    .summary-bar { display: flex; gap: 0; background: var(--neutral-dark); color: #fff; }
+    .summary-bar .item { flex: 1; text-align: center; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,0.1); }
     .summary-bar .item:last-child { border-right: none; }
-    .summary-bar .num {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #FB923C;
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
-    .summary-bar .label {
-      font-size: 0.7rem;
-      opacity: 0.75;
-      line-height: 1.4;
-    }
+    .summary-bar .num { display: block; font-size: 1.6rem; font-weight: 900; color: #FB923C; line-height: 1.1; margin-bottom: 4px; }
+    .summary-bar .label { font-size: 0.7rem; opacity: 0.75; line-height: 1.4; }
 
     /* CONTENT */
     .content { padding: 0 20px; }
-
-    .chapter {
-      padding: 40px 0 32px;
-      border-bottom: 1px solid var(--border);
-    }
+    .chapter { padding: 40px 0 32px; border-bottom: 1px solid var(--border); }
     .chapter:last-of-type { border-bottom: none; }
-
-    .chapter-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .chapter-label .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.78rem;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .chapter-label .ch-title {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-    .chapter h2 {
-      font-size: 1.3rem;
-      font-weight: 900;
-      line-height: 1.45;
-      margin-bottom: 16px;
-    }
-    .chapter p {
-      font-size: 0.95rem;
-      color: #374151;
-      margin-bottom: 14px;
-      line-height: 1.85;
-    }
+    .chapter-label { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .chapter-label .num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .chapter-label .ch-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--primary); text-transform: uppercase; }
+    .chapter h2 { font-size: 1.3rem; font-weight: 900; line-height: 1.45; margin-bottom: 16px; }
+    .chapter p { font-size: 0.95rem; color: #374151; margin-bottom: 14px; line-height: 1.85; }
     .chapter p:last-of-type { margin-bottom: 0; }
 
     /* CALLOUT */
-    .callout {
-      background: var(--primary-light);
-      border-left: 4px solid var(--primary);
-      border-radius: 0 8px 8px 0;
-      padding: 16px 18px;
-      margin: 20px 0;
-      font-size: 0.92rem;
-      color: #7C2D12;
-      font-weight: 500;
-      line-height: 1.75;
-    }
+    .callout { background: var(--primary-light); border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 16px 18px; margin: 20px 0; font-size: 0.92rem; color: #7C2D12; font-weight: 500; line-height: 1.75; }
 
     /* INSIGHT */
-    .insight {
-      background: #FFF7ED;
-      border: 1px solid #FED7AA;
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin: 20px 0;
-      font-size: 0.9rem;
-      color: #7C2D12;
-      line-height: 1.8;
-    }
-    .insight .insight-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--primary);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      display: block;
-    }
+    .insight { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 10px; padding: 18px 20px; margin: 20px 0; font-size: 0.9rem; color: #7C2D12; line-height: 1.8; }
+    .insight .insight-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--primary); text-transform: uppercase; margin-bottom: 8px; display: block; }
 
     /* STAT GRID */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .stat-card {
-      background: var(--neutral-light);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px;
-      text-align: center;
-    }
-    .stat-card .big {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--primary);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-    .stat-card .desc {
-      font-size: 0.78rem;
-      color: var(--neutral-mid);
-      line-height: 1.5;
-    }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+    .stat-card { background: var(--neutral-light); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+    .stat-card .big { font-size: 1.8rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-bottom: 6px; }
+    .stat-card .desc { font-size: 0.78rem; color: var(--neutral-mid); line-height: 1.5; }
     .stat-card.accent .big { color: var(--accent); }
 
-    /* BAR CHART */
+    /* BAR CHART (horizontal) */
     .bar-chart { margin: 20px 0; }
-    .bar-chart .bar-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .bar-chart .bar-label {
-      font-size: 0.78rem;
-      width: 90px;
-      color: var(--neutral-mid);
-      text-align: right;
-      flex-shrink: 0;
-      line-height: 1.3;
-    }
-    .bar-chart .bar-track {
-      flex: 1;
-      background: #F5F5F4;
-      border-radius: 4px;
-      height: 28px;
-      overflow: hidden;
-    }
-    .bar-chart .bar-fill {
-      height: 100%;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      padding-left: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #fff;
-      background: var(--primary);
-    }
+    .bar-chart .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .bar-chart .bar-label { font-size: 0.78rem; width: 90px; color: var(--neutral-mid); text-align: right; flex-shrink: 0; line-height: 1.3; }
+    .bar-chart .bar-track { flex: 1; background: #F5F5F4; border-radius: 4px; height: 28px; overflow: hidden; }
+    .bar-chart .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 0.78rem; font-weight: 700; color: #fff; background: var(--primary); }
     .bar-chart .bar-fill.accent { background: var(--accent); }
 
+    /* COLUMN CHART (vertical, CSS only) */
+    .col-chart { margin: 24px 0; }
+    .col-chart-title { font-size: 0.78rem; font-weight: 700; color: var(--neutral-dark); margin-bottom: 4px; }
+    .col-chart-sub { font-size: 0.72rem; color: var(--neutral-mid); margin-bottom: 14px; }
+    .col-chart-body { display: flex; align-items: flex-end; gap: 5px; height: 110px; border-bottom: 2px solid var(--border); padding-bottom: 0; }
+    .col-bar { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+    .col-bar-val { font-size: 0.58rem; font-weight: 700; color: var(--primary); margin-bottom: 2px; line-height: 1; }
+    .col-bar-fill { width: 100%; border-radius: 3px 3px 0 0; min-height: 3px; }
+    .col-bar-fill.primary { background: var(--primary); }
+    .col-bar-fill.highlight { background: #7C2D12; }
+    .col-chart-labels { display: flex; gap: 5px; margin-top: 5px; }
+    .col-bar-xlabel { flex: 1; text-align: center; font-size: 0.6rem; color: var(--neutral-mid); line-height: 1.3; }
+
+    /* COMPARE CHART (魚vs肉) */
+    .compare-chart { margin: 24px 0; }
+    .compare-chart-title { font-size: 0.78rem; font-weight: 700; color: var(--neutral-dark); margin-bottom: 4px; }
+    .compare-chart-sub { font-size: 0.72rem; color: var(--neutral-mid); margin-bottom: 10px; }
+    .compare-legend { display: flex; gap: 16px; margin-bottom: 12px; }
+    .compare-legend-item { display: flex; align-items: center; gap: 5px; font-size: 0.72rem; color: var(--neutral-mid); }
+    .compare-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .compare-chart-body { display: flex; align-items: flex-end; gap: 10px; height: 120px; border-bottom: 2px solid var(--border); }
+    .compare-group { flex: 1; display: flex; align-items: flex-end; gap: 2px; }
+    .compare-bar { flex: 1; border-radius: 3px 3px 0 0; min-height: 3px; position: relative; }
+    .compare-bar.fish { background: #0891B2; }
+    .compare-bar.meat { background: #EA580C; }
+    .compare-bar-val { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 0.52rem; font-weight: 700; white-space: nowrap; }
+    .compare-bar.fish .compare-bar-val { color: #0891B2; }
+    .compare-bar.meat .compare-bar-val { color: #EA580C; }
+    .compare-chart-xlabels { display: flex; gap: 10px; margin-top: 5px; }
+    .compare-xlabel { flex: 1; text-align: center; font-size: 0.62rem; color: var(--neutral-mid); }
+    .compare-crossover { font-size: 0.75rem; color: #7C2D12; font-weight: 700; background: var(--primary-light); border: 1px solid #FED7AA; border-radius: 6px; padding: 8px 12px; margin-top: 12px; }
+
     /* SPLIT CARD */
-    .split-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .split-card .half {
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .split-card .half.up {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
-    }
-    .split-card .half.down {
-      background: #FFF7ED;
-      border: 1px solid #FED7AA;
-    }
-    .split-card .half-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
+    .split-card { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+    .split-card .half { border-radius: 10px; padding: 16px; }
+    .split-card .half.up { background: #F0FDF4; border: 1px solid #BBF7D0; }
+    .split-card .half.down { background: #FFF7ED; border: 1px solid #FED7AA; }
+    .split-card .half-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 6px; }
     .split-card .half.up .half-label { color: #15803D; }
     .split-card .half.down .half-label { color: #C2410C; }
-    .split-card .half-body {
-      font-size: 0.88rem;
-      color: var(--neutral-dark);
-      line-height: 1.6;
-    }
+    .split-card .half-body { font-size: 0.88rem; color: var(--neutral-dark); line-height: 1.6; }
 
     /* STAGE ITEMS */
     .stage-list { margin: 20px 0; }
-    .stage-item {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 20px 20px 24px;
-      margin-bottom: 16px;
-      position: relative;
-    }
-    .stage-item::before {
-      content: '';
-      position: absolute;
-      left: -1px; top: 0; bottom: 0;
-      width: 4px;
-      border-radius: 4px 0 0 4px;
-      background: var(--primary);
-    }
-    .stage-item .stage-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 2px 8px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-    .stage-item h3 {
-      font-size: 1rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-    .stage-item p {
-      font-size: 0.88rem;
-      color: #57534E;
-      line-height: 1.8;
-      margin-bottom: 0;
-    }
-    .ratio-bar {
-      display: flex;
-      height: 10px;
-      border-radius: 5px;
-      overflow: hidden;
-      margin: 10px 0 4px;
-    }
+    .stage-item { border: 1px solid var(--border); border-radius: 12px; padding: 20px 20px 20px 24px; margin-bottom: 16px; position: relative; }
+    .stage-item::before { content: ''; position: absolute; left: -1px; top: 0; bottom: 0; width: 4px; border-radius: 4px 0 0 4px; background: var(--primary); }
+    .stage-item .stage-badge { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: var(--primary); background: var(--primary-light); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+    .stage-item h3 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; line-height: 1.5; }
+    .stage-item p { font-size: 0.88rem; color: #57534E; line-height: 1.8; margin-bottom: 8px; }
+    .stage-item p:last-of-type { margin-bottom: 0; }
+    .ratio-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin: 10px 0 4px; }
     .ratio-plan { background: #C2410C; }
     .ratio-impulse { background: #E7E5E4; }
-    .ratio-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.72rem;
-      color: var(--neutral-mid);
-      margin-bottom: 10px;
-    }
+    .ratio-label { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--neutral-mid); margin-bottom: 10px; }
+
+    /* IZUMI BLOCK */
+    .izumi-header { margin: 32px 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+    .izumi-header-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
+    .izumi-header h3 { font-size: 1.15rem; font-weight: 900; color: var(--neutral-dark); }
+    .izumi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+    .izumi-card { background: var(--neutral-light); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .izumi-card .ic-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+    .izumi-card .ic-title { font-size: 0.9rem; font-weight: 800; color: var(--neutral-dark); margin-bottom: 8px; line-height: 1.4; }
+    .izumi-card .ic-body { font-size: 0.82rem; color: #57534E; line-height: 1.7; }
+    .izumi-kpi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+    .izumi-kpi-item { background: #0F172A; color: #fff; border-radius: 10px; padding: 14px 12px; text-align: center; }
+    .izumi-kpi-item .kpi-num { font-size: 1.4rem; font-weight: 900; color: #38BDF8; line-height: 1.1; margin-bottom: 4px; }
+    .izumi-kpi-item .kpi-label { font-size: 0.64rem; opacity: 0.75; line-height: 1.4; }
+    .izumi-strategy-list { margin: 12px 0; }
+    .izumi-strategy-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .izumi-strategy-item:last-of-type { border-bottom: none; }
+    .izumi-strategy-item .si-tag { flex-shrink: 0; font-size: 0.68rem; font-weight: 700; background: var(--accent-light); color: var(--accent); padding: 2px 7px; border-radius: 4px; height: fit-content; margin-top: 2px; }
+    .izumi-strategy-item .si-body { color: #374151; line-height: 1.7; }
+    .izumi-strategy-item .si-body strong { color: var(--neutral-dark); }
 
     /* JOURNEY */
-    .journey {
-      display: flex;
-      align-items: stretch;
-      gap: 4px;
-      margin: 20px 0;
-    }
-    .journey .step {
-      flex: 1;
-      background: var(--primary-light);
-      border-radius: 8px;
-      padding: 14px 8px;
-      text-align: center;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #7C2D12;
-      line-height: 1.5;
-    }
-    .journey .arrow {
-      display: flex;
-      align-items: center;
-      color: var(--neutral-mid);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
+    .journey { display: flex; align-items: stretch; gap: 4px; margin: 20px 0; }
+    .journey .step { flex: 1; background: var(--primary-light); border-radius: 8px; padding: 14px 8px; text-align: center; font-size: 0.78rem; font-weight: 700; color: #7C2D12; line-height: 1.5; }
+    .journey .arrow { display: flex; align-items: center; color: var(--neutral-mid); font-size: 1.2rem; flex-shrink: 0; }
 
     /* CONCLUSION */
-    .conclusion {
-      background: linear-gradient(135deg, #7C2D12 0%, #C2410C 100%);
-      color: #fff;
-      border-radius: 14px;
-      padding: 32px 28px;
-      margin: 40px 0 24px;
-    }
-    .conclusion .label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      opacity: 0.75;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .conclusion h2 {
-      font-size: 1.3rem;
-      font-weight: 900;
-      margin-bottom: 16px;
-      line-height: 1.45;
-    }
-    .conclusion .pt {
-      font-size: 0.92rem;
-      opacity: 0.9;
-      line-height: 1.75;
-      padding-left: 1.2em;
-      position: relative;
-      margin-bottom: 8px;
-    }
-    .conclusion .pt::before {
-      content: '▶';
-      position: absolute;
-      left: 0;
-      font-size: 0.6rem;
-      top: 0.4em;
-      opacity: 0.7;
-    }
+    .conclusion { background: linear-gradient(135deg, #7C2D12 0%, #C2410C 100%); color: #fff; border-radius: 14px; padding: 32px 28px; margin: 40px 0 24px; }
+    .conclusion .label { font-size: 0.72rem; letter-spacing: 0.14em; opacity: 0.75; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+    .conclusion h2 { font-size: 1.3rem; font-weight: 900; margin-bottom: 16px; line-height: 1.45; }
+    .conclusion .pt { font-size: 0.92rem; opacity: 0.9; line-height: 1.75; padding-left: 1.2em; position: relative; margin-bottom: 8px; }
+    .conclusion .pt::before { content: '▶'; position: absolute; left: 0; font-size: 0.6rem; top: 0.4em; opacity: 0.7; }
 
     /* SOURCES */
-    .sources {
-      margin: 0 20px 24px;
-      padding: 20px;
-      background: var(--neutral-light);
-      border-radius: 10px;
-      border: 1px solid var(--border);
-    }
-    .sources h3 {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--neutral-mid);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .sources li {
-      font-size: 0.78rem;
-      color: var(--neutral-mid);
-      line-height: 1.7;
-      margin-left: 1em;
-    }
+    .sources { margin: 0 20px 24px; padding: 20px; background: var(--neutral-light); border-radius: 10px; border: 1px solid var(--border); }
+    .sources h3 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--neutral-mid); text-transform: uppercase; margin-bottom: 10px; }
+    .sources li { font-size: 0.78rem; color: var(--neutral-mid); line-height: 1.7; margin-left: 1em; }
 
     /* FOOTER */
-    .footer {
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--neutral-mid);
-      padding: 20px;
-      border-top: 1px solid var(--border);
-    }
+    .footer { text-align: center; font-size: 0.75rem; color: var(--neutral-mid); padding: 20px; border-top: 1px solid var(--border); }
     .footer a { color: var(--primary); text-decoration: none; }
 
     /* MOBILE */
     @media (max-width: 540px) {
-      .stat-grid { grid-template-columns: 1fr; }
-      .split-card { grid-template-columns: 1fr; }
+      .stat-grid, .split-card, .izumi-grid { grid-template-columns: 1fr; }
+      .izumi-kpi { grid-template-columns: 1fr 1fr; }
       .journey { flex-direction: column; }
       .journey .arrow { justify-content: center; }
       .summary-bar { flex-direction: column; }
       .summary-bar .item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
       .summary-bar .item:last-child { border-bottom: none; }
+      .col-chart-body { height: 80px; }
+      .compare-chart-body { height: 90px; }
     }
   </style>
 </head>
@@ -516,6 +252,7 @@
     </div>
     <h2>日本人の「食」に何が起きているか</h2>
     <p>3つのファクトが、変化の深さを物語っている。エンゲル係数・魚消費量・平均気温の偏差、それぞれが「食の豊かさ」を構造的に侵食しつつある。</p>
+
     <div class="stat-grid">
       <div class="stat-card">
         <div class="big">28.3%</div>
@@ -534,6 +271,107 @@
         <div class="desc">中食（惣菜・弁当）消費増<br>調理離れ・時短需要の拡大<br>素材を「見て選ぶ」機会が減少</div>
       </div>
     </div>
+
+    <!-- エンゲル係数 column chart -->
+    <div class="col-chart">
+      <div class="col-chart-title">エンゲル係数の推移</div>
+      <div class="col-chart-sub">家計消費支出に占める食費の割合（二人以上世帯） ／ 出典：総務省 家計調査年報</div>
+      <div class="col-chart-body">
+        <!-- min=22, max=30, range=8, canvas height=100px -->
+        <!-- height = (val-22)/8 * 100px -->
+        <div class="col-bar">
+          <div class="col-bar-val">22.9%</div>
+          <div class="col-bar-fill primary" style="height:11px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val">23.3%</div>
+          <div class="col-bar-fill primary" style="height:16px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val">25.0%</div>
+          <div class="col-bar-fill primary" style="height:38px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val">25.7%</div>
+          <div class="col-bar-fill primary" style="height:46px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val">27.5%</div>
+          <div class="col-bar-fill primary" style="height:69px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val">26.6%</div>
+          <div class="col-bar-fill primary" style="height:58px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val">27.8%</div>
+          <div class="col-bar-fill primary" style="height:72px"></div>
+        </div>
+        <div class="col-bar">
+          <div class="col-bar-val" style="color:#7C2D12;font-size:0.62rem">28.3%</div>
+          <div class="col-bar-fill highlight" style="height:79px"></div>
+        </div>
+      </div>
+      <div class="col-chart-labels">
+        <div class="col-bar-xlabel">2005</div>
+        <div class="col-bar-xlabel">2010</div>
+        <div class="col-bar-xlabel">2015</div>
+        <div class="col-bar-xlabel">2018</div>
+        <div class="col-bar-xlabel">2020</div>
+        <div class="col-bar-xlabel">2022</div>
+        <div class="col-bar-xlabel">2023</div>
+        <div class="col-bar-xlabel" style="color:#7C2D12;font-weight:700">2024</div>
+      </div>
+    </div>
+
+    <!-- 魚vs肉 compare chart -->
+    <div class="compare-chart">
+      <div class="compare-chart-title">魚介類 vs 肉類 消費量の推移</div>
+      <div class="compare-chart-sub">1人あたり年間消費量（kg）／ 出典：農林水産省 食料需給表</div>
+      <div class="compare-legend">
+        <div class="compare-legend-item"><div class="compare-legend-dot" style="background:#0891B2"></div>魚介類</div>
+        <div class="compare-legend-item"><div class="compare-legend-dot" style="background:#EA580C"></div>肉類</div>
+      </div>
+      <!-- max=40.2kg → 100px, scale = 100/40.2 = 2.49 -->
+      <div class="compare-chart-body">
+        <div class="compare-group">
+          <div class="compare-bar fish" style="height:100px"><span class="compare-bar-val">40.2</span></div>
+          <div class="compare-bar meat" style="height:71px"><span class="compare-bar-val">28.5</span></div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-bar fish" style="height:79px"><span class="compare-bar-val">31.6</span></div>
+          <div class="compare-bar meat" style="height:72px"><span class="compare-bar-val">29.0</span></div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-bar fish" style="height:71px"></div>
+          <div class="compare-bar meat" style="height:75px"></div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-bar fish" style="height:68px"><span class="compare-bar-val">27.3</span></div>
+          <div class="compare-bar meat" style="height:76px"><span class="compare-bar-val">30.7</span></div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-bar fish" style="height:61px"><span class="compare-bar-val">24.4</span></div>
+          <div class="compare-bar meat" style="height:80px"><span class="compare-bar-val">32.2</span></div>
+        </div>
+        <div class="compare-group">
+          <div class="compare-bar fish" style="height:55px"><span class="compare-bar-val">22.0</span></div>
+          <div class="compare-bar meat" style="height:85px"><span class="compare-bar-val">34.0</span></div>
+        </div>
+      </div>
+      <div class="compare-chart-xlabels">
+        <div class="compare-xlabel">2001</div>
+        <div class="compare-xlabel">2008</div>
+        <div class="compare-xlabel" style="color:#C2410C;font-weight:700">2011<br>逆転</div>
+        <div class="compare-xlabel">2014</div>
+        <div class="compare-xlabel">2017</div>
+        <div class="compare-xlabel">2022</div>
+      </div>
+      <div class="compare-crossover">
+        ⚑ 2011年に肉が魚を逆転。差は拡大し続け、2022年には魚22kg・肉34kgと12kgの開きに。「旬の魚を選ぶ」という文化が急速に薄れている。
+      </div>
+    </div>
+
     <div class="insight">
       <span class="insight-label">DATA INSIGHT</span>
       食料品の値上がりに賃金上昇が追いつかず、家計が食費に圧迫される構造が定着。一方で気温上昇はみかんの栽培適地を北上させ、サンマを小型化させ、「旬」の輪郭そのものを消しかけている。食の変化は「好み」ではなく、構造的な問題だ。
@@ -551,27 +389,19 @@
     <div class="bar-chart">
       <div class="bar-row">
         <span class="bar-label">新聞<br>2000年</span>
-        <div class="bar-track">
-          <div class="bar-fill" style="width:94%">1.13部/世帯</div>
-        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:94%">1.13部/世帯</div></div>
       </div>
       <div class="bar-row">
         <span class="bar-label">新聞<br>2024年</span>
-        <div class="bar-track">
-          <div class="bar-fill" style="width:37%">0.45部/世帯</div>
-        </div>
+        <div class="bar-track"><div class="bar-fill" style="width:37%">0.45部/世帯</div></div>
       </div>
       <div class="bar-row">
         <span class="bar-label">スマホ<br>2010年</span>
-        <div class="bar-track">
-          <div class="bar-fill accent" style="width:4%; min-width:30px">4%</div>
-        </div>
+        <div class="bar-track"><div class="bar-fill accent" style="width:4%; min-width:30px">4%</div></div>
       </div>
       <div class="bar-row">
         <span class="bar-label">スマホ<br>2025年</span>
-        <div class="bar-track">
-          <div class="bar-fill accent" style="width:98%">98%</div>
-        </div>
+        <div class="bar-track"><div class="bar-fill accent" style="width:98%">98%</div></div>
       </div>
     </div>
     <div class="callout">
@@ -584,7 +414,7 @@
   <div class="chapter">
     <div class="chapter-label">
       <span class="num">3</span>
-      <span class="ch-title">4つの時代</span>
+      <span class="ch-title">4つの時代 ＆ イズミの応答</span>
     </div>
     <h2>購買比率の変化と、媒体の役割</h2>
     <p>AI進化 × 食感度変化 × 媒体の役割。この3軸で見ると、過去10年・現在・5年後・2030年代という4つのSTAGEに整理できる。</p>
@@ -608,6 +438,7 @@
         </div>
         <div class="ratio-label"><span>■ 計画 35%</span><span>□ 非計画 65%</span></div>
         <p>新聞購読世帯が半数を割り込み、エンゲル係数は43年ぶり高水準。ChatGPTやGeminiが普及しても、買い物への適用はまだ限定的。問題は「ときめいて買う」から「安いから買う」へ、非計画購買の中身が変質し始めていることだ。</p>
+        <p>イズミ第二次中計の振り返りでは、「シニアへの高い依存度」「ファミリー層の売上減少」「インフレ対応の遅れ」が明示された課題として挙げられた。ランサムウェア被害やM&A（サンライフ・西友九州）もあり、営業収益5,693億円・営業利益272億円で最終年度に入っている。</p>
       </div>
       <div class="stage-item">
         <span class="stage-badge">STAGE 3｜2026〜2030年</span>
@@ -618,6 +449,7 @@
         </div>
         <div class="ratio-label"><span>■ 計画 50%</span><span>□ 非計画 50%</span></div>
         <p>Google HomeやAlexaが献立を提案し、スマート冷蔵庫が在庫を管理し始める。「なんとなく買い」の一部がAIに組み込まれ、計画・非計画がちょうど半々の転換点へ。この時期こそ、売場の圧倒的な生鮮力が逆張りの武器になる。</p>
+        <p>イズミはまさにこの時期を見越して、第三次中期経営計画（2026〜2030年度）を策定。「新規SM事業の創造」「GMSの進化」「小売周辺事業の強化」の3本柱で、AIに負けない売場の再構築に動き出した。</p>
       </div>
       <div class="stage-item">
         <span class="stage-badge">STAGE 4｜2030年代〜</span>
@@ -627,8 +459,73 @@
           <div class="ratio-impulse" style="width:35%"></div>
         </div>
         <div class="ratio-label"><span>■ 計画 65%</span><span>□ 非計画 35%</span></div>
-        <p>定番食材の補充をAIに任せる家庭が増え、「買い物に行く」こと自体が意識的な選択になる。リアル店舗に来る理由は「旬の魚を自分の目で選びたい」「売場で新しいものに出会いたい」という、効率では測れない動機へと変わっていく。</p>
+        <p>定番食材の補充をAIに任せる家庭が増え、「買い物に行く」こと自体が意識的な選択になる。リアル店舗に来る理由は「旬の魚を自分の目で選びたい」「売場で新しいものに出会いたい」という、効率では測れない動機へと変わっていく。非計画購買は35%まで縮小するが、その一つひとつの意味は深くなる。</p>
       </div>
+    </div>
+
+    <!-- イズミ第三次中計 -->
+    <div class="izumi-header">
+      <div class="izumi-header-label">IZUMI 第三次中期経営計画（2026〜2030年度）</div>
+      <h3>構造変化に、イズミはどう応えるか</h3>
+    </div>
+
+    <p>イズミは2026年4月に第三次中計を発表。「地域の総合生活産業」を目指す長期ビジョンのもと、GMS偏重だったビジネス構造を抜本的に進化させる5か年計画を示した。</p>
+
+    <div class="izumi-kpi">
+      <div class="izumi-kpi-item">
+        <div class="kpi-num">7,000億円</div>
+        <div class="kpi-label">2030年度<br>営業収益目標<br>（現状比+23%）</div>
+      </div>
+      <div class="izumi-kpi-item">
+        <div class="kpi-num">350億円</div>
+        <div class="kpi-label">2030年度<br>営業利益目標<br>（現状比+28.5%）</div>
+      </div>
+      <div class="izumi-kpi-item">
+        <div class="kpi-num">300店舗+</div>
+        <div class="kpi-label">2030年目標<br>店舗数<br>（活性化148店含む）</div>
+      </div>
+    </div>
+
+    <div class="izumi-grid">
+      <div class="izumi-card">
+        <div class="ic-label">SM戦略</div>
+        <div class="ic-title">「旬のものをお得に買うならイズミ」のポジション確立</div>
+        <div class="ic-body">大型フォーマット（600坪〜）では青果（鮮度と安さ）・鮮魚（対面販売の活気）・惣菜（おいしさ）で集客。みゆき店の実験では食品売上+20%・食品客数+14%、青果+44%・鮮魚+48%を達成。「売場の力はまだ有効」を数字で証明した。</div>
+      </div>
+      <div class="izumi-card">
+        <div class="ic-label">GMS戦略</div>
+        <div class="ic-title">「お客さま・MDを20歳若返らせる」</div>
+        <div class="ic-body">メインターゲットをシニアから団塊ジュニア/ファミリー層へ転換。「最適」「快適」「集いの場」の3軸でGMSを再定義。超大型店には市民ホール・シェアキッチン・子どもの遊び場、小型店には行政出張所・クリニック・福祉施設を誘致し、地域の生活インフラとして機能させる。</div>
+      </div>
+      <div class="izumi-card">
+        <div class="ic-label">PB戦略</div>
+        <div class="ic-title">ゆめイチ：163品目 → 1,400品目へ</div>
+        <div class="ic-body">2025年9月に全店展開したPB「ゆめイチ」は、食品売上構成比2.5%から2030年に10%を目標。セブンプレミアムは2027年2月に取り扱い終了し、地域密着の独自ブランドとして完全独立路線へ。プレミアムラインの開発も加速する。</div>
+      </div>
+      <div class="izumi-card">
+        <div class="ic-label">エリア戦略</div>
+        <div class="ic-title">広島・福岡・熊本を最優先に西日本ドミナント</div>
+        <div class="ic-body">重点エリアは広島・福岡・熊本・山口・兵庫（播磨）。M&A投資枠550億円（5年総額）を設定し、市場占有率No.1を狙う。都市部ではNSC（ゆめモール）を展開し、食品SMを核に生活全般を一カ所で完結させる「ワンストップ型」を確立。</div>
+      </div>
+    </div>
+
+    <div class="izumi-strategy-list">
+      <div class="izumi-strategy-item">
+        <span class="si-tag">DX</span>
+        <div class="si-body"><strong>AI自動発注・部門統合・電子棚札</strong>で店舗省人化を推進。グロサリー部門の統合でチェーンストア型の高効率オペレーションを実現し、浮いた人員をデスティネーション（生鮮・惣菜）に再配分する。</div>
+      </div>
+      <div class="izumi-strategy-item">
+        <span class="si-tag">顧客</span>
+        <div class="si-body"><strong>ゆめアプリ約200万人</strong>を軸に、個別販促・顧客エンゲージメントを高度化。BaaS事業（銀行代理業）も26年度下期にリリース予定で、ゆめかカードを起点とした経済圏を構築する。</div>
+      </div>
+      <div class="izumi-strategy-item">
+        <span class="si-tag">NSC</span>
+        <div class="si-body">ゆめモール西条は坪あたり食品売上<strong>+25.9%</strong>、ゆめモール山陽は改装後<strong>+78.4%</strong>増を達成。生鮮で集客し、テナントとの相互作用で買い回りが起き、NSC全体の収益が底上げされるモデルが機能している。</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      AIが計画購買を吸い上げる時代だからこそ、「旬の魚を対面で選ぶ体験」「焼きたてパンの香り」「子どもが驚く野菜との出会い」──そういった売場にしかできないことが、圧倒的な差別化になる。イズミの第三次中計は、まさにその逆張りを戦略の核心に置いている。
     </div>
   </div>
 
@@ -662,12 +559,11 @@
   <!-- CONCLUSION -->
   <div class="conclusion">
     <div class="label">CONCLUSION</div>
-    <h2>売場の力は、まだ有効だ</h2>
+    <h2>売場の力は、これからも有効だ</h2>
     <p class="pt">AI圧力と食感度低下の二重の変化は、スーパーの売場を根本から問い直す。</p>
     <p class="pt">しかしSTAGE 3の「転換点」は、逆張りのチャンスでもある。AIが合理化するほど、「売場でしか出会えないもの」の価値が相対的に上がる。</p>
     <p class="pt">「旬を教えるPOP」「対面販売の声かけ」「子どもが驚く野菜との出会い」──これらは効率で測れない価値だ。</p>
-    <p class="pt">生鮮強化の実験店舗が示す青果・鮮魚の売上増は、売場の力がまだ機能するという証拠だ。</p>
-    <p class="pt">問いの質を変えることが、次の10年の差になる。</p>
+    <p class="pt">みゆき店の青果+44%・鮮魚+48%という数字は、売場の力がこれからも機能し続けるという証拠だ。</p>
   </div>
 
 </div><!-- /content -->
@@ -680,6 +576,7 @@
     <li>年平均気温偏差：気象庁「気候変動監視レポート」</li>
     <li>新聞世帯あたり部数：日本新聞協会「新聞の発行部数」</li>
     <li>スマートフォン普及率：NTTドコモ モバイル社会研究所</li>
+    <li>イズミ第三次中期経営計画：株式会社イズミ（2026年4月14日公表）</li>
     <li>本資料は複数の公開情報をもとに独自に編集・再構成したものです。</li>
   </ul>
 </div>
