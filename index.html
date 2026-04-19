@@ -117,12 +117,16 @@
     .card-tag { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: bold; letter-spacing: 0.04em; }
     .card-tag.study { background: rgba(229,57,53,0.2); color: #ef9a9a; }
     .card-tag.app   { background: rgba(33,150,243,0.2); color: #90caf9; }
+    .card-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
     .card-source {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: rgba(255,255,255,0.35);
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
       letter-spacing: 0.03em;
+      line-height: 1.2;
     }
     .card-tag.life  { background: rgba(76,175,80,0.2); color: #a5d6a7; }
     .footer {
@@ -194,8 +198,10 @@
   <div class="category-label">日経・MJの記事を深堀り</div>
   <div class="cards">
     <a class="card" href="https://tokokanri10502-pixel.github.io/oshi-katsu/" target="_blank">
-      <div class="card-source">📰 日本経済新聞｜2026年4月17日</div>
-      <div class="card-icon">🛍️</div>
+      <div class="card-icon-row">
+        <div class="card-icon">🛍️</div>
+        <div class="card-source">📰 日本経済新聞｜2026年4月17日</div>
+      </div>
       <div class="card-title">特集｜推し活が変える<br>消費の地図</div>
       <div class="card-desc">物価高でも伸び続ける「推し活」経済圏の実態。3.8兆円市場・2,600万人の行動原理をデータで解説</div>
       <div class="card-meta">
@@ -204,8 +210,10 @@
       </div>
     </a>
     <a class="card" href="https://tokokanri10502-pixel.github.io/hasegawa-akari/" target="_blank">
-      <div class="card-source">📰 日経MJ｜2026年4月17日</div>
-      <div class="card-icon">🍳</div>
+      <div class="card-icon-row">
+        <div class="card-icon">🍳</div>
+        <div class="card-source">📰 日経MJ｜2026年4月17日</div>
+      </div>
       <div class="card-title">特集｜長谷川あかり現象を解読<br>「疲れた日本人を救う」料理家の正体</div>
       <div class="card-desc">SNS総フォロワー135万人・著書30万部（発信半年）。なぜ今、彼女は時代のニーズと精密に一致するのか。社会背景と経営視点から徹底分析。</div>
       <div class="card-meta">
