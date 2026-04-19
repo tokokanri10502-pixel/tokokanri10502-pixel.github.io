@@ -125,6 +125,52 @@
       padding: 24px 0;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
+    .search-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .search-input {
+      width: 100%;
+      max-width: 420px;
+      padding: 12px 48px 12px 18px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input::placeholder { color: rgba(255,255,255,0.3); }
+    .search-input:focus { border-color: rgba(229,57,53,0.6); }
+    .search-btn {
+      position: absolute;
+      right: calc(50% - 210px + 4px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: color 0.2s;
+    }
+    .search-btn:hover { color: #e53935; }
+    .search-results-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+    .no-results {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.9rem;
+      padding: 20px 0;
+    }
   </style>
 </head>
 <body>
@@ -132,32 +178,18 @@
   <div class="header-label">TOKO WORKS</div>
   <h1>社会派 <span>DEEP Lab</span></h1>
   <p class="header-sub">社会の深層をデータと言葉で読み解き、丁寧に解説します。</p>
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" type="text" placeholder="記事を検索...">
+    <button class="search-btn" id="searchBtn">🔍</button>
+  </div>
 </div>
 <div class="container">
-  <div class="category-label">勉強会・社内共有</div>
+  <div class="category-label">日経・MJの記事を深堀り</div>
   <div class="cards">
-    <a class="card" href="https://tokokanri10502-pixel.github.io/nihon-hinkon/" target="_blank">
-      <div class="card-icon">📊</div>
-      <div class="card-title">特集｜日本の貧困<br>「一億総中流」の終焉</div>
-      <div class="card-desc">10年前との対比・アンダークラス890万人の実態・格差社会の未来予測を図表で解説</div>
-      <div class="card-meta">
-        <span class="card-date">2026.04.17</span>
-        <span class="card-tag study">勉強会資料</span>
-      </div>
-    </a>
     <a class="card" href="https://tokokanri10502-pixel.github.io/oshi-katsu/" target="_blank">
       <div class="card-icon">🛍️</div>
       <div class="card-title">特集｜推し活が変える<br>消費の地図</div>
       <div class="card-desc">物価高でも伸び続ける「推し活」経済圏の実態。3.8兆円市場・2,600万人の行動原理をデータで解説</div>
-      <div class="card-meta">
-        <span class="card-date">2026.04.17</span>
-        <span class="card-tag study">勉強会資料</span>
-      </div>
-    </a>
-    <a class="card" href="https://tokokanri10502-pixel.github.io/kaimono-fukei/" target="_blank">
-      <div class="card-icon">🛒</div>
-      <div class="card-title">特集｜AI時代の販促構造変化<br>売り場はどうあるべきか</div>
-      <div class="card-desc">現状、「買うと決めて」来店する割合は30％。AIの普及と食感度低下の二重変化を4つのSTAGEで読み解く</div>
       <div class="card-meta">
         <span class="card-date">2026.04.17</span>
         <span class="card-tag study">勉強会資料</span>
@@ -173,20 +205,79 @@
       </div>
     </a>
   </div>
-  <div class="category-label">Next Issue</div>
+  <div class="category-label">AIの潮流を深堀り</div>
   <div class="cards">
-    <div class="card" style="opacity:0.35; cursor:default; border-style:dashed;">
-      <div class="card-icon">＋</div>
-      <div class="card-title">次の特集</div>
-      <div class="card-desc">新しい社会派記事ができたらここに追加されます</div>
+    <a class="card" href="https://tokokanri10502-pixel.github.io/kaimono-fukei/" target="_blank">
+      <div class="card-icon">🛒</div>
+      <div class="card-title">特集｜AI時代の販促構造変化<br>売り場はどうあるべきか</div>
+      <div class="card-desc">現状、「買うと決めて」来店する割合は30％。AIの普及と食感度低下の二重変化を4つのSTAGEで読み解く</div>
       <div class="card-meta">
-        <span class="card-date">Coming soon</span>
+        <span class="card-date">2026.04.17</span>
+        <span class="card-tag study">勉強会資料</span>
       </div>
-    </div>
+    </a>
+  </div>
+  <div class="category-label">日本の「今」を深堀り</div>
+  <div class="cards">
+    <a class="card" href="https://tokokanri10502-pixel.github.io/nihon-hinkon/" target="_blank">
+      <div class="card-icon">📊</div>
+      <div class="card-title">特集｜日本の貧困<br>「一億総中流」の終焉</div>
+      <div class="card-desc">10年前との対比・アンダークラス890万人の実態・格差社会の未来予測を図表で解説</div>
+      <div class="card-meta">
+        <span class="card-date">2026.04.17</span>
+        <span class="card-tag study">勉強会資料</span>
+      </div>
+    </a>
+  </div>
+
+</div>
+<div id="searchResultsSection" style="display:none;">
+  <div class="container" style="padding-bottom: 0;">
+    <p class="search-results-label" id="searchResultsLabel"></p>
+    <div class="cards" id="searchResultsCards"></div>
+    <p class="no-results" id="noResults" style="display:none;">該当する記事が見つかりませんでした</p>
   </div>
 </div>
 <div class="footer">
   © 2026 TOKO WORKS — 社会派 DEEP Lab
 </div>
+<script>
+  const allCards = Array.from(document.querySelectorAll('.container .card'));
+
+  function doSearch() {
+    const q = document.getElementById('searchInput').value.trim();
+    const section = document.getElementById('searchResultsSection');
+    const resultsCards = document.getElementById('searchResultsCards');
+    const noResults = document.getElementById('noResults');
+    const label = document.getElementById('searchResultsLabel');
+
+    if (!q) {
+      section.style.display = 'none';
+      return;
+    }
+
+    const matched = allCards.filter(card => {
+      const title = card.querySelector('.card-title').textContent;
+      return title.includes(q);
+    });
+
+    resultsCards.innerHTML = '';
+    if (matched.length === 0) {
+      noResults.style.display = 'block';
+      label.textContent = `「${q}」の検索結果：0件`;
+    } else {
+      noResults.style.display = 'none';
+      label.textContent = `「${q}」の検索結果：${matched.length}件`;
+      matched.forEach(card => resultsCards.appendChild(card.cloneNode(true)));
+    }
+    section.style.display = 'block';
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.getElementById('searchBtn').addEventListener('click', doSearch);
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doSearch();
+  });
+</script>
 </body>
 </html>
