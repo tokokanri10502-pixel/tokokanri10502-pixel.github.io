@@ -1,0 +1,138 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="85%" r="90%">
+      <stop offset="0%" stop-color="#021530"/>
+      <stop offset="100%" stop-color="#010810"/>
+    </radialGradient>
+    <linearGradient id="beamFade" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#a8d8f0" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#5ba8d8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2a6fa8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beamCore" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#cce8f8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#cce8f8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur12" x="-40%" y="-10%" width="180%" height="120%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="blur4" x="-20%" y="-10%" width="140%" height="120%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="srcGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="cc">
+      <circle cx="256" cy="256" r="252"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGrad)"/>
+
+  <g clip-path="url(#cc)">
+
+    <!-- Water depth layers -->
+    <rect x="-4" y="0"   width="520" height="128" fill="#010d20" opacity="0.35"/>
+    <rect x="-4" y="128" width="520" height="128" fill="#021428" opacity="0.20"/>
+    <rect x="-4" y="256" width="520" height="128" fill="#031a30" opacity="0.15"/>
+    <rect x="-4" y="384" width="520" height="130" fill="#010c1c" opacity="0.10"/>
+
+    <!-- Subtle wave lines -->
+    <path d="M-10,105 Q100,112 256,107 Q380,102 522,110" fill="none" stroke="#0d3a6a" stroke-width="1" opacity="0.45"/>
+    <path d="M-10,215 Q120,222 256,218 Q370,213 522,220" fill="none" stroke="#0d3a6a" stroke-width="1" opacity="0.35"/>
+    <path d="M-10,325 Q110,332 256,328 Q390,323 522,330" fill="none" stroke="#0d3a6a" stroke-width="1" opacity="0.25"/>
+    <path d="M-10,430 Q130,437 256,433 Q380,428 522,435" fill="none" stroke="#0d3a6a" stroke-width="1" opacity="0.18"/>
+
+    <!-- Outer beam glow (wide, very soft) -->
+    <polygon points="256,505 30,0 482,0" fill="url(#beamFade)" opacity="0.40" filter="url(#blur12)"/>
+
+    <!-- Mid beam -->
+    <polygon points="256,505 120,0 392,0" fill="url(#beamFade)" opacity="0.45" filter="url(#blur4)"/>
+
+    <!-- Inner beam -->
+    <polygon points="256,505 180,0 332,0" fill="url(#beamCore)" opacity="0.42"/>
+
+    <!-- Core beam (brightest) -->
+    <polygon points="256,505 218,0 294,0" fill="url(#beamCore)" opacity="0.50"/>
+
+    <!-- Center axis line -->
+    <line x1="256" y1="502" x2="256" y2="0" stroke="#ddf0fa" stroke-width="1.5" opacity="0.12"/>
+
+    <!-- === Particles / data points in beam === -->
+
+    <!-- Zone 1: deep upper -->
+    <circle cx="256" cy="55"  r="2.5" fill="#90caf9" opacity="0.90" filter="url(#glow)"/>
+    <circle cx="248" cy="78"  r="1.5" fill="#b3e5fc" opacity="0.75"/>
+    <circle cx="264" cy="68"  r="1.0" fill="#e1f5fe" opacity="0.80"/>
+
+    <!-- diamond at 256,95 -->
+    <polygon points="256,90 260,95 256,100 252,95" fill="none" stroke="#90caf9" stroke-width="1.5" opacity="0.65"/>
+
+    <!-- Zone 2 -->
+    <circle cx="252" cy="148" r="3.0" fill="#64b5f6" opacity="0.80" filter="url(#glow)"/>
+    <circle cx="264" cy="168" r="1.5" fill="#90caf9" opacity="0.60"/>
+    <circle cx="242" cy="185" r="2.0" fill="#b3e5fc" opacity="0.65"/>
+    <!-- cross -->
+    <line x1="268" y1="135" x2="276" y2="135" stroke="#4fc3f7" stroke-width="1.5" opacity="0.50"/>
+    <line x1="272" y1="131" x2="272" y2="139" stroke="#4fc3f7" stroke-width="1.5" opacity="0.50"/>
+
+    <!-- Zone 3 -->
+    <circle cx="255" cy="248" r="2.5" fill="#64b5f6" opacity="0.65"/>
+    <circle cx="266" cy="272" r="1.5" fill="#90caf9" opacity="0.55"/>
+    <circle cx="245" cy="288" r="2.0" fill="#b3e5fc" opacity="0.50"/>
+
+    <!-- Zone 4 -->
+    <circle cx="258" cy="355" r="2.0" fill="#4fc3f7" opacity="0.50"/>
+    <circle cx="249" cy="378" r="1.5" fill="#81d4fa" opacity="0.42"/>
+    <!-- cross -->
+    <line x1="260" y1="318" x2="268" y2="318" stroke="#4fc3f7" stroke-width="1.5" opacity="0.38"/>
+    <line x1="264" y1="314" x2="264" y2="322" stroke="#4fc3f7" stroke-width="1.5" opacity="0.38"/>
+
+    <!-- Zone 5 (near source) -->
+    <circle cx="254" cy="430" r="1.5" fill="#81d4fa" opacity="0.38"/>
+    <circle cx="260" cy="455" r="1.0" fill="#b3e5fc" opacity="0.35"/>
+
+  </g>
+
+  <!-- Light source (searchlight) -->
+  <!-- Outer ambient glow -->
+  <circle cx="256" cy="495" r="38" fill="#3a9ad4" opacity="0.12" filter="url(#srcGlow)"/>
+  <!-- Mid glow -->
+  <circle cx="256" cy="495" r="16" fill="#90caf9" opacity="0.38" filter="url(#blur4)"/>
+  <!-- Rim ring -->
+  <circle cx="256" cy="495" r="9"  fill="none" stroke="#90caf9" stroke-width="2" opacity="0.55"/>
+  <!-- Core -->
+  <circle cx="256" cy="495" r="5.5" fill="#ffffff" opacity="0.95"/>
+  <!-- Lens highlight -->
+  <circle cx="253" cy="492" r="2"   fill="#ffffff" opacity="0.65"/>
+
+  <!-- TOKO WORKS text -->
+  <text x="256" y="428"
+    font-family="'Arial', 'Helvetica', sans-serif"
+    font-size="72"
+    font-weight="700"
+    letter-spacing="4"
+    text-anchor="middle"
+    fill="#cce8f8"
+    opacity="0.95"
+    filter="url(#glow)">TOKO</text>
+  <text x="256" y="472"
+    font-family="'Arial', 'Helvetica', sans-serif"
+    font-size="38"
+    font-weight="400"
+    letter-spacing="7"
+    text-anchor="middle"
+    fill="#90c8e8"
+    opacity="0.85">WORKS</text>
+
+  <!-- Outer border ring -->
+  <circle cx="256" cy="256" r="251" fill="none" stroke="#0d3a6a" stroke-width="2.5" opacity="0.55"/>
+  <circle cx="256" cy="256" r="248" fill="none" stroke="#1a5a9a" stroke-width="1"   opacity="0.25"/>
+</svg>
