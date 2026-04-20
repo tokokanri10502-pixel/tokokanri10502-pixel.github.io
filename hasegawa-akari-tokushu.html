@@ -27,22 +27,13 @@
     color: var(--text);
     font-size: 15px;
     line-height: 1.8;
+    max-width: 720px; margin: 0 auto;
   }
 
   /* ── HEADER ── */
-  .site-header {
-    background: var(--bar-bg);
-    color: #fff;
-    text-align: center;
-    padding: 12px 16px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-  }
-  .site-header span {
-    color: var(--primary-light);
-    font-weight: 700;
-    font-size: 13px;
-  }
+  .site-header { text-align: center; padding: 20px 16px 16px; border-bottom: 1px solid var(--border); }
+  .site-header .logo { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--primary); font-weight: 700; text-decoration: none; display: block; }
+  .site-header .date { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
 
   /* ── HERO ── */
   .hero {
@@ -51,7 +42,7 @@
     padding: 56px 24px 48px;
     text-align: center;
   }
-  .hero-tag {
+  .hero .tag {
     display: inline-block;
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 20px;
@@ -72,7 +63,7 @@
     color: #FED7AA;
     font-style: normal;
   }
-  .hero-sub {
+  .hero .sub {
     font-size: 13px;
     color: rgba(255,255,255,0.8);
     max-width: 480px;
@@ -370,14 +361,15 @@
 
 <!-- ① SITE HEADER -->
 <div class="site-header">
-  <span>TOKO Life Trend NEWS</span>　特集　|　2026年4月19日
+  <a class="logo" href="https://tokokanri10502-pixel.github.io">TOKO WORKS — 社会派 DEEP Lab 特集</a>
+  <div class="date">2026年4月｜萬財塾</div>
 </div>
 
 <!-- ② HERO -->
 <div class="hero">
-  <div class="hero-tag">🍳 DEEP ANALYSIS — 人物特集</div>
+  <div class="tag">🍳 DEEP ANALYSIS — 人物特集</div>
   <h1>「疲れた日本人を救う」<br><em>長谷川あかり現象</em>を解読する</h1>
-  <p class="hero-sub">なぜ彼女のレシピはSNSを席巻し、135万人を動かすのか。<br>数字・背景・マーケティング視点で徹底分析する。</p>
+  <p class="sub">なぜ彼女のレシピはSNSを席巻し、135万人を動かすのか。<br>数字・背景・マーケティング視点で徹底分析する。</p>
 </div>
 
 <!-- ③ SUMMARY BAR -->
