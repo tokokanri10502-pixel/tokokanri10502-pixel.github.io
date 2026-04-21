@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口どけから、咀嚼へ。── インフレ時代に&quot;もちもち&quot;が選ばれる理由｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#8B6F47;
+  --primary-dark:#5E4A30;
+  --primary-light:#C4A373;
+  --accent:#C97B63;
+  --accent-light:#E8B8A8;
+  --bg:#FAF5EC;
+  --bg-card:#FFFFFF;
+  --text:#2B2620;
+  --text-muted:#6B5D4F;
+  --border:#E6D9C2;
+  --up:#6B8E5A;
+  --down:#B55747;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#8B6F47 0%,#C97B63 55%,#E8B8A8 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:50%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.22);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.3);
+}
+.hero h1{
+  font-size:38px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.95;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:36px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.1;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.85;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(139,111,71,.06);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#FFF8EC 0%,#FCEEE4 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* bar-chart */
+.bar-chart{margin:24px 0;}
+.bar-row{margin-bottom:14px;}
+.bar-head{
+  display:flex;justify-content:space-between;
+  font-size:13px;margin-bottom:6px;
+}
+.bar-head .name{font-weight:600;color:var(--text);}
+.bar-head .val{color:var(--primary-dark);font-weight:700;}
+.bar-outer{
+  width:100%;height:16px;
+  background:#EFE6D3;
+  border-radius:8px;overflow:hidden;
+}
+.bar-inner{
+  height:100%;
+  background:linear-gradient(90deg,var(--primary-light),var(--primary));
+  border-radius:8px;
+  transition:width .4s;
+}
+.bar-inner.highlight{
+  background:linear-gradient(90deg,var(--accent-light),var(--accent));
+}
+.bar-delta{
+  font-size:11px;color:var(--up);
+  margin-left:8px;font-weight:600;
+}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--up);}
+.split-cell.right{border-top:4px solid var(--accent);}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell.left h4::before{content:"🟢 ";}
+.split-cell.right h4::before{content:"🔵 ";}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--primary-light);
+}
+
+/* journey */
+.journey{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  gap:8px;
+  margin:24px 0;
+}
+.journey-step{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 12px;
+  text-align:center;
+  position:relative;
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.journey-step .icon{font-size:24px;margin-bottom:6px;display:block;}
+.journey-step .name{
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:13px;
+  margin-bottom:4px;
+}
+.journey-arrow{
+  align-self:center;
+  color:var(--primary);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#5E4A30 0%,#8B6F47 60%,#C97B63 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;}
+.conclusion h2{
+  font-size:26px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.95;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.12);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.9;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--primary);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:28px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .journey{flex-direction:column;}
+  .journey-arrow{transform:rotate(90deg);padding:4px 0;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年4月
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#食感トレンド</span>
+      <span class="tag">#インフレ経済</span>
+      <span class="tag">#生活者心理</span>
+    </div>
+    <h1>口どけから、咀嚼へ。</h1>
+    <p class="sub">
+      スイーツ平均単価が過去最高の227円を更新した2025年。<br>
+      なめらか、ふわふわの牙城のなかで、<br>
+      唯一「口に長く残る」もちもちが4位に食い込んだ。<br>
+      この地殻変動は、何を語っているのか。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">227円</div>
+      <div class="lbl">スイーツ平均単価<br>13年連続上昇で過去最高</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">4位</div>
+      <div class="lbl">もちもち食感の順位<br>前年6位から躍進</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">+10.4pt</div>
+      <div class="lbl">好まれ度の上昇幅<br>20.3% → 30.7%</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>なぜ「口どけ」の時代に、<br>「噛む」甘さが選ばれたのか</h2>
+    <p>
+      洋菓子メーカーのモンテールが16〜64歳の男女約1000人に行った2025年の調査で、スーパーとコンビニで購入するスイーツ1商品あたりの平均金額は227円に達した。集計を始めた2013年以降の最高値で、13年連続の上昇である。同じ調査のなかに、もう一つ静かだが無視できない動きがある。スイーツに求める食感ランキングで、もちもちが前年の6位から4位へ。20.3%から30.7%へと、約10ポイント伸びたのだ。
+    </p>
+    <p>
+      上位は「なめらか」「ふわふわ」「ふんわり」と、いずれも<strong>口に入れた瞬間に消える"口どけ系"</strong>が占める。そのなかに、ひとつだけ性格の違うものが混じっている。もちもちは、口に長く残る食感である。消える甘さではなく、残る甘さ。なぜ、値上げ疲れの真っただ中で、人々は「噛み続ける甘さ」を選び始めたのか。この小さな数字の異変には、現代の生活者心理が色濃く映っている。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>事実：口どけ3強に食い込んだ<br>"もちもち"という異色</h2>
+    <p>
+      モンテール調査によるスイーツの好まれる食感の上位4つは、次のような構図になっている。わずかな差で並ぶ3つの口どけ系と、そこに食い込んだもちもちの温度差に注目してほしい。
+    </p>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">1位　なめらか</span><span class="val">38.6%</span></div>
+        <div class="bar-outer"><div class="bar-inner" style="width:86%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">2位　ふわふわ</span><span class="val">33.4%</span></div>
+        <div class="bar-outer"><div class="bar-inner" style="width:75%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">3位　ふんわり</span><span class="val">32.0%</span></div>
+        <div class="bar-outer"><div class="bar-inner" style="width:72%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">4位　もちもち<span class="bar-delta">↑ +10.4pt</span></span><span class="val">30.7%</span></div>
+        <div class="bar-outer"><div class="bar-inner highlight" style="width:69%"></div></div>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">6位 → 4位</div>
+        <div class="lbl">もちもちの順位変動<br>(2024年→2025年)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">+8円</div>
+        <div class="lbl">スイーツ単価の前年比<br>(219円 → 227円)</div>
+      </div>
+    </div>
+
+    <p>
+      もちもち以外の躍進ワードは上位にほぼ存在しない。他の食感は比較的安定した推移を示しており、このカテゴリでこれほど大きく動いたのはもちもち一つだけだ。言い換えれば、<strong>2025年の食感市場で唯一目立った動きが、もちもちの単独浮上だった</strong>ということである。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>背景①　インフレが生んだ<br>「充実感経済」の台頭</h2>
+    <p>
+      この躍進を最もよく説明するのは、同じ紙面に並ぶもう一つのニュース──スイーツ平均単価の過去最高更新だ。小麦・卵・乳製品といった主要原材料の価格高騰が続き、1商品あたりの値札は静かに上がり続けている。最も単価が高かったのは10代で、年代を追うごとに金額は下がる。だが年齢層を問わず、支出の総額は確実に増えている。
+    </p>
+
+    <div class="callout">
+      値段が上がれば、消費者は無意識に<strong>「一口あたりの体験時間」で価値を回収しようとする</strong>。噛み続けるほど、味わう時間は長くなる。もちもちは、そのしくみに最も忠実に応える食感だ。
+    </div>
+
+    <p>
+      口どけ系が「一瞬で消える贅沢」を届けるのに対し、もちもち系は「続く贅沢」を届ける。同じ227円でも、後者のほうが体感単価は割安に感じられる。しかもその知覚は、論理ではなく、顎の動きと咀嚼時間という身体感覚に刻まれる。<strong>インフレは、口どけよりも咀嚼に価値を感じさせる局面を生む</strong>。もちもちの躍進は、その最初のシグナルと読める。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">INSIGHT</span>
+      <p>
+        モンテール自身も調査の分析のなかで、昨今の傾向を「ご自愛」や「自分へのご褒美」といった文脈で捉えつつ、業界全体の原材料高・コスト増を背景に、<strong>消費者の価格への意識がむしろ高まっている</strong>と述べている。コスト増の時代に「お値打ち感」「充実感」が価値を決める。この論理は、口どけよりも咀嚼に追い風をもたらす。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>背景②　"自分へのご褒美"が<br>マインドフル消費に出会う</h2>
+    <p>
+      スイーツを食べるきっかけを尋ねる項目で、上位に並んだのは次の三つだ。
+    </p>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">うれしいとき</span><span class="val">37.4%</span></div>
+        <div class="bar-outer"><div class="bar-inner" style="width:84%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">自分をほめてあげたいとき</span><span class="val">35.0%</span></div>
+        <div class="bar-outer"><div class="bar-inner" style="width:78%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-head"><span class="name">達成感・充実感があるとき</span><span class="val">28.1%</span></div>
+        <div class="bar-outer"><div class="bar-inner" style="width:63%"></div></div>
+      </div>
+    </div>
+
+    <p>
+      スイーツの動機はもはや「空腹」ではない。<strong>心の状態を整えるための儀式</strong>になっている。頑張った日、報われた日、何かをやり切った日──そうした自分への"小さな贈り物"として、甘いものが選ばれる。
+    </p>
+
+    <div class="callout">
+      この動機の変化は、食感の好みを静かに書き換える。<strong>ご褒美とは、味わう時間そのもの</strong>だ。一瞬で消えるものより、噛みしめられるもののほうが、儀式の密度は上がる。もちもちは、ご褒美消費と構造的に相性がよい。
+    </div>
+
+    <p>
+      もう一つの補助線は、マインドフル・イーティングの流れだ。早食い・ながら食いの対極として、ゆっくり噛むことを重視する健康志向が若年層から広がっている。もちもちは、意識せずとも咀嚼を促す食感である。つまり、<strong>頭でマインドフルでなくとも、体が自然にマインドフルになる</strong>。この"強制的にゆっくり食べさせる"性質が、忙しい現代人の心のリズムに、思いのほかよく馴染んでいる。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>背景③　SNS短尺動画と<br>K-スイーツがつくった"伸びる映え"経済圏</h2>
+    <p>
+      もちもちを押し上げた第三の力は、映像文化だ。TikTokやInstagram Reelsが支配する短尺動画の世界では、視覚的に強い食感ほど発見されやすい。チーズの伸び、飴の伸び、そしてもちの伸び。<strong>「引っ張る」「伸びる」「ちぎれる」という身体動作を伴う食感は、アルゴリズム上で明確に有利になる</strong>。
+    </p>
+    <p>
+      同じ調査で、20代の32.0%、30代の29.5%が、スイーツ情報をAIに尋ねた経験があると回答している。若年層ほどデジタル経由で商品を発見し、その発見経路で映像化しやすい食感が優位に立つ。もちもちは、この新しい発見環境と噛み合った。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">PARALLEL TREND</span>
+      <p>
+        並走してきたのが、K-スイーツの波である。韓国のもち米ドーナツ「チャプサル」、ねじり揚げの「クァベギ」、じゃがいも×もちの「カムジャパン」といったもち食感中心の菓子が、K-POPやインバウンド文化とともに日本に流入した。<strong>これは日本一国の現象ではなく、東アジア規模の"もち回帰"</strong>だ。日本にもともとある餅文化の下地と、海外由来の新しい"もち"とが、同時に市場を温めた。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 5 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 5</span>
+    <h2>マッピング：どんな"もちもち"が<br>実際にヒットしてるのか</h2>
+    <p>
+      2026年春時点で売れている商品を俯瞰すると、もちもち市場は単一カテゴリではない。<strong>「もちもち × 既存人気フォーマット」のハイブリッド市場</strong>として読むのが実態に近い。大きく二つの層に分かれる。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>定番系（ロングセラー）</h4>
+        <ul>
+          <li>雪見だいふく（1981年〜／もちもち市場の開祖）</li>
+          <li>ポン・デ・リング（2003年〜／累計38億個販売）</li>
+          <li>やわもちアイス（井村屋）</li>
+          <li>モチクリーム系（オハヨー乳業ほか）</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>新興系（2025-26年ヒット）</h4>
+        <ul>
+          <li>どらもっち いちご（ローソン／週次1位）</li>
+          <li>もっちり和クレープ おもちときなこ（セブン）</li>
+          <li>もっちゅりん（ミスタードーナツ55周年）</li>
+          <li>フルーツ大福専門店（覚王山・銀座ほか）</li>
+          <li>チャプサル／カムジャパン（K-スイーツ）</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      定番系は家庭の冷凍庫や定番棚に静かに定位置を保ち、新興系がコンビニ・SNS・若年層を通じて市場に熱を加えている。注目は、<strong>シュークリーム（調査で19年連続1位）、ロールケーキ、クレープ、どら焼きといった"生地もの"すべてにもち化の波が及んでいる</strong>ことだ。もちもちはもはや単独の商品ではなく、<strong>既存の勝ちパターンに乗せる"食感アドオン"</strong>として機能している。
+    </p>
+
+    <p>この広がり方は、次の流通経路で起きている。</p>
+
+    <div class="journey">
+      <div class="journey-step">
+        <span class="icon">🇰🇷</span>
+        <div class="name">K-スイーツ</div>
+        屋台発<br>SNS経由で流入
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🏪</span>
+        <div class="name">専門店</div>
+        I'm donut?<br>フルーツ大福系
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🥐</span>
+        <div class="name">コンビニ</div>
+        週次ヒット<br>週替わり新作
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🛒</span>
+        <div class="name">スーパー</div>
+        定番化<br>家庭冷凍庫へ
+      </div>
+    </div>
+
+    <p>
+      左から右へ、発見性が高い場所から生活動線に根ざした場所へ。もちもちは今、この流路の中段まで到達している。定番棚の一角を占めるまでには、もう少し時間がかかるだろう。しかし、<strong>5年後に標準装備になっている食感は、まちがいなくもちもちだ</strong>。
+    </p>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>もちもちは、時代の鏡である</h2>
+    <p>
+      小さな甘味の食感ランキングが語るのは、食の話題にとどまらない。<strong>人々の時間感覚と価値観の変化</strong>である。値段が上がり、心が揺れる時代に、日本の消費者は「噛み続けられる甘さ」にほんの少しだけ多くの価値を置き始めた。
+    </p>
+    <ul class="pt">
+      <li>🔸 インフレ下で、消費者は「時間のかかる価値」を求める</li>
+      <li>🔸 ご褒美消費の定着が、咀嚼＝マインドフル体験と噛み合う</li>
+      <li>🔸 SNS短尺動画が、「伸びる食感」を発見可能性の高い資産に変えた</li>
+      <li>🔸 K-スイーツと連動した、東アジア共通の"もち回帰"が起きている</li>
+    </ul>
+    <p class="closer">
+      「速い消費」から「濃い消費」へ──。もちもちは、その静かな地殻変動を映す、最も小さなシグナルである。次に世の中で再評価されるのは、「時間をかけて味わえるもの」のすべて。それは、食卓の上だけの話ではない。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日本経済新聞 日経MJ 2026年4月20日 7面「スイーツ購入単価最高、227円」</li>
+    <li>モンテール スイーツに関する意識調査 2025年（対象：16〜64歳 男女 約1000人）</li>
+    <li>B.M. FT シズルワードランキング 2025</li>
+    <li>mognavi「コンビニスイーツ週次ランキング」（2026年4月）</li>
+    <li>トクバイニュース「新作コンビニスイーツまとめ」（2026年4月）</li>
+    <li>DIME「コンビニ3社のもちもち系スイーツ食べくらべ」</li>
+    <li>東洋経済オンライン「第3次ドーナツブーム」</li>
+    <li>食べログマガジン「令和のフルーツ大福ブーム」</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年4月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
