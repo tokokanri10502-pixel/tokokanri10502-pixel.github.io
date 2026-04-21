@@ -226,7 +226,9 @@
 
       const cards = document.createElement('div');
       cards.className = 'cards';
-      cat.articles.forEach(art => {
+      // 日付降順（新しいものを左＝先頭）に並び替え。date は "YYYY.MM.DD" 文字列なので辞書順比較でOK
+      const sorted = cat.articles.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+      sorted.forEach(art => {
         const a = document.createElement('a');
         a.className = 'card';
         a.href = art.url;
