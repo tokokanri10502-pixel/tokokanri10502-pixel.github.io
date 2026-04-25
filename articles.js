@@ -44,7 +44,7 @@ window.ARTICLES = {
           image: "images/hasegawaakari.jpg",
           source: "📰 日経MJ｜2026年4月17日",
           title: "特集｜長谷川あかり現象を解読<br>「疲れた日本人を救う」料理家の正体",
-          url: "https://tokokanri10502-pixel.github.io/hasegawa-akari/",
+          url: "https://tokokanri10502-pixel.github.io/hasegawa-tokushu.html",
           desc: "SNS総フォロワー135万人・著書30万部（発信半年）。なぜ今、彼女は時代のニーズと精密に一致するのか。社会背景と経営視点から徹底分析。",
           date: "2026.04.19",
           tag: "study",
