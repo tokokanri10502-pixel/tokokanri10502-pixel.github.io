@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ、今Claudeなのか ── 信念で動くAI企業 Anthropic の正体｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#1E3A5F;
+  --primary-dark:#0F2540;
+  --primary-light:#4A6FA5;
+  --accent:#C9A961;
+  --accent-light:#E8D599;
+  --bg:#F4F2EC;
+  --bg-card:#FFFFFF;
+  --text:#1F2937;
+  --text-muted:#5B6478;
+  --border:#D8D2C2;
+  --up:#2E7D5C;
+  --down:#B7472A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#0F2540 0%,#1E3A5F 55%,#4A6FA5 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(201,169,97,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:50%;height:60%;
+  background:radial-gradient(circle,rgba(232,213,153,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(232,213,153,.4);
+}
+.hero h1{
+  font-size:38px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.95;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:36px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.1;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.85;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(30,58,95,.08);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#FBF8EE 0%,#F2EAD3 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* bar-chart */
+.bar-chart{margin:24px 0;}
+.bar-row{margin-bottom:14px;}
+.bar-head{
+  display:flex;justify-content:space-between;
+  font-size:13px;margin-bottom:6px;
+}
+.bar-head .name{font-weight:600;color:var(--text);}
+.bar-head .val{color:var(--primary-dark);font-weight:700;}
+.bar-outer{
+  width:100%;height:16px;
+  background:#E5DDC8;
+  border-radius:8px;overflow:hidden;
+}
+.bar-inner{
+  height:100%;
+  background:linear-gradient(90deg,var(--primary-light),var(--primary));
+  border-radius:8px;
+  transition:width .4s;
+}
+.bar-inner.highlight{
+  background:linear-gradient(90deg,var(--accent-light),var(--accent));
+}
+.bar-delta{
+  font-size:11px;color:var(--up);
+  margin-left:8px;font-weight:600;
+}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--down);}
+.split-cell.right{border-top:4px solid var(--up);}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell.left h4::before{content:"🟠 ";}
+.split-cell.right h4::before{content:"🟣 ";}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--primary-light);
+}
+
+/* ai-card (accordion) */
+.ai-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin-bottom:12px;
+  overflow:hidden;
+  transition:box-shadow .15s;
+}
+.ai-card[open]{box-shadow:0 4px 14px rgba(30,58,95,.08);}
+.ai-card summary{
+  cursor:pointer;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  list-style:none;
+  user-select:none;
+  transition:background .15s;
+}
+.ai-card summary::-webkit-details-marker{display:none;}
+.ai-card summary::marker{display:none;content:"";}
+.ai-card summary:hover{background:#FBF8EE;}
+.ai-card summary::after{
+  content:"＋";
+  margin-left:auto;
+  font-size:18px;
+  color:var(--primary);
+  font-weight:300;
+  transition:transform .2s;
+  line-height:1;
+}
+.ai-card[open] summary::after{content:"−";}
+.ai-card .ai-icon{font-size:22px;line-height:1;}
+.ai-card .ai-name{
+  font-weight:700;
+  font-size:16px;
+  color:var(--primary-dark);
+}
+.ai-card .ai-tag{
+  font-size:11px;
+  background:var(--accent-light);
+  color:var(--primary-dark);
+  padding:3px 10px;
+  border-radius:999px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.ai-body{
+  padding:18px 20px 22px;
+  border-top:1px solid var(--border);
+}
+.ai-body p{font-size:14px;line-height:1.85;margin-bottom:12px;color:var(--text);}
+.ai-body p:last-child{margin-bottom:0;}
+.ai-body .stat-grid{margin:0 0 14px;}
+.ai-body .stat-cell{padding:14px 12px;}
+.ai-body .stat-cell .num{font-size:18px;letter-spacing:0;}
+.ai-body .stat-cell .lbl{font-size:11px;}
+.ai-body h5{
+  font-size:13px;
+  color:var(--primary-dark);
+  margin:14px 0 8px;
+  letter-spacing:.05em;
+}
+.ai-body ul{
+  list-style:none;
+  padding:0;
+  margin-bottom:12px;
+}
+.ai-body ul li{
+  font-size:13px;
+  line-height:1.75;
+  padding-left:14px;
+  position:relative;
+  color:var(--text-muted);
+  margin-bottom:4px;
+}
+.ai-body ul li::before{
+  content:"—";
+  position:absolute;
+  left:0;
+  color:var(--primary-light);
+}
+.ai-note{
+  font-size:12px;
+  color:var(--text-muted);
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px dashed var(--border);
+  line-height:1.7;
+}
+
+/* journey */
+.journey{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  gap:8px;
+  margin:24px 0;
+}
+.journey-step{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 12px;
+  text-align:center;
+  position:relative;
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.journey-step .icon{font-size:24px;margin-bottom:6px;display:block;}
+.journey-step .name{
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:13px;
+  margin-bottom:4px;
+}
+.journey-arrow{
+  align-self:center;
+  color:var(--primary);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#0F2540 0%,#1E3A5F 60%,#4A6FA5 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;}
+.conclusion h2{
+  font-size:26px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.95;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.12);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.9;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--primary);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:28px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .journey{flex-direction:column;}
+  .journey-arrow{transform:rotate(90deg);padding:4px 0;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年4月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#AI業界</span>
+      <span class="tag">#Anthropic</span>
+      <span class="tag">#信念経営</span>
+    </div>
+    <h1>なぜ、今Claudeなのか</h1>
+    <p class="sub">
+      信念より利益が当たり前の時代に、<br>
+      利益より信念を選んだAI企業がある。<br>
+      米国政府から「Huaweiと同列のリスク企業」と指定された会社。<br>
+      その正体は、Claude を作る Anthropic である。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">640億ドル</div>
+      <div class="lbl">累計調達額<br>(2021年設立から5年で)</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">380億ドル</div>
+      <div class="lbl">企業評価額<br>(2026年2月 Series G時点)</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">米企業初</div>
+      <div class="lbl">米国防省「サプライチェーン<br>リスク」指定（2026年3月）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>ChatGPTとClaude、<br>その裏で起きていた「決別」</h2>
+    <p>
+      AIの世界では今、ChatGPTとClaudeがしばしば並列で語られる。OpenAIとAnthropic、二大生成AI企業。性能を競い、ユーザーを奪い合う、よくあるライバル構図。──しかし両社の関係は、それほど単純ではない。Anthropicは2021年、OpenAIから離脱した安全性チームの中核メンバーが立ち上げた会社である。つまりこれは、ライバル企業同士の話ではなく、<strong>一度同じ船に乗っていた人々が、思想の違いで降りた話</strong>だ。
+    </p>
+    <p>
+      そして2026年、両社の歩みは決定的に分岐した。一方は米国政府との取引を拡大し、もう一方は米国企業として史上初めて「サプライチェーンリスク」企業に指定された。同じAIを作っているはずの二社が、なぜここまで違う道を歩いているのか。「いま、なぜClaudeを使うのか」という問いに、性能比較表で答えるだけでは、本質は見えてこない。
+    </p>
+  </section>
+
+  <!-- ===== BACKGROUND ===== -->
+  <section class="chapter">
+    <span class="chapter-label">BACKGROUND</span>
+    <h2>AI競争の現在地<br>── Google・OpenAI・Anthropic の3社マップ</h2>
+    <p>
+      本題に入る前に、生成AI業界の現在地を簡単に整理しておきたい。「ChatGPTは知っているが、Gemini や Claude は使ったことがない」「3社の違いがよくわからない」── 業界内ですら、そういう人は多い。<strong>各社をクリックすると展開します</strong>。すでに把握している方は読み飛ばしてください。
+    </p>
+
+    <details class="ai-card">
+      <summary>
+        <span class="ai-icon">🟦</span>
+        <span class="ai-name">Google ／ Gemini</span>
+        <span class="ai-tag">最大の生態系</span>
+      </summary>
+      <div class="ai-body">
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <div class="num">Gemini 3.1 Pro</div>
+            <div class="lbl">最新モデル<br>(2026年2月19日)</div>
+          </div>
+          <div class="stat-cell">
+            <div class="num">2M tokens</div>
+            <div class="lbl">コンテキスト窓<br>業界最大級</div>
+          </div>
+        </div>
+        <p>
+          Google が DeepMind と Google Brain を統合して開発する旗艦AI。検索・Gmail・Docs・YouTube・Android といった既存サービスへの深い統合が最大の武器で、ユーザーは意識せずとも日常的に Gemini に触れている。
+        </p>
+        <h5>サービス・プラン</h5>
+        <ul>
+          <li>個人向け：Google AI Pro（$19.99/月）／Ultra（最上位）</li>
+          <li>無料枠：Flash モデルは AI Studio で引き続き利用可</li>
+          <li>2026年4月から、無料での Pro 階層モデル利用は終了</li>
+        </ul>
+        <h5>強み・特徴</h5>
+        <ul>
+          <li>2Mトークンの超長文コンテキスト（書籍数冊分を一度に処理可）</li>
+          <li>Workspace 連携・Deep Research 機能・マルチモーダル対応</li>
+          <li>Google検索とのファクト連携、ハルシネーション抑制に強み</li>
+        </ul>
+        <p class="ai-note">
+          ユーザー数の公式公表は限定的だが、Google の既存ユーザーベース全体に Gemini が浸透中。「気づかぬうちに使っている」が最大のシェア戦略。
+        </p>
+      </div>
+    </details>
+
+    <details class="ai-card">
+      <summary>
+        <span class="ai-icon">🟢</span>
+        <span class="ai-name">OpenAI ／ ChatGPT</span>
+        <span class="ai-tag">圧倒的な大衆性</span>
+      </summary>
+      <div class="ai-body">
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <div class="num">9億人</div>
+            <div class="lbl">ChatGPT 週間アクティブ<br>ユーザー(2026年2月)</div>
+          </div>
+          <div class="stat-cell">
+            <div class="num">GPT-5</div>
+            <div class="lbl">最新モデル<br>(2025年8月公開)</div>
+          </div>
+        </div>
+        <p>
+          2022年11月の ChatGPT 公開で生成AIブームを起こした、現在の業界覇者。週間9億人のアクティブユーザー、有料購読者は消費者向け5,000万人＋ビジネス向け900万人。年間換算売上は約250億ドルに達する（2026年2月時点）。
+        </p>
+        <h5>サービス・プラン</h5>
+        <ul>
+          <li>無料：ChatGPT 基本機能</li>
+          <li>個人向け：Plus（$20/月）／Pro（$200/月、上位モデル無制限）</li>
+          <li>法人向け：Team／Enterprise</li>
+        </ul>
+        <h5>強み・特徴</h5>
+        <ul>
+          <li>マルチモーダル：画像生成（DALL-E）・動画生成（Sora）・音声（Voice Mode）</li>
+          <li>圧倒的なユーザー数による学習データと改善の好循環</li>
+          <li>開発者向け Codex、Realtime API、エージェント機能の早期実装</li>
+        </ul>
+        <p class="ai-note">
+          一般大衆への普及度は3社で最大。「AI＝ChatGPT」と認識されている層が依然多数派。
+        </p>
+      </div>
+    </details>
+
+    <details class="ai-card">
+      <summary>
+        <span class="ai-icon">🟧</span>
+        <span class="ai-name">Anthropic ／ Claude</span>
+        <span class="ai-tag">本記事の主役</span>
+      </summary>
+      <div class="ai-body">
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <div class="num">Claude Opus 4.7</div>
+            <div class="lbl">最新モデル<br>(2026年4月16日)</div>
+          </div>
+          <div class="stat-cell">
+            <div class="num">$140億</div>
+            <div class="lbl">年間換算売上<br>(2026年初頭)</div>
+          </div>
+        </div>
+        <p>
+          2021年に OpenAI 離脱組が設立。最新モデル Opus 4.7（2026年4月16日公開）は、コーディング・エージェントタスクの分野で業界最高水準の評価を受けている。Claude Code（CLI コーディングエージェント）、Computer Use（PC を直接操作する機能）など、「思考と作業を代行する AI」に特化している。
+        </p>
+        <h5>サービス・プラン</h5>
+        <ul>
+          <li>無料：Claude.ai（基本機能）</li>
+          <li>個人向け：Pro（$20/月）／Max（より上位）</li>
+          <li>法人向け：Team／Enterprise／API</li>
+        </ul>
+        <h5>強み・特徴</h5>
+        <ul>
+          <li>コーディング業務で他社モデルを引き離す評価</li>
+          <li>1Mトークンの長文コンテキスト・大量資料の精密読解</li>
+          <li>Constitutional AI（憲法的AI）など、安全性研究の独自路線</li>
+          <li>画像生成・動画生成は意図的に非対応</li>
+        </ul>
+        <p class="ai-note">
+          評価額は3,800億ドル（2026年2月 Series G）。ユーザー数の公開数値はないが、エンジニア・研究者・士業など「専門職プロユース」での浸透が顕著。
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>離反 ──<br>ダリオ・アモデイがOpenAIを去った理由</h2>
+    <p>
+      Anthropic CEO のダリオ・アモデイは、物理学の博士号を持つ研究者である。Baidu、Google を経て OpenAI に参画し、現代のAI開発を支配する「スケーリング則」── モデルを大きくすれば性能が上がる ── の研究の中心人物となった。彼は早い段階から、<strong>AIの能力が指数関数的に伸びることと、それに伴う社会的危険が同時に増幅すること</strong>の両方を予見していた。
+    </p>
+
+    <div class="callout">
+      アモデイの一貫した主張は、ひとことで言えばこうだ。<br>
+      <strong>「安全性は、開発スピードや性能と天秤にかける項目ではない。最優先事項である」</strong>
+    </div>
+
+    <p>
+      この信念は、当時のOpenAIの方向性と次第にすれ違っていく。2019年7月、OpenAIはMicrosoftから10億ドルの出資を受け入れ、事実上の営利化路線に舵を切った。GPT-3の商用化、製品開発の加速、安全性チームと事業チームの優先順位の対立──これらが折り重なるなかで、安全性を信念の中心に置いていたアモデイ兄妹を含む複数の研究者が、2020年末から2021年初頭にかけてOpenAIを離れた。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">2019年</div>
+        <div class="lbl">MS の OpenAI 出資<br>10億ドル・営利化への転機</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">2021年</div>
+        <div class="lbl">Anthropic 設立<br>離脱メンバーが結集</div>
+      </div>
+    </div>
+
+    <p>
+      Anthropicという社名は「人間中心の」を意味するギリシャ語に由来する。設立の出発点は、技術的な野心ではなく、<strong>「安全性を後付けにせず、開発の核に据える」という思想的な選択</strong>だった。これが、その後の同社のあらゆる判断の起点になっている。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>構造 ──<br>公益法人(PBC)という、利益を縛る仕組み</h2>
+    <p>
+      信念は口で言うだけなら誰でもできる。Anthropicが特異なのは、その信念を組織構造に作り込んでしまった点である。同社は通常の株式会社ではなく、<strong>米国の Public Benefit Corporation（公益法人／PBC）</strong>という法人形態を採用している。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">構造解説</span>
+      <p>
+        通常の株式会社は、法律上「株主利益の最大化」が経営者の義務とされる。利益と社会的使命がぶつかったとき、最終的には利益を優先しないと、株主から訴えられかねない。
+      </p>
+      <p>
+        PBC はその縛りを解く形態だ。<strong>「社会的使命の遂行」を意思決定の優先事項として定款に明記できる</strong>。利益が最大化しなくとも、安全なAIを開発するという選択を、法的に正当化できる仕組みである。
+      </p>
+    </div>
+
+    <p>
+      Anthropic はさらに、議決権を外部投資家に持たせない特殊なガバナンス構造もとっている。長期的な使命を、短期の市場圧力から守るための設計だ。「他社に勝つために安全性を度外視して性能を上げる」── 資本主義の世界でAI企業が陥りがちな泥沼の競争から、構造として距離を置く選択である。
+    </p>
+
+    <p>
+      興味深いのは、この「利益を縛る仕組み」を持ちながら、同社が累計640億ドルを調達し、企業評価額380億ドル（2026年2月 Series G ラウンド時点）に達している点だ。<strong>信念を貫く構造が、結果的に投資家の信頼を勝ち取っている</strong>。倫理を語る企業は数多いが、倫理を制度に組み込んだうえで資本市場で成功している企業は稀である。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>事件 ──<br>2025年秋、米国防省との決裂</h2>
+    <p>
+      Anthropic の信念は、2025年に入って最大の試練を迎える。相手は、米国政府そのものだった。
+    </p>
+    <p>
+      2025年7月、同社は米国防省（当時。後に Department of War へ改称）と2億ドル規模の契約を締結する。Claude は<strong>米国の機密ネットワーク上で運用が許可された、初の最先端AI</strong>となった。Palantir との提携を通じて、諜報・防衛機関の最高機密領域に AI を提供できる、唯一の企業になったのである。
+    </p>
+
+    <p>
+      ところが、その関係は2025年秋、契約の運用を巡って急速に冷え込む。発端は、国防総省が「GenAI.mil」という政府内AIプラットフォームへの Claude 配備を進めるなかで提示した、ある条件だった。
+    </p>
+
+    <div class="callout">
+      国防総省が要求したのは、<strong>「あらゆる合法的用途における無制限のアクセス」</strong>だった。<br>
+      この「合法的用途」には、完全自律型兵器システム、米国内の大規模監視プログラムへの転用が含まれうる。Anthropic 側は「自社AIが自律型兵器や大規模監視に使われない保証が欲しい」と主張し、これを受け入れなかった。
+    </div>
+
+    <p>
+      Anthropic はもともと、利用ポリシーで「自律型兵器」「大規模国内監視」を明確に禁止していた。これは契約金額や政府との関係よりも上位に置かれた、譲れない一線である。<strong>「合法であっても、自社の倫理基準に反するなら拒む」</strong>。この姿勢を、相手が国家であっても崩さなかった。それが、この事件の核心である。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>対比 ──<br>道徳的境界線と、法的境界線</h2>
+    <p>
+      同じ AI 業界で、なぜ二社の判断はここまで割れたのか。話を分かりやすくするために、OpenAI と Anthropic がそれぞれ「境界線」をどう引いているかを並べて見る。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>OpenAI ／ 法的境界線</h4>
+        <ul>
+          <li>「合法な用途」であれば原則受け入れる</li>
+          <li>2024年、利用ポリシーから軍事禁止条項を撤廃</li>
+          <li>米軍・国防関連の契約に積極的に応じる</li>
+          <li>境界は「法律の範囲内かどうか」</li>
+          <li>判断の主体は外部（法・契約・政府）</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>Anthropic ／ 道徳的境界線</h4>
+        <ul>
+          <li>合法でも、自社の利用ポリシーに反するなら拒む</li>
+          <li>自律型兵器・大規模監視は明示的に禁止</li>
+          <li>政府要求であっても境界線は譲らない</li>
+          <li>境界は「自分たちが何を作りたいか」</li>
+          <li>判断の主体は内部（信念・憲法的AI）</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      これは単なるポリシーの違いではない。<strong>誰が、何を根拠に、AIの使われ方を決めるのか</strong>という、根本的な思想の差である。OpenAI は「法律と契約に委ねる」。Anthropic は「自社の倫理を法より上に置く」。極端に言えば、前者は外注であり、後者は自治である。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">市場の反応</span>
+      <p>
+        この対立構図が表面化した2026年初頭から、ユーザー側にも明確な動きがあった。倫理を重視するユーザー層、特に企業のリーガル・コンプライアンス担当者や研究者・教育機関のあいだで、<strong>ChatGPT から Claude への乗り換えが加速</strong>した。AI を「誰の信念で作られているか」で選ぶという、これまであまり前面に出てこなかった選択基準が、いま市場に立ち上がっている。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 5 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 5</span>
+    <h2>進行中 ──<br>2026年4月、いま続いている対立</h2>
+    <p>
+      この事件は、すでに過去のニュースではない。本稿執筆時点（2026年4月下旬）でも、Anthropic と米国政府の対立は<strong>現在進行形</strong>である。直近2か月の動きを時系列で並べる。
+    </p>
+
+    <div class="journey">
+      <div class="journey-step">
+        <span class="icon">📢</span>
+        <div class="name">2/27</div>
+        Hegseth 国防長官<br>X で「リスク企業」<br>指定を予告
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">📜</span>
+        <div class="name">3/3</div>
+        正式通知レター<br>米企業初の<br>サプライチェーン<br>リスク指定発効
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">⚖️</span>
+        <div class="name">3/24</div>
+        北カリフォルニア<br>地裁が予備差止<br>「政府の行動は<br>報復目的」と判示
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🔁</span>
+        <div class="name">4/8</div>
+        控訴審で差止<br>一時取消<br>政府優勢に揺り戻し
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🤝</span>
+        <div class="name">4/21</div>
+        ホワイトハウス<br>協議で軟化<br>Trump「dealは<br>possible」発言
+      </div>
+    </div>
+
+    <p>
+      注目は2026年3月24日、カリフォルニア北部地区裁判所が下した予備差止命令である。判決は明確に、<strong>「政府の行動は安全保障の観点ではなく、Anthropic を懲罰する目的で行われた」</strong>と認定した。一国の AI 政策に司法が介入し、国防省側の動機を正面から否定する判決を出すのは、米国でも極めて異例である。
+    </p>
+
+    <div class="callout">
+      この「サプライチェーンリスク」指定は、<strong>これまで Huawei など敵対国の企業にのみ適用されてきた制裁的措置</strong>である。米国企業に対して同等の指定が出されたのは、この件が初めて。Anthropic は自国政府から、敵国企業と同じ枠組みで扱われた、最初のアメリカ企業になった。
+    </div>
+
+    <p>
+      4月8日には控訴審で差止が一時取り消され、政府側に揺り戻し。その後4月17日に CEO ダリオ・アモデイがホワイトハウスを訪問、Trump 大統領は4月21日「DOD との合意は可能だ」と CNBC に語った。事態は依然として流動的で、ここから先の展開は本稿執筆時点では見えていない。だが、すでにはっきりしていることが一つある。<strong>Anthropic は、信念を譲ってでも政府との関係を回復しようとはしなかった</strong>。
+    </p>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>技術ではなく、思想で<br>AIを選ぶ時代</h2>
+    <p>
+      AI の選び方は、確実に変わりつつある。「速い」「賢い」「安い」── これまでツール選びの軸はそれらだった。しかし、AI が社会のあらゆる判断に関わり始めたいま、もう一つの軸が前面に出てきている。<strong>誰が、どんな信念で、その AI を作っているのか</strong>。
+    </p>
+    <ul class="pt">
+      <li>🔹 Anthropic は、利益最大化を法的に放棄した PBC 企業</li>
+      <li>🔹 米国政府の要求に対して、史上初の「リスク企業」指定を受けてでも一線を譲らなかった</li>
+      <li>🔹 「合法か」ではなく「自分たちが作りたい AI か」で線を引く道徳的境界線</li>
+      <li>🔹 倫理が、構造・契約・司法のすべてを巻き込んで試されている</li>
+    </ul>
+    <p class="closer">
+      Claude を選ぶということは、ただ高性能な AI を選ぶということではない。<strong>「合法でも、譲らない」と決めた会社が作った AI を選ぶ</strong>ということである。これは、技術の選択ではなく、世界観の選択だ。社内勉強会の机に Claude が並んでいるとき、私たちもまた、その世界観に小さな一票を投じている。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>おちつき AI ラジオ ep.59「Claude躍進の理由は信念にあり！利益より社会貢献を選ぶ異端のAI企業、Anthropicの正体に迫る」（KANERIN Podcast Studios・2026年4月10日公開）</li>
+    <li>Anthropic 公式「Claude Gov models for U.S. national security customers」</li>
+    <li>Anthropic 公式「Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation」</li>
+    <li>Crunchbase News「Anthropic Raises $30B At $380B Valuation In Second-Largest Venture Funding Deal Of All Time」</li>
+    <li>Bloomberg「Anthropic at Risk of Huawei-Like Ban After Pentagon Punishment」（2026年3月6日）</li>
+    <li>CNBC「Anthropic was the Pentagon's choice for AI. Now it's banned and experts are worried」（2026年3月9日）</li>
+    <li>CNBC「Anthropic wins preliminary injunction in DOD fight as judge cites 'First Amendment retaliation'」（2026年3月26日）</li>
+    <li>CNBC「Anthropic loses appeals court bid to temporarily block Pentagon blacklisting」（2026年4月8日）</li>
+    <li>CNBC「Trump says Anthropic is shaping up and a deal is 'possible' for Department of Defense use」（2026年4月21日）</li>
+    <li>Mayer Brown「Pentagon Designates Anthropic a Supply Chain Risk」</li>
+    <li>Wikipedia「Anthropic–United States Department of Defense dispute」</li>
+    <li>Council on Foreign Relations「Anthropic's Standoff With the Pentagon Is a Test of U.S. Credibility」</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年4月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>

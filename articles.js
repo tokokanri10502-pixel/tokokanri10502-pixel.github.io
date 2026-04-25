@@ -82,6 +82,15 @@ window.ARTICLES = {
           date: "2026.04.19",
           tag: "study",
           tagLabel: "勉強会資料"
+        },
+        {
+          icon: "⚖️",
+          title: "特集｜なぜ、今Claudeなのか<br>信念で動くAI企業 Anthropic の正体",
+          url: "https://tokokanri10502-pixel.github.io/anthropic-tokushu.html",
+          desc: "米国政府から「Huaweiと同列のリスク企業」と指定されたAnthropic。OpenAIから派生し、利益最大化を法的に放棄した異端児が、今Claude躍進の裏側で何を選び続けているのか──思想と国防省事件の両面から読み解く。",
+          date: "2026.04.25",
+          tag: "study",
+          tagLabel: "勉強会資料"
         }
       ]
     },
