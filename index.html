@@ -103,17 +103,34 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      overflow: hidden;
+    }
+    .card.has-image { padding: 0; }
+    .card.has-image .card-body {
+      padding: 16px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      display: block;
+      background: #0f0f1a;
     }
     .card:hover {
       transform: translateY(-3px);
       border-color: rgba(229,57,53,0.5);
       box-shadow: 0 8px 24px rgba(0,0,0,0.4);
     }
+    .card.has-image:hover .card-image { opacity: 0.92; transition: opacity 0.15s; }
     .card-icon { font-size: 1.6rem; line-height: 1; }
     .card-title { font-size: 1rem; font-weight: 800; color: #fff; line-height: 1.35; }
     .card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; flex: 1; }
     .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
-    .card-date { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+    .card-date { font-size: 0.74rem; color: rgba(255,255,255,0.6); font-weight: 600; letter-spacing: 0.04em; }
     .card-tag { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: bold; letter-spacing: 0.04em; }
     .card-tag.study { background: rgba(229,57,53,0.2); color: #ef9a9a; }
     .card-tag.app   { background: rgba(33,150,243,0.2); color: #90caf9; }
@@ -129,6 +146,14 @@
       line-height: 1.2;
     }
     .card-tag.life  { background: rgba(76,175,80,0.2); color: #a5d6a7; }
+    .card-tag.disclaimer {
+      background: transparent;
+      color: rgba(255,255,255,0.35);
+      font-weight: normal;
+      padding: 2px 0;
+      letter-spacing: 0.02em;
+      font-size: 0.66rem;
+    }
     .footer {
       text-align: center;
       font-size: 0.75rem;
@@ -230,21 +255,32 @@
       const sorted = cat.articles.slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
       sorted.forEach(art => {
         const a = document.createElement('a');
-        a.className = 'card';
+        a.className = art.image ? 'card has-image' : 'card';
         a.href = art.url;
         a.target = '_blank';
 
-        const iconBlock = (cat.showSource && art.source)
-          ? `<div class="card-icon-row">
-               <div class="card-icon">${art.icon}</div>
-               <div class="card-source">${art.source}</div>
-             </div>`
-          : `<div class="card-icon">${art.icon}</div>`;
+        const imageBlock = art.image
+          ? `<img class="card-image" src="${art.image}" alt="" loading="lazy">`
+          : '';
 
-        const tagClass = art.tag || 'study';
+        let iconBlock;
+        if (art.image) {
+          iconBlock = (cat.showSource && art.source)
+            ? `<div class="card-source">${art.source}</div>`
+            : '';
+        } else {
+          iconBlock = (cat.showSource && art.source)
+            ? `<div class="card-icon-row">
+                 <div class="card-icon">${art.icon}</div>
+                 <div class="card-source">${art.source}</div>
+               </div>`
+            : `<div class="card-icon">${art.icon}</div>`;
+        }
+
         const tagLabel = art.tagLabel || '勉強会資料';
+        const tagClass = tagLabel.startsWith('※') ? 'disclaimer' : (art.tag || 'study');
 
-        a.innerHTML = `
+        const inner = `
           ${iconBlock}
           <div class="card-title">${art.title}</div>
           <div class="card-desc">${art.desc}</div>
@@ -252,6 +288,10 @@
             <span class="card-date">${art.date}</span>
             <span class="card-tag ${tagClass}">${tagLabel}</span>
           </div>`;
+
+        a.innerHTML = art.image
+          ? `${imageBlock}<div class="card-body">${inner}</div>`
+          : inner;
         cards.appendChild(a);
       });
       root.appendChild(cards);
