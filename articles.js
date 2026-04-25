@@ -91,6 +91,15 @@ window.ARTICLES = {
           date: "2026.04.25",
           tag: "study",
           tagLabel: "勉強会資料"
+        },
+        {
+          icon: "⚡",
+          title: "特集｜イーロン・マスクの第4極戦略<br>xAIとGrokが描く、もう一つのAI地図",
+          url: "https://tokokanri10502-pixel.github.io/xai-grok-tokushu.html",
+          desc: "ChatGPT・Gemini・Claudeに続く第4のAI企業 xAI。月10億ドル赤字、4か月でデータセンター建設、創業者11名中9名離脱、SpaceX統合 ── 異常値ばかりが並ぶ「マスクのAI」を、思想・物理力・組織から読み解く。",
+          date: "2026.04.25",
+          tag: "study",
+          tagLabel: "勉強会資料"
         }
       ]
     },
