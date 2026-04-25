@@ -54,7 +54,7 @@ window.ARTICLES = {
           icon: "🍡",
           image: "images/mochimochi.jpg",
           source: "📰 日経MJ｜2026年4月20日",
-          title: "特集｜口どけから、もちもちへ",
+          title: "特集｜口どけから、もちもちへ<br>食感ランキングに異変あり",
           url: "https://tokokanri10502-pixel.github.io/mochimochi-tokushu.html",
           desc: "スイーツ単価が過去最高の227円を更新するなか、食感ランキングで唯一浮上したもちもち。インフレ時代の「充実感経済」「ご自愛消費」「SNS映え」「K-スイーツ」の4軸から、食卓の小さな異変を社会構造として読み解く。",
           date: "2026.04.21",

@@ -129,7 +129,7 @@
     .card-icon { font-size: 1.6rem; line-height: 1; }
     .card-title { font-size: 1rem; font-weight: 800; color: #fff; line-height: 1.35; }
     .card-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; flex: 1; }
-    .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; }
     .card-date { font-size: 0.74rem; color: rgba(255,255,255,0.6); font-weight: 600; letter-spacing: 0.04em; }
     .card-tag { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: bold; letter-spacing: 0.04em; }
     .card-tag.study { background: rgba(229,57,53,0.2); color: #ef9a9a; }
@@ -259,8 +259,9 @@
         a.href = art.url;
         a.target = '_blank';
 
+        const altText = (art.title || '').replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '');
         const imageBlock = art.image
-          ? `<img class="card-image" src="${art.image}" alt="" loading="lazy">`
+          ? `<img class="card-image" src="${art.image}" alt="${altText}" loading="lazy">`
           : '';
 
         let iconBlock;
@@ -280,10 +281,11 @@
         const tagLabel = art.tagLabel || '勉強会資料';
         const tagClass = tagLabel.startsWith('※') ? 'disclaimer' : (art.tag || 'study');
 
+        const descBlock = art.image ? '' : `<div class="card-desc">${art.desc}</div>`;
         const inner = `
           ${iconBlock}
           <div class="card-title">${art.title}</div>
-          <div class="card-desc">${art.desc}</div>
+          ${descBlock}
           <div class="card-meta">
             <span class="card-date">${art.date}</span>
             <span class="card-tag ${tagClass}">${tagLabel}</span>
