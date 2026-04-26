@@ -33,7 +33,7 @@ window.ARTICLES = {
           image: "images/oshikatsu.jpg",
           source: "📰 日本経済新聞｜2026年4月17日",
           title: "特集｜推し活が変える<br>消費の地図",
-          url: "https://tokokanri10502-pixel.github.io/oshi-katsu/",
+          url: "https://tokokanri10502-pixel.github.io/oshi-katsu-tokushu.html",
           desc: "物価高でも伸び続ける「推し活」経済圏の実態。3.8兆円市場・2,600万人の行動原理をデータで解説",
           date: "2026.04.17",
           tag: "study",

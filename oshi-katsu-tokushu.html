@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>推し活が変える消費の地図｜TOKO WORKS — 社会派 DEEP Lab 特集</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#7C3AED">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TOKO Trend">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #7C3AED;
+      --primary-light: #EDE9FE;
+      --primary-mid: #A78BFA;
+      --accent: #EC4899;
+      --accent-light: #FCE7F3;
+      --neutral-dark: #1F2937;
+      --neutral-mid: #6B7280;
+      --neutral-light: #F9FAFB;
+      --border: #E5E7EB;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      line-height: 1.85;
+      color: var(--neutral-dark);
+      background: #fff;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 60px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      text-align: center;
+      padding: 20px 16px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .logo {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .site-header .date {
+      font-size: 0.78rem;
+      color: var(--neutral-mid);
+      margin-top: 4px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #4C1D95 0%, #7C3AED 50%, #EC4899 100%);
+      color: #fff;
+      padding: 48px 24px 44px;
+      text-align: center;
+    }
+    .hero .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .hero .sub {
+      font-size: 0.95rem;
+      opacity: 0.88;
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ===== SUMMARY NUMBERS ===== */
+    .summary-bar {
+      display: flex;
+      gap: 0;
+      background: var(--neutral-dark);
+      color: #fff;
+    }
+    .summary-bar .item {
+      flex: 1;
+      text-align: center;
+      padding: 18px 12px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .summary-bar .item:last-child { border-right: none; }
+    .summary-bar .num {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--primary-mid);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .summary-bar .label {
+      font-size: 0.7rem;
+      opacity: 0.75;
+      line-height: 1.4;
+    }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content {
+      padding: 0 20px;
+    }
+
+    /* ===== CHAPTER ===== */
+    .chapter {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .chapter:last-of-type {
+      border-bottom: none;
+    }
+    .chapter-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .chapter-label .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .chapter-label .ch-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+    .chapter h2 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      line-height: 1.45;
+      margin-bottom: 16px;
+      color: var(--neutral-dark);
+    }
+    .chapter p {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 14px;
+      line-height: 1.85;
+    }
+    .chapter p:last-of-type { margin-bottom: 0; }
+
+    /* ===== CALLOUT ===== */
+    .callout {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 18px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+      color: #4C1D95;
+      font-weight: 500;
+      line-height: 1.75;
+    }
+
+    /* ===== INSIGHT BOX ===== */
+    .insight {
+      background: #F5F3FF;
+      border: 1px solid #DDD6FE;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      color: #4C1D95;
+      line-height: 1.8;
+    }
+    .insight .insight-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary-mid);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* ===== STAT GRID ===== */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat-card {
+      background: var(--neutral-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card .big {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .stat-card .desc {
+      font-size: 0.78rem;
+      color: var(--neutral-mid);
+      line-height: 1.5;
+    }
+    .stat-card.accent .big { color: var(--accent); }
+
+    /* ===== BAR CHART ===== */
+    .bar-chart {
+      margin: 20px 0;
+    }
+    .bar-chart .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .bar-chart .bar-label {
+      font-size: 0.82rem;
+      width: 56px;
+      flex-shrink: 0;
+      text-align: right;
+      color: #374151;
+    }
+    .bar-chart .bar-track {
+      flex: 1;
+      background: #E5E7EB;
+      border-radius: 4px;
+      height: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar-chart .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      transition: width 0.3s;
+    }
+    .bar-chart .bar-fill.accent { background: var(--accent); }
+    .bar-chart .bar-value {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .bar-chart-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--neutral-mid);
+      margin-bottom: 12px;
+    }
+
+    /* ===== SPLIT CARD ===== */
+    .split-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .split-card .half {
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+    .split-card .half.up {
+      background: #ECFDF5;
+      border: 1px solid #6EE7B7;
+    }
+    .split-card .half.down {
+      background: #FEF2F2;
+      border: 1px solid #FCA5A5;
+    }
+    .split-card .half h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .split-card .half.up h4 { color: #065F46; }
+    .split-card .half.down h4 { color: #991B1B; }
+    .split-card .half ul {
+      padding-left: 16px;
+    }
+    .split-card .half li {
+      margin-bottom: 5px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== JOURNEY ===== */
+    .journey {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin: 20px 0;
+    }
+    .journey .step {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      padding: 14px 6px;
+      background: var(--primary-light);
+      border-radius: 8px;
+      position: relative;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4C1D95;
+      line-height: 1.4;
+    }
+    .journey .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2px;
+      color: var(--primary-mid);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .journey .step.strike {
+      text-decoration: line-through;
+      opacity: 0.45;
+    }
+    .journey .step.highlight {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    @media (max-width: 540px) {
+      .journey {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .journey .step {
+        flex: none;
+        padding: 12px 16px;
+        text-align: left;
+      }
+      .journey .arrow {
+        transform: rotate(90deg);
+        padding: 2px 0;
+        height: 24px;
+      }
+    }
+
+    /* ===== CONCLUSION CARD ===== */
+    .conclusion {
+      background: linear-gradient(135deg, #4C1D95, #7C3AED);
+      color: #fff;
+      border-radius: 14px;
+      padding: 32px 24px;
+      margin: 40px 0 0;
+    }
+    .conclusion h2 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+    .conclusion p {
+      font-size: 0.92rem;
+      opacity: 0.9;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .conclusion .points {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .conclusion .pt {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+    .conclusion .pt-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===== SOURCES ===== */
+    .sources {
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--neutral-light);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .sources h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--neutral-mid);
+      margin-bottom: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .sources ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sources li {
+      font-size: 0.8rem;
+      color: var(--neutral-mid);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    .sources li:last-child { border-bottom: none; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 32px 20px 40px;
+      font-size: 0.75rem;
+      color: #9CA3AF;
+    }
+    .footer a { color: #7C3AED; text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .summary-bar { flex-direction: column; }
+      .summary-bar .item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .stat-grid { grid-template-columns: 1fr; }
+      .split-card { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <div class="site-header">
+    <a class="logo" href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集 ｜ 2026年4月</a>
+    <div class="date">2026年4月17日</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="tag">消費構造の転換</span>
+    <h1>推し活が変える<br>消費の地図</h1>
+    <p class="sub">物価高で節約しているはずなのに、なぜ一部の消費は伸び続けているのか。削られるもの、残るもの、そして生まれるもの。</p>
+  </div>
+
+  <!-- SUMMARY BAR -->
+  <div class="summary-bar">
+    <div class="item">
+      <span class="num">3.8兆円</span>
+      <span class="label">推し活の<br>市場規模</span>
+    </div>
+    <div class="item">
+      <span class="num">2,600万人</span>
+      <span class="label">推し活<br>人口（国内）</span>
+    </div>
+    <div class="item">
+      <span class="num">73%</span>
+      <span class="label">60代で物価高が<br>「全く影響しない」</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- CHAPTER 序 -->
+    <div class="chapter">
+      <div class="chapter-label">
+        <span class="num">序</span>
+        <span class="ch-title">矛盾する2つのニュース</span>
+      </div>
+      <h2>節約しているのに、なぜシールの前に行列ができるのか。</h2>
+      <p>2025年、消費者物価指数は4年連続で前年比2%を超えた。生鮮食品を除く総合は<strong>3.1%上昇</strong>（総務省）。食料品は値上がりし、人々はスーパーよりドラッグストアで買い物をする。中国地方を地盤とするスーパーの決算発表では、衣料品の購買回数の明確な減少が報告されている。</p>
+      <p>一方で、同じ中国地方のスーパーでは子供や若い女性を中心にシール売り場に長蛇の列ができており、趣味や推し活にかかわる消費意欲は旺盛だという。同じ消費者が、削るものと削らないものを明確に選り分けている。</p>
+      <div class="callout">
+        消費が「減っている」のではなく、「選別されている」——これが今起きていることの本質だ。
+      </div>
+    </div>
+
+    <!-- CHAPTER 1 -->
+    <div class="chapter">
+      <div class="chapter-label">
+        <span class="num">1</span>
+        <span class="ch-title">推し活の実態</span>
+      </div>
+      <h2>「若者のオタク文化」ではなく、日本経済を支える3.8兆円の力。</h2>
+      <p>野村総合研究所の2025年3月の調査によると、15〜69歳の推し活人口は約<strong>2,600万人</strong>。これは日本の同年齢層の3割を超える規模だ。</p>
+      <p>推し活の消費は「公式グッズ・ライブチケット」だけではない。推しへのプレゼントを買う「自主」消費、カメラや旅費などの「付随」消費、推しとのコラボ商品への「コラボ」消費と、4層にわたって広がりをみせる。</p>
+      <p>経済産業省の経済解析室は第3次産業活動指数において「音楽・芸術等興行」の伸びが大きいことを指摘し、推し活や体験型消費の定着傾向を紹介している。日銀のさくらリポートでも、推し活関連の宿泊需要やイベント効果が各地で報告されている。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="big">3.8兆円</div>
+          <div class="desc">関連分野も含む<br>市場規模（2025年）</div>
+        </div>
+        <div class="stat-card accent">
+          <div class="big">数兆円</div>
+          <div class="desc">野村証券による<br>市場規模の推計</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 2 -->
+    <div class="chapter">
+      <div class="chapter-label">
+        <span class="num">2</span>
+        <span class="ch-title">意外な主役</span>
+      </div>
+      <h2>最も使っているのは、若者ではなく50代だった。</h2>
+      <p>「推し活は若い世代のもの」というイメージは、もはや過去のものだ。総務省の家計調査（2024年）でライブ・演劇・宿泊など関連21品目の支出を年代別に見ると、50代が<strong>年間9万9千円</strong>でトップ。40代が8万円、60代が7万円と続く。29歳以下と30代は伸び悩んでいる。</p>
+
+      <p class="bar-chart-title" style="margin-top:20px;">推し活関連支出（1世帯あたり年間平均 / 総務省家計調査 2024年）</p>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="bar-label">50代</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;"><span class="bar-value">9.9万円</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">40代</span>
+          <div class="bar-track"><div class="bar-fill" style="width:81%;"><span class="bar-value">8.0万円</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">60代</span>
+          <div class="bar-track"><div class="bar-fill" style="width:71%;"><span class="bar-value">7.0万円</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">30代</span>
+          <div class="bar-track"><div class="bar-fill accent" style="width:52%;"><span class="bar-value">伸び悩み</span></div></div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">20代以下</span>
+          <div class="bar-track"><div class="bar-fill accent" style="width:42%;"><span class="bar-value">伸び悩み</span></div></div>
+        </div>
+      </div>
+
+      <p>物価高や円安の影響についても、年代差は鮮明だ。インテージの2025年1月の調査によると、推し活に「全く影響しない」との回答は15〜39歳で40%台だったのに対し、40代以上は50%超、60代では<strong>73%</strong>に達した。</p>
+
+      <div class="insight">
+        <span class="insight-label">アナリスト分析（野村証券）</span>
+        少子化や未婚率の上昇に加え、賃上げによって中高年の可処分所得が増加していることが推し活市場の拡大を後押ししている。高齢化が進む中で、中高年の市場における存在感はさらに増していくとみられる。
+      </div>
+    </div>
+
+    <!-- CHAPTER 3 -->
+    <div class="chapter">
+      <div class="chapter-label">
+        <span class="num">3</span>
+        <span class="ch-title">何が削られているのか</span>
+      </div>
+      <h2>「竹のライン」が消えていく——中価格帯の受難。</h2>
+      <p>推し活消費が伸びる一方で、何が削られているのか。中国地方を地盤とするイズミの2026年2月期決算発表によると、衣料品の購買回数は年4回から3.5回に減少し、ライフスタイル用品全般で節約志向の強まりが確認されている。同社では、食品においても高付加価値品への支持は根強い一方、中価格帯のいわゆる「竹のライン」の落ち込みが目立つとしている。</p>
+      <p>経済産業省の商業動態統計（2025年）も同じ構図を示している。</p>
+
+      <div class="split-card">
+        <div class="half up">
+          <h4>▲ 伸びている</h4>
+          <ul>
+            <li>スーパー：前年比 <strong>+4.7%</strong></li>
+            <li>ライブ・興行：大幅増</li>
+            <li>高品質・高付加価値品</li>
+            <li>推し活グッズ・体験</li>
+          </ul>
+        </div>
+        <div class="half down">
+          <h4>▼ 苦戦している</h4>
+          <ul>
+            <li>百貨店：前年比 <strong>−1.8%</strong></li>
+            <li>ホームセンター：<strong>−0.2%</strong></li>
+            <li>衣料品（中価格帯）</li>
+            <li>CD・音楽メディア（若年層）</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>若年層では、アーティストがサブスクリプションを解禁したことで音楽・映像収録済メディアへの支出が大きく減少している。CDという「モノ」への支出が、ライブという「体験」や推し活グッズへと移行しているのだ。</p>
+
+      <div class="callout">
+        消費者は「なんとなく選ぶ中間商品」を削り、「感情が動くもの」に集中投資している。
+      </div>
+    </div>
+
+    <!-- CHAPTER 4 -->
+    <div class="chapter">
+      <div class="chapter-label">
+        <span class="num">4</span>
+        <span class="ch-title">なぜ削られないのか</span>
+      </div>
+      <h2>昭和の「追っかけ」と決定的に違う点——消費の動機が変わった。</h2>
+      <p>昭和の「追っかけ」や平成の「オタク」は、ファン自身が満足を得るために消費していた。推し活は違う。<strong>「推し（対象）を直接応援する」</strong>という利他的・応援的な動機が消費の根幹にある。この変化がグッズやサービスの単価を押し上げ、物価高でも削れない理由になっている。</p>
+      <p>センイル広告（推しの誕生日に駅や建物に出す広告）は、韓国発祥のサービスとして日本でも定着。1万円程度から、ビル壁面の街頭ビジョンでは50万円以上のものまで存在する。弾丸海外遠征で数十万円を使うケースも珍しくない。</p>
+
+      <p>Z世代の女子高生646人への調査（僕と私と・フリュー共同調査、2026年）では、さらに根本的な変化が浮かび上がった。</p>
+
+      <p style="font-weight:700; font-size:0.88rem; color: #374151; margin-bottom:8px;">従来のカスタマージャーニー</p>
+      <div class="journey">
+        <div class="step">認知</div>
+        <div class="arrow">→</div>
+        <div class="step">興味</div>
+        <div class="arrow">→</div>
+        <div class="step highlight">比較<br>検討</div>
+        <div class="arrow">→</div>
+        <div class="step highlight">記憶</div>
+        <div class="arrow">→</div>
+        <div class="step">購入</div>
+      </div>
+
+      <p style="font-weight:700; font-size:0.88rem; color: #374151; margin: 16px 0 8px;">Z世代・推し活消費のカスタマージャーニー</p>
+      <div class="journey">
+        <div class="step">知る</div>
+        <div class="arrow">→</div>
+        <div class="step">興味</div>
+        <div class="arrow">→</div>
+        <div class="step">欲求</div>
+        <div class="arrow">→</div>
+        <div class="step strike">比較<br>検討</div>
+        <div class="arrow">→</div>
+        <div class="step highlight">即購入</div>
+      </div>
+
+      <p>推し活グッズでは「興味を持つとき（31.1%）」と「実際に買う・使うとき（27.3%）」に感情のピークが集中し、検索や比較を挟まずに購入へ進む「界隈消費」の傾向が顕著だ。購入の決め手はX（旧Twitter）上のファンの投稿（29.5%）で、熱量が高い同じ界隈のキーパーソンの投稿を見た瞬間に購入が完結する。</p>
+    </div>
+
+    <!-- CHAPTER 5 -->
+    <div class="chapter">
+      <div class="chapter-label">
+        <span class="num">5</span>
+        <span class="ch-title">何が生まれているのか</span>
+      </div>
+      <h2>コミュニティ、地域経済、新しいマーケティングの前提。</h2>
+      <p>推し活の経済効果は消費だけにとどまらない。子育てが一段落した中高年が、ライブやオフ会を通して新たなコミュニティを形成している。50〜88歳の女性を対象にしたハルメクの調査（2025年）では、推しがいる人のうち<strong>45.7%</strong>が誰かと一緒に推し活をしていると回答した。</p>
+
+      <p>日銀のさくらリポートは地域経済への波及も記録している。推し活関連の消費意欲の高さにより、イベント開催の多い週末は宿泊施設が高稼働を維持しているほか（福岡支店、2025年4月）、大型アートイベントや県立アリーナでのコンサートが周辺の交通・宿泊・飲食需要を押し上げた事例も報告されている（高松支店、2026年1月）。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="big">45.7%</div>
+          <div class="desc">推しがいる中高年女性のうち<br>誰かと一緒に推し活している割合</div>
+        </div>
+        <div class="stat-card accent">
+          <div class="big">50万円+</div>
+          <div class="desc">ビル壁面センイル広告の<br>上限例（推しへの応援消費）</div>
+        </div>
+      </div>
+
+      <p>マーケティングの観点でも、推し活は前提を変えつつある。企業は「認知を取ってもなぜ売れないのか」という問いを突きつけられている。答えは、消費者が「比較・検討」をやめ、「感情主導＝エモ消費」に移行したことにある。従来のファネルモデルでは捉えられない購買行動に対応するために、最初の接触で感情を動かす体験設計が不可欠になってきた。</p>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <h2>この転換が意味すること</h2>
+      <p>消費は「量」から「意味・感情・つながり」へ。節約と推し活の共存は矛盾ではなく、「なんとなく買う消費」が終わり、「理由のある消費」だけが残っていく時代の必然だ。</p>
+      <div class="points">
+        <div class="pt">
+          <span class="pt-icon">📊</span>
+          <span>中価格帯（竹のライン）の市場は縮む。企業に問われるのは、自社商品が「感情価値を持っているか」どうか。</span>
+        </div>
+        <div class="pt">
+          <span class="pt-icon">🧑‍🤝‍🧑</span>
+          <span>主要消費者は若者ではなく中高年（特に50代）。可処分所得と時間を持つ中高年が、市場を牽引し続ける。</span>
+        </div>
+        <div class="pt">
+          <span class="pt-icon">📱</span>
+          <span>購買の入口はSNSの熱量。「比較させる」マーケティングより「一目惚れさせる」体験設計が問われる時代へ。</span>
+        </div>
+        <div class="pt">
+          <span class="pt-icon">🤝</span>
+          <span>推し活はコミュニティを生む。孤立が深まる社会で、「応援する」という行為が人のつながりを作り直している。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="sources">
+      <h3>参考データ出典</h3>
+      <ul>
+        <li>野村総合研究所「推し活に関する調査」2025年3月</li>
+        <li>インテージ「物価高・円安が推し活に与える影響調査」2025年1月</li>
+        <li>ハルメク「50〜88歳女性の推し活に関する調査」2025年</li>
+        <li>僕と私と・フリュー「女子高校生の購買行動調査」（Zview Lab.）2026年</li>
+        <li>総務省 消費者物価指数（2025年）／ 総務省 家計調査（2024年）</li>
+        <li>経済産業省 商業動態統計（2025年）／ 第3次産業活動指数</li>
+        <li>日本銀行 地域経済報告（さくらリポート）福岡支店 2025年4月号・高松支店 2026年1月号</li>
+        <li>イズミ・フジ・ハローズ 各社2026年2月期決算発表資料</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>萬財塾 2026年4月｜東光印刷株式会社 制作本部</p>
+      <p style="margin-top:12px"><a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a></p>
+    </div>
+
+  </div>
+
+  <!-- Service Worker 登録 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('[PWA] SW registered:', reg.scope))
+          .catch(err => console.warn('[PWA] SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
