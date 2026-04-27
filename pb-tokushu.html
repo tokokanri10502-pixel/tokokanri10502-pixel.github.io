@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安さの先へ──イズミ、イオンのPB戦略｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#9B2E3D;
+  --primary-dark:#6B1E27;
+  --primary-light:#BD5566;
+  --accent:#C99060;
+  --accent-light:#E8C499;
+  --bg:#FAF2E8;
+  --bg-card:#FFFFFF;
+  --text:#231A1D;
+  --text-muted:#6B5C5F;
+  --border:#E5D9C8;
+  --up:#5C8A6E;
+  --down:#B05757;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#6B1E27 0%,#9B2E3D 35%,#C99060 75%,#E8C499 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:55%;height:65%;
+  background:radial-gradient(circle,rgba(216,181,141,.20) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.28);
+}
+.hero h1{
+  font-size:36px;
+  font-weight:700;
+  line-height:1.45;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.95;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:34px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.15;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.85;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:25px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(30,58,95,.06);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#FBF6E9 0%,#F1E5CE 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* bar-chart */
+.bar-chart{margin:24px 0;}
+.bar-row{margin-bottom:14px;}
+.bar-head{
+  display:flex;justify-content:space-between;
+  font-size:13px;margin-bottom:6px;
+}
+.bar-head .name{font-weight:600;color:var(--text);}
+.bar-head .val{color:var(--primary-dark);font-weight:700;}
+.bar-outer{
+  width:100%;height:16px;
+  background:#F0DDD9;
+  border-radius:8px;overflow:hidden;
+}
+.bar-inner{
+  height:100%;
+  background:linear-gradient(90deg,var(--primary-light),var(--primary));
+  border-radius:8px;
+  transition:width .4s;
+}
+.bar-inner.highlight{
+  background:linear-gradient(90deg,var(--accent-light),var(--accent));
+}
+.bar-delta{
+  font-size:11px;color:var(--accent);
+  margin-left:8px;font-weight:600;
+}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--primary);}
+.split-cell.right{border-top:4px solid var(--accent);}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell.left h4::before{content:"🔷 ";}
+.split-cell.right h4::before{content:"🟤 ";}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--accent);
+}
+
+/* journey */
+.journey{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  gap:8px;
+  margin:24px 0;
+}
+.journey-step{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 12px;
+  text-align:center;
+  position:relative;
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.journey-step .icon{font-size:24px;margin-bottom:6px;display:block;}
+.journey-step .name{
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:13px;
+  margin-bottom:4px;
+}
+.journey-arrow{
+  align-self:center;
+  color:var(--accent);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#6B1E27 0%,#8E2B3A 50%,#A03E50 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+  position:relative;
+  overflow:hidden;
+}
+.conclusion::after{
+  content:"";
+  position:absolute;
+  top:-20%;right:-15%;
+  width:65%;height:85%;
+  background:radial-gradient(circle,rgba(232,196,153,.32) 0%,transparent 70%);
+  pointer-events:none;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;position:relative;z-index:1;}
+.conclusion h2{
+  font-size:25px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.95;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.10);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.95;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--accent);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:26px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .journey{flex-direction:column;}
+  .journey-arrow{transform:rotate(90deg);padding:4px 0;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年4月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#PB戦略</span>
+      <span class="tag">#スーパーの本質</span>
+      <span class="tag">#地域インフラ</span>
+    </div>
+    <h1>安さの先へ──<br>イズミ、イオンのPB戦略</h1>
+    <p class="sub">
+      2026年4月27日、日経MJ。<br>
+      イズミ会長が改めて語った「第二の創業」。<br>
+      4月初旬に過去最高益を見込んだイオンも、PBを軸に据えた。<br>
+      同じ方向に進む二強の先に、何が見えてくるのか。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">×8.6倍</div>
+      <div class="lbl">イズミ ゆめイチ品目数<br>163品 → 1,400品（2031年2月期）</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">¥1.4兆</div>
+      <div class="lbl">イオン トップバリュ<br>27年2月期 売上目標</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">&lt;1%</div>
+      <div class="lbl">スーパー営業益率の現実<br>節約志向下で痩せる利幅</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>イズミとイオン、ともにPB拡大へ</h2>
+    <p>
+      2026年4月27日の日経MJで、イズミの山西泰明会長が、食品スーパー事業の方針を改めて語った。中国・九州地方で「ゆめタウン」を展開してきた同社が、食品スーパー事業を「<strong>第二の創業</strong>」と位置づけ、5,000億円規模へ倍増させる──4月14日に発表した中期経営計画の方針が、紙面で再整理された格好だ。一方、イオンは4月9日に、2027年2月期の営業利益が前期比26%増の3,400億円となる見通しを発表している。過去最高益を2年連続で更新する見込みだ。
+    </p>
+    <p>
+      4月のうちに前後して報じられた二社の方針には、共通の主役がいる。<strong>プライベートブランド（PB）</strong>だ。イズミは自社開発PB「ゆめイチ」を163品から1,400品まで一気に広げる。イオンは主力PB「トップバリュ」を1兆4,000億円規模へ。<strong>進め方の色合いは違うが、向かう方向は同じ「PB拡大」</strong>。ここまでは二社の足並みはそろう。ただし、その共通の方向の先には、もう一つ、両社に持ち越された問いがある。<strong>PBが拡大していくとき、消費者の買い物には何が起きるのか</strong>。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>縮む市場、痩せる利幅<br>──スーパーが置かれた構造</h2>
+    <p>
+      まず、二社が同じ方向を向いた背景にある構造を見ておきたい。スーパー業界の体力は、いま静かに削られている。物価高で原材料費・人件費・物流費が上がり続ける一方、消費者の節約志向は強まり、価格転嫁は思うように進まない。結果として、両社の本業は薄利の海に沈みかけている。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">&lt;1%</div>
+        <div class="lbl">イオン GMS・SM事業<br>2026年2月期 営業利益率</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">1.6%</div>
+        <div class="lbl">中四国地盤フジ<br>2025年2月期 営業利益率</div>
+      </div>
+    </div>
+
+    <p>
+      イオンの総合スーパー（GMS）と食品スーパー（SM）の営業利益率は、2026年2月期で1%を割り込んだ。事業規模の近いフジは1.6%、滋賀の平和堂が3.0%。<strong>大型店中心のスーパーほど、薄利のしわ寄せを受けやすい</strong>構図が浮かび上がる。
+    </p>
+
+    <div class="callout">
+      イオンの土谷美津子副社長は語る。<strong>「メーカー商品を値上げした場合、一度目は受け入れられたとしても、二度目はもうギブアップして違う商品を購入するといった動きが多い」</strong>。生活防衛意識は売り上げデータに明確に表れており、低価格帯PB「トップバリュベストプライス」が特に売れている、と。
+    </p>
+
+    <p>
+      ではなぜ、その解がPBなのか。理由は単純で、<strong>PBは大手メーカーのナショナルブランド（NB）に比べて粗利益率が10ポイントほど高い場合もある</strong>からだ。同じ価格帯でも、利益の残り方がまるで違う。フジが2027年2月期の営業利益を52%増の170億円と見込めるのも、EDLP（エブリデー・ロー・プライス）と「トップバリュ」を約900億円まで拡販する前提があってこそ。<strong>PBの拡大は、薄利時代を生き延びるための共通言語</strong>となった。
+    </p>
+
+    <p>
+      その共通言語を、イズミとイオンはそれぞれの方言で話している。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>イオンの戦略<br>──「価値観」をPBに織り込む</h2>
+    <p>
+      トップバリュは、もはや「安いから」だけでは説明がつかない。トップバリュの2024年度売上は1兆983億円（前年比+8.3%）、26年2月期は1兆2,000億円、27年2月期は<strong>1兆4,000億円</strong>を見込む。1兆円規模のPBが、なお年率2桁で伸び続ける構図には、明確な戦略転換がある。
+    </p>
+
+    <p>
+      ひとつめの軸は、<strong>3階層化</strong>だ。低価格帯の「トップバリュベストプライス」、本体の「トップバリュ」、オーガニックや環境配慮の「トップバリュグリーンアイ」。同じPBの中に、安さも、標準も、プレミアムも揃えた。同じ商品カテゴリで、消費者の「ここは節約したい」「ここは少し払ってもいい」という両方の気持ちに、自社内で応える設計だ。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>節約のレイヤー</h4>
+        <ul>
+          <li>トップバリュベストプライス（緑茶62円ほか）</li>
+          <li>早ゆでスパゲッティ500g 213円（NBの約半額）</li>
+          <li>消費量の多い主食を価格訴求で押さえる</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>価値のレイヤー</h4>
+        <ul>
+          <li>フリーフロム塩だけポテチ 105円（標準より+10円）</li>
+          <li>グリーンアイ オーガニック緑茶 73円</li>
+          <li>fun fun smile（ベビーフード／オーガニック中心）</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      もう一つの軸が、<strong>「価値観スコア」</strong>と呼ばれる独自指標だ。簡便、健康、安全・安心、プレミアム、美容、内面重視、鮮度──約100項目にわたる価値観タグを、7,500〜8,000品目におよぶPBひとつひとつに割り振る。グループの顧客基盤を使った大規模アンケートと突合させ、「どんな属性の、どんな価値観を持った人が、どの商品を選んでいるか」を可視化する仕組みだ。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">INSIGHT</span>
+      <p>
+        この設計の意味は、<strong>商品開発の軸を「デモグラ」から「価値観」へ移したこと</strong>にある。同じパワーカップルでも、節約したい領域と、お金を出してでも安全・おいしさを求めたい領域が同居する。そこを「ひとりの中の複数の価値観」として捉えれば、たとえば<strong>フリーフロム食品</strong>──「化学調味料不使用」「添加物不使用」のように、何かを「<strong>使わない</strong>」ことを価値にする食品群（英語の <em>free from ○○</em> から）──は「安さ」では負けても「安心」で選ばれる。安さを下げる努力の限界を、別の軸の創出で補う発想だ。
+      </p>
+    </div>
+
+    <p>
+      副社長の土谷美津子氏の言葉が、この発想を端的に表す。<strong>「価格が下がらないものを下げようとするのは企業努力では限界がある。顧客の『こっちでいいや』『こっちがいい』を探すことが重要だ」</strong>。緑茶の値上げが続くなかで、イオンが発売したのは安い緑茶ではなく、<strong>コーン茶とルイボスティー</strong>だった。緑茶という土俵を降りて、別の選択肢を提示する。これがヒットになった。
+    </p>
+
+    <p>
+      ミックスベジタブルでは、原価が一番高いグリーンピースを減らしてコーンを増やしてほしい、という顧客の声を反映した。お茶のペットボトルは丸形から四角に変え、トラックの積載量を増やした。<strong>「当たり前を見直す」「思い込みを捨てる」</strong>。この姿勢で、年間2,500品目をリニューアルし続ける。安さの追求と、価値の創出。トップバリュは、そのふたつを同時に走らせている。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>イズミの戦略<br>──「第二の創業」とゆめイチへの賭け</h2>
+    <p>
+      イズミは、構造そのものから組み直そうとしている。山西会長が「第二の創業」と呼ぶこの転換は、単なるPB拡大ではない。<strong>大型店に依存してきた事業モデルを、食品スーパー中心へと軸足ごと移す</strong>大規模な再設計だ。
+    </p>
+
+    <p>
+      きっかけは、これまで稼ぎ頭だった大型店の伸び悩みである。1990年代以降に九州などで集中展開した「ゆめタウン」は、商圏人口の減少と老朽化が同時に進む。本格改修や建て替えの時期が迫るなか、新しい収益の柱を育てる必要があった。そこで打ち出されたのが、食品スーパー300店体制である。
+    </p>
+
+    <div class="journey">
+      <div class="journey-step">
+        <span class="icon">🏬</span>
+        <div class="name">ゆめタウン</div>
+        大型店で利益<br>これを原資に
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🛒</span>
+        <div class="name">サニー流</div>
+        24h少人数<br>運営ノウハウ
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🍱</span>
+        <div class="name">ゆめイチ</div>
+        163品 → 1,400品<br>食品売上1割超
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">📍</span>
+        <div class="name">300店体制</div>
+        広島・福岡・熊本<br>でドミナント
+      </div>
+    </div>
+
+    <p>
+      このシナリオの心臓部にあるのが、2024年に西友から買収した九州のスーパー<strong>「サニー」</strong>だ。サニーは24時間営業にもかかわらず、1店舗あたりの従業員数は「ゆめマート」や「ユアーズ」より大幅に少ない。発注、品出し、レジまで一人で完結させる<strong>究極の少人数運営</strong>のノウハウを持つ。これを既存店に移植し、セミセルフレジ・セルフレジ・AI発注・セントラルキッチンを重ねていく。
+    </p>
+
+    <div class="callout">
+      山西会長の言葉は重い。<strong>「人口減少が進む中では、現在の『2分の1』の人手でも店舗を運営できる体制を整える必要がある」</strong>。これは効率化の話ではなく、<strong>そうしなければ事業として持たない</strong>という現実認識に立っている。
+    </div>
+
+    <p>
+      そして、その効率化と並行して進めるのが、自社開発PB「ゆめイチ」の大幅拡大だ。2025年に発売されたこの自社開発PBの取り扱いは、26年2月時点でわずか163品。これを2031年2月期には<strong>1,400品まで約8.6倍に拡大</strong>する。食品売上に占めるゆめイチの比率は、現在の3%から10%超へ。第三次中期経営計画では、価格訴求のラインに加え、<strong>プレミアム領域の開発も加速</strong>させる方針が打ち出されている。安いだけのPBで終わらせない、という意思表示だ。
+    </p>
+
+    <p>
+      象徴的な決断もあった。イズミは2027年2月をもって、セブン&アイ・ホールディングスの「セブンプレミアム」の取り扱いを終了する。業務提携自体は維持するが、PBの棚は<strong>自社の世界観に塗り替える</strong>。M&Aは「前提条件」であり、5年で約550億円の枠を確保。受け身ではなく、候補企業に積極提案する姿勢に切り替えた。広島市中心部に2026年夏に開業する<strong>「ユアーズ広瀬北町店」（1,100㎡）</strong>は、最新技術を投入した24時間少人数運営の実験店だ。ここで磨いた型を、300店に展開する。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>PBが伸びると、何が縮むのか</h2>
+    <p>
+      ここで、本特集の核心の問いに踏み込む。トップバリュが1兆4,000億円へ、ゆめイチが1,400品へ──二社のPBは確実に拡大する。だが、消費者の家計支出はそう簡単には増えない。<strong>1回あたりの食費は、ほぼ変わらない</strong>のだ。同じ財布の中でPBが伸びるなら、何かが必ず縮んでいる。
+    </p>
+
+    <p>
+      では何が縮むのか。それは、消費者の側にある。商品ごとの背景にあるブランドの物語、メーカー同士の競争が生んでいた選ぶ楽しみ、地域の中小メーカーが棚に並ぶ多様性、棚そのものを編集する小売の腕──こうした<strong>目に見えにくい「経験の総量」</strong>が、PB比率の上昇とともに少しずつ薄まっていく可能性がある。
+    </p>
+
+    <p>
+      量は変わらない。値段も大きくは変わらない。<strong>だが、買い物がもたらしていた「豊かさ」は、確実に痩せていく</strong>。これは物質的な縮みではなく、経験の縮みだ。そしてこの縮みは、家計簿には現れない。
+    </p>
+
+    <div class="callout">
+      <strong>失われるもの──「豊かさ」。</strong><br>
+      ブランドの物語、選ぶ楽しみ、棚の編集の妙、地域の食文化との接点。<br>
+      安さの代償として、これらが少しずつ削られている。<br>
+      では、PB戦略はそれをどう埋め戻すのか。<strong>その兆しは、すでに灯り始めている。</strong>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 5 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 5</span>
+    <h2>豊かさを&ldquo;内製&rdquo;できるか<br>──二社の兆しと、その先</h2>
+    <p>
+      もっとも、両社ともそれに無自覚なわけではない。同じ「PB拡大」でも、PBの中身の作り込み方には、それぞれの色が見え始めている。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>イオンの兆し</h4>
+        <ul>
+          <li>価値観スコア100項目で「安さ以外の軸」を可視化</li>
+          <li>フリーフロム食品で「安心」のレイヤーを創出</li>
+          <li>グリーンアイで「オーガニック」上位帯を確立</li>
+          <li>緑茶→コーン茶/ルイボスへ「別の選択肢」を提示</li>
+          <li>fun fun smileで子育て世帯の「価値の領域」へ</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>イズミの兆し</h4>
+        <ul>
+          <li>ゆめイチを163品→1,400品へ大幅拡張</li>
+          <li>第三次中計で<strong>プレミアム領域の開発を加速</strong></li>
+          <li>広島・福岡・熊本のドミナントで地域素材の活用余地</li>
+          <li>セブンプレミアム終了で自社の世界観へ集中</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      イオンは、商品設計の軸を「価格」から「価値観」へ組み替える方法論を、すでに運用段階に乗せている。<strong>1兆円を超えたPBがなお年率2桁で伸びている</strong>のは、その方法論が市場で機能している証と読める。
+    </p>
+
+    <p>
+      イズミの兆しは、まだ輪郭が薄い。ゆめイチ1,400品の中身はこれから埋まっていく段階で、価格訴求と<strong>プレミアム領域の両軸を持たせる</strong>構想が中期経営計画には書き込まれた。広島・福岡・熊本のドミナント戦略を本気で活かすなら、地域の素材・地産・旬を商品に織り込む余地は大きい。サニー流の少人数運営で生まれる人時とコストの余力を、<strong>商品の中身にどれだけ還元できるか</strong>。問われているのはそこだ。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">そして、もう一段踏み込む</span>
+      <p>
+        PBは結局、「安さ」が入口だ。価格を極めるディスカウントストアは、それでいい。だが、<strong>地域のインフラ</strong>を標榜するイオンとイズミは、それだけでいいのか。
+      </p>
+      <p>
+        スーパーの本来の使命は、価格と同じ重さで<strong>「味」「旬」「地域の食文化」</strong>を届けることだ。そしてそれは、<strong>PBだけでは担えない</strong>。生鮮の質、NBの個性、棚の編集、店頭の発見、買い物そのものの体験──豊かさは、店全体の総和から生まれる。
+      </p>
+      <p>
+        だからこそ、PBに問われているのは「店の主役になること」ではない。<strong>安さで底を支えながら、店全体の豊かさを痩せさせない設計</strong>になっているかどうか。兆しは灯っている。灯火を絶やさず大きくできるかは、これからの5年が決める。
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>問われているのは、<br>インフラ企業としての覚悟だ</h2>
+    <p>
+      PBを広げるということは、単に利益率を上げるためだけではない。これまでメーカーが担ってきた<strong>「物語」や「多様性」</strong>を、今度は<strong>小売業自らが背負う</strong>ということだ。イオンもイズミも、その<strong>重い十字架</strong>を背負うことを決めた。
+    </p>
+    <p>
+      PBの存在感がここまで大きくなった時代、問われているのは「生活者に寄り添う」といった耳障りの良い言葉ではない。<strong>痩せゆく日本の食卓</strong>において、<strong>豊かさを自社で創り出し、維持し続ける</strong>という、<strong>地域のインフラ企業としての覚悟</strong>である。
+    </p>
+    <p class="closer">
+      安さの先で、生活者の豊かさをどう描くか。<br>
+      <strong>本当の勝負は、ここから始まる。</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日経MJ 2026年4月27日「イズミ、食品スーパーで『第二の創業』 積極M&Aで5000億円目標」</li>
+    <li>日本経済新聞 2026年4月27日「イオンの27年2月期、2年連続で営業最高益 PB商品伸ばす」</li>
+    <li>日本経済新聞 2026年4月14日「イズミ、27年2月期は純利益3%増 自社開発PBの拡販で」</li>
+    <li>日本経済新聞 2026年4月7日「スーパーのフジ、27年2月期は営業益52%増 低価格商品を拡販」</li>
+    <li>日本経済新聞 2026年3月25日 Leader's Voice「イオン土谷副社長『低価格PB、顧客の<span style="white-space:nowrap;">「こっちでいいや」</span>見極め』」</li>
+    <li>日経クロストレンド 2025年6月22日「イオンのPBトップバリュ、脱・安さ偏重 顧客の価値観重視」</li>
+    <li>イズミ 第三次中期経営計画（2025年度〜2030年度）</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年4月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
