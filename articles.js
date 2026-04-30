@@ -80,16 +80,6 @@ window.ARTICLES = {
       showSource: false,
       articles: [
         {
-          icon: "🛒",
-          image: "images/uriba.jpg",
-          title: "特集｜AI時代の販促構造変化<br>売り場はどうあるべきか",
-          url: "https://tokokanri10502-pixel.github.io/kaimono-fukei/",
-          desc: "現状、「買うと決めて」来店する割合は30％。AIの普及と食感度低下の二重変化を4つのSTAGEで読み解く",
-          date: "2026.04.17",
-          tag: "study",
-          tagLabel: "※画像はイメージです"
-        },
-        {
           icon: "🤖",
           image: "images/gundam.jpg",
           title: "特集｜ガンダムの駆動はAIだった⁉<br>1979年のアニメが描いた先見性",
