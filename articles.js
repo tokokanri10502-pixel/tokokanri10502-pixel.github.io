@@ -117,6 +117,16 @@ window.ARTICLES = {
       showSource: false,
       articles: [
         {
+          icon: "💄",
+          image: "images/kankoku.png",
+          title: "特集｜イオン広島府中の改装から見る<br>コスメ消費の現状",
+          url: "https://tokokanri10502-pixel.github.io/kankoku-cosme-tokushu.html",
+          desc: "2026年4月28日、中国・四国エリアの旗艦店として刷新されたイオンスタイル広島府中。グラムビューティーク全面刷新を起点に、ロビン・フッド甚目寺店4/24開業、ドラッグストアの二極化、地場スーパーの衣料苦戦──いま日本のコスメ消費に何が起きているかをファクトベースで読む。マーケ担当者向けに「動機で切る／プチプラを格上げる／体験で接続する」の3つの視点を提示。",
+          date: "2026.05.01",
+          tag: "study",
+          tagLabel: "勉強会資料"
+        },
+        {
           icon: "📊",
           image: "images/nihonhinkon.jpg",
           title: "特集｜日本の貧困<br>「一億総中流」の終焉",
