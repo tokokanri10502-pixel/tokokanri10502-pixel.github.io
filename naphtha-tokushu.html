@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4EKTRW9RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4EKTRW9RX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「ナフサ不足」が変える小売の風景──ホルムズから食卓まで｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#243B5C;
+  --primary-dark:#16243B;
+  --primary-light:#4A6B96;
+  --accent:#5A7BA8;
+  --accent-light:#B8C8DD;
+  --bg:#F5F7FA;
+  --bg-card:#FFFFFF;
+  --text:#1F2937;
+  --text-muted:#6B7280;
+  --border:#E2E8F0;
+  --up:#5C8A6E;
+  --down:#B05757;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#16243B 0%,#243B5C 40%,#4A6B96 80%,#7A92B5 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:55%;height:65%;
+  background:radial-gradient(circle,rgba(184,200,221,.28) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.30);
+}
+.hero h1{
+  font-size:32px;
+  font-weight:700;
+  line-height:1.45;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.95;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:34px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.15;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.85;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:25px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(36,59,92,.08);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#EAF0F8 0%,#D2DEEC 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:24px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.2;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--primary);}
+.split-cell.right{border-top:4px solid var(--accent);}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell.left h4::before{content:"📦 ";}
+.split-cell.right h4::before{content:"🏭 ";}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--accent);
+}
+
+/* journey (supply chain flow) */
+.journey{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  gap:6px;
+  margin:24px 0;
+}
+.journey-step{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 8px;
+  text-align:center;
+  position:relative;
+  font-size:11px;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+.journey-step .icon{font-size:22px;margin-bottom:4px;display:block;}
+.journey-step .name{
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:12px;
+  margin-bottom:3px;
+}
+.journey-arrow{
+  align-self:center;
+  color:var(--accent);
+  font-size:16px;
+  font-weight:700;
+}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#16243B 0%,#243B5C 50%,#3C5478 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+  position:relative;
+  overflow:hidden;
+}
+.conclusion::after{
+  content:"";
+  position:absolute;
+  top:-20%;right:-15%;
+  width:65%;height:85%;
+  background:radial-gradient(circle,rgba(184,200,221,.32) 0%,transparent 70%);
+  pointer-events:none;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;position:relative;z-index:1;}
+.conclusion h2{
+  font-size:25px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.95;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.10);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.95;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--accent);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:24px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .journey{flex-direction:column;gap:4px;}
+  .journey-arrow{transform:rotate(90deg);padding:2px 0;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年5月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#ナフサ</span>
+      <span class="tag">#ホルムズ海峡</span>
+      <span class="tag">#値上げ第二波</span>
+      <span class="tag">#GW消費</span>
+    </div>
+    <h1>「ナフサ不足」が変える<br>小売の風景<br>──ホルムズから食卓まで</h1>
+    <p class="sub">
+      2026年4-6月、国産ナフサ価格は2倍弱へ。<br>
+      値上げラッシュ第二波と「巣ごもりGW」が示す、<br>
+      これから半年の消費の輪郭。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">約2倍</div>
+      <div class="lbl">国産ナフサ価格<br>2026年4-6月期予測<br>（前期 ¥65,700/kL → ¥120,000台）</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">44%</div>
+      <div class="lbl">「すでに打撃」と回答<br>食品・飲料メーカー712社調査<br>（生団連／4月27日）</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">+1万品目</div>
+      <div class="lbl">2026年通年の値上げ品目<br>見通し（帝国データバンク）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>節約モードのGWと、<br>値上げと品薄の連鎖</h2>
+    <p>
+      GW予算は1人当たり<strong>¥27,660</strong>、前年比<strong>-5.4%</strong>。23年以降で最も低い水準だ。「特に予定なし」と答えた人は<strong>41.2%</strong>と過去4年で最高。池袋の金券ショップでは在来線・新幹線チケットの売れ行きが過去最高、楽天市場では4月の自転車・サイクリング用品が前年比+1割、温浴施設では重油不足を受けて「水風呂への切替」や「設定温度1度ダウン」が検討されている──家計は明確に「節約モードのGW」に入った。
+    </p>
+    <p>
+      同じ4月末、メーカー側でも値上げや品薄の発表が続いていた。<strong>ミツカンが納豆19品の6月値上げを発表（6〜20%）</strong>。ある中堅食品メーカーは容器調達のめどが立たず、<strong>5月のプリン販売休止を検討</strong>。別の中堅飲料メーカーは、商品名や原材料を印字するインキが手当てできず、<strong>15品のラベルから印字を消した</strong>──。
+    </p>
+    <p>
+      家計の節約と、工場の値上げ・品薄。これらすべてが同じ原因で起きているわけではない。物価高は本来、人件費・物流費・小麦や油脂などの原材料高が積み重なった、<strong>複数要因の合算</strong>だ。25年のうちに広範囲な値上げが一巡し、家計の購買力が下がった状態が下地にある。
+    </p>
+    <p>
+      そこに2026年4月以降、新しい変数が加わった。原油から生まれる「<strong>ナフサ</strong>」と呼ばれる原料の不足である。中東情勢の悪化──ホルムズ海峡の事実上の封鎖──を引き金に、容器・フィルム・インキ・合成繊維といった「目に見えにくい原料」の調達が一気に細り始めた。本稿は、このナフサの動きを軸に、<strong>すでに走っていた値上げの流れがどう増幅されているか</strong>、そして家計にこれから何が起きるのかを順に確かめていく。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>消費者の動き<br>──節約モードのGW</h2>
+    <p>
+      まず、4月末の家計の動きを数字で押さえておく。調査会社インテージによれば、2026年GWの1人当たり予算は<strong>¥27,660</strong>。前年比-5.4%で、23年以降で最も低い。一方、「GWの予定は特にない」と答えた人は<strong>41.2%</strong>と前年比+4.7ポイント、過去4年で最も高い。株高による資産効果や賃上げの恩恵を受けた人ばかりではない実態が、数字に出ている。
+    </p>
+
+    <div class="stat-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="stat-cell">
+        <div class="num">¥27,660</div>
+        <div class="lbl">2026年GW予算（1人）<br>前年比-5.4%／4年最低</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">41.2%</div>
+        <div class="lbl">「GWは特に予定なし」<br>4年で最高（インテージ）</div>
+      </div>
+    </div>
+
+    <p>
+      外に出る人は、移動コストを徹底的に削る。池袋の金券ショップ「J・マーケット池袋東武ホープセンター店」では、西武池袋〜西武秩父のチケットがまとめ買いで売れ、過去最高の売れ行きとなった。駐車場シェア大手akippaの調査では、26年GWで「抑えたい出費」のトップは「<strong>ガソリン代や高速道路料金</strong>」（53.7%）。
+    </p>
+    <p>
+      旅行に出る人も、移動を控える設計に流れている。ホテルニューオータニ幕張の「GWファミリーステイ」は予約数が<strong>前年比8倍</strong>。ホテル内のレストランやプレイランドで一日中過ごせるプランで、近隣からの予約が中心だ。楽天トラベルでは、館内利用料・飲食代込みの「オールインクルーシブ型」予約がGW期間で<strong>前年比+4割</strong>。「移動より滞在」「外食より館内」が、コストを抑えつつ満足を得る選択として選ばれている。
+    </p>
+    <p>
+      家で過ごす人も多い。共通ポイント「Ponta」運営のロイヤリティマーケティング調査では、GWの過ごし方として最も多かった回答が<strong>「掃除・片付け」（37%）</strong>。ダスキンのGWエアコンクリーニング受注は前年比<strong>+7割</strong>、楽天市場の掃除用品売上は4月に前年比+3割、ハンズの掃除用品は前年比+4割で推移。ハンズではパズル・ボードゲームの売れ行きも前年比+2割。「家で楽しむ」消費が、節約と気晴らしを兼ねる選択になっている。
+    </p>
+
+    <div class="callout">
+      家計のGW消費は、<strong>移動・滞在・室内</strong>のすべてのレイヤーで「コストを切り詰めて、満足は中で完結させる」設計に寄っている。ガソリン代・電車賃・宿泊費──エネルギー価格と物価の二重圧が、消費の選択肢を「節約と巣ごもり」のほうへ静かに押し続けている。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>ナフサとは何か、<br>いま価格に何が起きているか</h2>
+    <p>
+      GW消費を圧迫しているのは原油高だが、それと並行して、別の形で小売に効き始めている原料がある。それが、原油から精製される「<strong>ナフサ</strong>」だ。
+    </p>
+    <p>
+      ナフサ（粗製ガソリン）は、原油を蒸留・精製する過程で、ガソリンや灯油、軽油と一緒に出てくる留分の一つ。これを高温で熱分解すると、エチレンやプロピレン、ベンゼンといった「<strong>基礎化学品</strong>」が生まれる。そこから合成樹脂・合成繊維・合成ゴム・各種フィルム・インキ・接着剤・塗料が作られる──つまり、ナフサは石油化学品全体の出発点だ。
+    </p>
+
+    <div class="journey">
+      <div class="journey-step">
+        <span class="icon">🛢️</span>
+        <span class="name">原油</span>
+        中東等から輸入
+      </div>
+      <span class="journey-arrow">▶</span>
+      <div class="journey-step">
+        <span class="icon">⚗️</span>
+        <span class="name">ナフサ</span>
+        粗製ガソリン
+      </div>
+      <span class="journey-arrow">▶</span>
+      <div class="journey-step">
+        <span class="icon">🧪</span>
+        <span class="name">基礎化学品</span>
+        エチレン等
+      </div>
+      <span class="journey-arrow">▶</span>
+      <div class="journey-step">
+        <span class="icon">🎞️</span>
+        <span class="name">樹脂・フィルム</span>
+        ポリエチレン等
+      </div>
+      <span class="journey-arrow">▶</span>
+      <div class="journey-step">
+        <span class="icon">🛒</span>
+        <span class="name">容器・棚</span>
+        食品・日用品
+      </div>
+    </div>
+
+    <figure style="margin:24px 0;">
+      <img src="images/naphtha-products.png" alt="身近にあるナフサ由来の製品（食品トレー、ラップフィルム、納豆パック、印刷インキ、合成繊維、接着剤など）" style="width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--border);">
+    </figure>
+
+    <p>
+      国内のナフサ使用量は、約<strong>4割が国産、約6割が輸入</strong>。輸入ナフサの主要ルートは中東で、ペルシャ湾とアラビア海をつなぐ「<strong>ホルムズ海峡</strong>」を通る。世界の海上原油輸送の約2割がここを通過する重要な海上交通路で、4月以降この海峡の事実上の封鎖が進み、ナフサの輸入が滞り始めた。
+    </p>
+    <p>
+      <strong>スポット価格</strong>とは、長期契約に基づかず、その時々の市場で随時取引される価格のこと。短期的な需給を即時に映す指標で、原料コストの変化を最も早く反映する。そのスポット価格の動きを追うと、いま起きていることがわかりやすい。2025年11月〜2026年1月のナフサのスポット価格は600ドル前後で推移していた。<strong>2月末、米国・イスラエルがイランを攻撃</strong>したことを機に、価格は急騰。一時<strong>1,200ドル</strong>とほぼ2倍に達し、足元も1,000ドル前後で推移している。為替も円安基調が続く。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">600→1,200</div>
+        <div class="lbl">スポット価格（USD）<br>イラン攻撃を機にほぼ倍</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">¥65,700→<br>¥120,000台</div>
+        <div class="lbl">国産ナフサ／kL<br>Q4'25 → Q2'26予測</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">約2倍</div>
+        <div class="lbl">2026年4-6月期の<br>国産価格上昇率（過去最大）</div>
+      </div>
+    </div>
+
+    <p>
+      国産ナフサの価格は輸入価格の平均と連動する。25年10〜12月期および26年1〜3月期は、対象期間が中東情勢の悪化前だったためほぼ横ばいで、1キロリットル<strong>¥65,700</strong>前後で推移した。しかし、26年4〜6月期の国産価格は7月末に確定する見込みで、業界の見立ては「<strong>2倍弱の¥120,000台</strong>」（石油化学コンサルタント、日経取材）。価格水準・上昇幅とも過去最大となる。先物で手当てしていたナフサが届かず、割高な期近の商品で輸入を補わざるを得ない構図も影響している。
+    </p>
+
+    <div class="callout">
+      <strong>国産ナフサ価格は、樹脂・包装資材・インキの取引価格の「基準」</strong>として広く使われている。原料が2倍に近づけば、樹脂・フィルム・容器・インキを使う産業──つまり、食品・飲料・日用品・コスメ・住宅まで──のコストが、波のように押し上げられていく。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>小売とメーカーの<br>現場で起きていること</h2>
+    <p>
+      価格の波はすでに、店頭と工場の両方に届き始めている。
+    </p>
+    <p>
+      食品・飲料メーカー、飲食店など712社で構成する<strong>国民生活産業・消費者団体連合会（生団連）</strong>が4月27日に発表した緊急調査では、ナフサ不足の事業への影響時期について「<strong>すでに発生している</strong>」と答えた企業が44%にのぼった。「3カ月以内に影響が出る」も31%。回答企業の<strong>77%</strong>がナフサ由来の原材料を容器・包装に使用しており、即座の代替は難しい構造になっている。
+    </p>
+
+    <div class="stat-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="stat-cell">
+        <div class="num">44%</div>
+        <div class="lbl">「すでに打撃」と回答<br>食品・飲料メーカー（生団連）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">77%</div>
+        <div class="lbl">容器・包装にナフサ由来<br>材料を使用（同調査）</div>
+      </div>
+    </div>
+
+    <p>
+      具体的な値上げが連日発表されている。商品側では、<strong>ミツカンが納豆19品を6月から6〜20%値上げ</strong>（看板の「金のつぶ たれたっぷり！たまご醤油たれ3P」は¥235→¥281）、<strong>山崎製パンが7月1日出荷分から食パン・菓子パン・和洋菓子の計306品目を値上げ</strong>（食パン類62品目で平均6.6%）。
+    </p>
+    <p>
+      包装資材側でも値上げが連鎖している。<strong>食品トレー大手のエフピコは、6月1日出荷分から全製品を20%以上値上げ</strong>。<strong>三菱ケミカルが食品包装用フィルム「ダイアミロン」を4月21日出荷分から2割超値上げ</strong>、<strong>DIC子会社のDICグラフィックスが食品包装インキ・製缶用塗料を30%以上値上げ</strong>、<strong>artience（旧東洋インキ）も食品包装・紙食器インキで20%以上の値上げ</strong>に踏み切った。
+    </p>
+
+    <p>
+      値上げに至らない、もしくは値上げで吸収しきれない局面では、商品設計そのものに手が入り始めている。中堅飲料メーカーは5月下旬から、自社・委託生産の<strong>乳酸菌飲料15品について、商品名や原材料の容器印字を取りやめる</strong>。「手作業でシールを貼る案も出たが、大量生産では物理的に不可能だった」（同社幹部）。複数個を束ねる透明フィルムには印字を残す形で、最低限の表示を確保する。
+    </p>
+    <p>
+      販売そのものが止まる動きも出てきた。全国の小売店でプリンを展開する中堅食品メーカー幹部は、日経の取材に「<strong>5月上旬からプリン容器が納品されるか決まっていない。入ってこなければ販売休止する</strong>」と答えている。中食企業は容器メーカーから4割の値上げを通告され、「（危機に乗じた）便乗値上げではないか」と訴える声も上がる。
+    </p>
+
+    <div class="callout">
+      ナフサ不足は、<strong>「値段を上げる／パッケージを簡素化する／一時休売する」</strong>の三つの選択を、食品・飲料・日用品メーカーに同時に突きつけている。値上げ余力が乏しい企業ほど、パッケージ簡素化や販売休止という、消費者の目に見えやすい形で痛みが出る。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>秋以降の見通し<br>──「第二波」のスケール</h2>
+    <p>
+      ここまで見てきた値上げは、いわば<strong>「第一波」</strong>だ。次に控える「第二波」は、<strong>7月末に確定する4-6月期の国産ナフサ価格</strong>（業界の見立てでは2倍弱の水準）が反映される、秋以降の動きを指す。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">+1万品目</div>
+        <div class="lbl">2026年通年の値上げ品目<br>見通し（帝国データ）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">56%</div>
+        <div class="lbl">食品企業「半年未満で<br>主力事業縮小」（同調査）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">-10%</div>
+        <div class="lbl">食品メーカー25年利益<br>（東京商工リサーチ／4,994社）</div>
+      </div>
+    </div>
+
+    <p>
+      帝国データバンクは4月30日に公表した食料品の価格動向調査で、「<strong>早ければ今夏中、遅くとも秋ごろに広範囲な値上げラッシュ再燃の可能性が高い</strong>」とし、<strong>26年通年の値上げ品目数を「最低でも1万品目以上」</strong>と見通している。同社が4月9日に発表した原油高アンケートでは、原油高がいつまで続くと主力事業の縮小につながるかとの問いに、食品企業の<strong>56%が「半年未満」</strong>と答えた。値上げ第二波が来る前提で、影響の長期化を企業自身が織り込み始めている。
+    </p>
+    <p>
+      供給側の体力は痩せている。東京商工リサーチが食品メーカー4,994社の25年業績を調査したところ、売上は前年比+3%の24兆2,824億円とコロナ後5年で最高だったが、利益は<strong>-10%の8,806億円</strong>。原材料高に伴う値上げが売上を押し上げる一方、人件費や物流費のコスト上昇分をまかなう値上げまでは踏み切れず、収益を圧迫している。25年度の食品メーカーの倒産は<strong>168件と前年比+14%</strong>。価格転嫁が困難な中小・零細ほど、賃上げ負担も重くのしかかる。
+    </p>
+    <p>
+      第二波が来る場面では、企業は値上げだけでは吸収しきれない。<strong>パッケージ簡素化、販売休止、内容量の調整、流通チャネルの絞り込み</strong>といった「価格以外の調整」が、より広い範囲のメーカーに波及していく。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">INSIGHT</span>
+      <p>
+        ここ1年、安いものに人が集まり、中くらいの価格帯（中間価格帯）が苦しんできた。これは小売の構造変化として続いてきた流れだ。<strong>ナフサ不足はこの流れの上にさらに変化を重ねる</strong>──短期では「安いはずだった廉価帯（韓国コスメ・PBなど）の値上げ」を、中期では「廉価帯の供給そのものが細る」可能性をもたらす。値上げ第二波は、棚と家計の風景をもう一段書き換える。
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>ナフサ不足が、<br>買い物の値段とかたちを変える</h2>
+    <p>
+      ナフサは、これまで生活者の視界の外にあった原料だった。原油が精製されて生まれ、化学プラントで形を変え、<strong>容器・フィルム・インキ・繊維・タイヤ</strong>として、私たちの周りのほとんどの製品に組み込まれている。普段は意識されない原料だが、製品コストの土台を担っている。
+    </p>
+    <p>
+      ナフサの価格はすでに約2倍に跳ね上がっている。だが消費者の側からは、その上昇は派手な数字としてではなく、<strong>納豆フィルムの値段、プリン容器の供給、ペットボトルの印字</strong>といった、いつも見ているはずの場所の小さな変化として現れる。
+    </p>
+    <ul class="pt">
+      <li>GWの「節約モード」と巣ごもり志向は、一時的な行動ではなく、物価高の長期化を消費者が体感的に織り込み始めた兆候。</li>
+      <li>ナフサの国産価格は7月末に2倍弱の水準で確定する見込み。値上げ第二波は秋に立ち上がる。</li>
+      <li>ここ1年、安いものに人が集まり、中くらいの価格帯が苦しんできた。第二波の値上げは、その流れの上にさらに変化を重ね、棚に並ぶ商品の種類・パッケージ・値段をいまよりさらに変える。</li>
+    </ul>
+    <p class="closer">
+      ホルムズ海峡から食卓まで──その距離は、いま想像よりずっと近い。次の半年、棚に並ぶ商品の種類・パッケージ・値段を変えていくのは、<strong>中東情勢や原料の調達ルート</strong>という、ふだんは家計とは無縁に思える話だ。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日本経済新聞 2026年4月21日「食品業界、値上げ追いつかず10%減益　25年民間調査」（東京商工リサーチ）</li>
+    <li>日経MJ 2026年5月2日「原油高のゴールデンウィーク　車・飛行機やめ自転車、巣ごもり派は掃除」</li>
+    <li>日本経済新聞 2026年5月1日「ミツカン、納豆19品値上げ　ナフサ高騰でトレーやフィルムのコスト上昇」</li>
+    <li>日本経済新聞 2026年4月30日「食品値上げラッシュ、ナフサ不足で『6月にも再燃』　帝国データ調べ」</li>
+    <li>日本経済新聞 2026年4月30日「エフピコ、食品トレーを6月から2割以上値上げ　ナフサ価格上昇で」</li>
+    <li>日本経済新聞 2026年4月28日「山崎製パンが306品目値上げ　食パン類は平均6.6%」</li>
+    <li>日本経済新聞 2026年4月28日「国産ナフサ価格、1〜3月ほぼ横ばい　中東危機で4〜6月は2倍弱上昇へ」</li>
+    <li>日本経済新聞 2026年4月27日「ナフサ危機、食品企業4割すでに打撃　容器不足でプリン販売休止」</li>
+    <li>日本経済新聞 2026年4月24日「ホルムズ封鎖の影響、あらゆる商品に　コニシはボンド20%超値上げ」</li>
+    <li>国民生活産業・消費者団体連合会（生団連）緊急調査（2026年4月27日発表）</li>
+    <li>帝国データバンク「食料品の価格動向調査」（2026年4月30日）／「原油高に関するアンケート」（2026年4月9日）</li>
+    <li>インテージ GW意識調査／ロイヤリティマーケティング Ponta調査</li>
+    <li>JR東日本／JTB／楽天市場／楽天トラベル／akippa／いこーよ総研／ホテルニューオータニ幕張</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年5月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
