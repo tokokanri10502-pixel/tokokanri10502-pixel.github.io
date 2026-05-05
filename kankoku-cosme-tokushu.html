@@ -192,7 +192,7 @@ body{
 /* stat-grid */
 .stat-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,1fr);
   gap:14px;
   margin:24px 0;
 }
@@ -301,6 +301,31 @@ body{
   color:var(--accent);
   font-size:18px;
   font-weight:700;
+}
+
+/* photo-pair */
+.photo-pair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:20px 0 24px;
+}
+.photo-pair figure{margin:0;}
+.photo-pair img{
+  width:100%;
+  height:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid var(--border);
+  display:block;
+}
+.photo-pair figcaption{
+  font-size:11px;
+  color:var(--text-muted);
+  margin-top:6px;
+  line-height:1.5;
+  text-align:center;
 }
 
 /* ===== conclusion ===== */
@@ -494,10 +519,6 @@ body{
         <div class="num">+40%</div>
         <div class="lbl">ロフト 韓国コスメイベント<br>売上前年比（2024年10月）</div>
       </div>
-      <div class="stat-cell">
-        <div class="num">×1.8倍</div>
-        <div class="lbl">国内メンズコスメ市場<br>2019年→2024年（497億円）</div>
-      </div>
     </div>
 
     <p>
@@ -517,6 +538,18 @@ body{
   <section class="chapter">
     <span class="chapter-label">CHAPTER 2</span>
     <h2>売場改装の現場<br>──イオン広島府中の解像度</h2>
+
+    <div class="photo-pair">
+      <figure>
+        <img src="images/fuchu-cosme-1.jpg" alt="イオンスタイル広島府中 グラムビューティーク売場入口">
+        <figcaption>「Glam Beautique」入口（AEON STYLE 広島府中）</figcaption>
+      </figure>
+      <figure>
+        <img src="images/fuchu-cosme-2.jpg" alt="イオンスタイル広島府中 グラムビューティーク売場内観">
+        <figcaption>ビューティカウンター／プチプラ・韓国コスメ売場</figcaption>
+      </figure>
+    </div>
+
     <p>
       数字の背景を踏まえたうえで、改めて<strong>イオンスタイル広島府中</strong>の刷新を細かく見ていく。中国・四国エリアの旗艦店として位置づけられた以上、同店の売場設計は、イオンが今後の地方GMSに展開していく標準型のひな型と読むことができる。
     </p>
@@ -594,34 +627,10 @@ body{
   <!-- ===== Chapter 4 ===== -->
   <section class="chapter">
     <span class="chapter-label">CHAPTER 4</span>
-    <h2>ドラッグストアと地場スーパーの証言</h2>
+    <h2>中間価格帯の購入意欲の低下</h2>
     <p>
       旗艦店GMSと新業態が同じパイを取りにいくなか、<strong>ドラッグストア・百貨店・地場スーパー</strong>からも同じ方向の証言が積み上がっている。
     </p>
-
-    <div class="bar-chart">
-      <div class="bar-row">
-        <div class="bar-head">
-          <span class="name">高額化粧品（海外ブランド）</span>
-          <span class="val">好調</span>
-        </div>
-        <div class="bar-outer"><div class="bar-inner highlight" style="width:80%;"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-head">
-          <span class="name">中間価格帯</span>
-          <span class="val">鈍化</span>
-        </div>
-        <div class="bar-outer"><div class="bar-inner" style="width:35%;"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-head">
-          <span class="name">廉価帯（韓国コスメ等）</span>
-          <span class="val">好調</span>
-        </div>
-        <div class="bar-outer"><div class="bar-inner highlight" style="width:80%;"></div></div>
-      </div>
-    </div>
 
     <p>
       <strong>ドラッグストア</strong>側では、化粧品売場の二極化が業界紙でも明示的に語られている。中京圏を中心に店舗展開する<strong>アマノ</strong>の天野信二社長は、<strong>2025年7月</strong>の日本経済新聞「月曜経済観測」で、コロナ後に動き始めた富裕層消費に支えられた海外ブランドの高額品と、若年層中心に売れる韓国コスメ系の廉価品が両方伸び、間にあった<strong>中間価格帯の購入意欲が落ちている</strong>と整理している。<strong>高額品と廉価品が伸び、中間が抜ける</strong>──化粧品市場の二極化は、ドラッグストアの売場で先行的に観察されている。本稿の序で触れた中四国地盤スーパーの「衣料苦戦・化粧品好調」という観察も、この二極化の延長線上にあると読める。
