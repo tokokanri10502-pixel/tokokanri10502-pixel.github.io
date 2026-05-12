@@ -35,7 +35,7 @@ window.ARTICLES = {
           title: "特集｜「ナフサ不足」が変える<br>小売の行方──ホルムズから食卓まで",
           url: "https://tokokanri10502-pixel.github.io/naphtha-tokushu.html",
           desc: "国産ナフサ価格は4-6月期に2倍弱へ。値上げラッシュ第二波と「巣ごもりGW」が示す、これから半年の消費の輪郭をデータで読む。",
-          date: "2026.05.05",
+          date: "2026.05.12更新",
           tag: "study",
           tagLabel: "※画像はイメージです"
         },
