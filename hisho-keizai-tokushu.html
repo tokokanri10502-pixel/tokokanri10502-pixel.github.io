@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4EKTRW9RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4EKTRW9RX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今年も避暑経済がアツい ──「酷暑日」命名と、夏物展開の前倒し・広がる避暑インフラ｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#0E8A8D;
+  --primary-dark:#0F5959;
+  --primary-light:#7DD3D6;
+  --accent:#38BDF8;
+  --accent-light:#BAE6FD;
+  --bg:#F0FDFA;
+  --bg-card:#FFFFFF;
+  --text:#1F2937;
+  --text-muted:#64748B;
+  --border:#CCFBF1;
+  --up:#38BDF8;
+  --down:#0E8A8D;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#0F5959 0%,#0E8A8D 50%,#38BDF8 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.20) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:50%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.22);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.3);
+}
+.hero h1{
+  font-size:38px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.95;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:36px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.1;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.85;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(14,138,141,.08);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#E0F2FE 0%,#CCFBF1 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* bar-chart */
+.bar-chart{margin:24px 0;}
+.bar-row{margin-bottom:14px;}
+.bar-head{
+  display:flex;justify-content:space-between;
+  font-size:13px;margin-bottom:6px;
+}
+.bar-head .name{font-weight:600;color:var(--text);}
+.bar-head .val{color:var(--primary-dark);font-weight:700;}
+.bar-outer{
+  width:100%;height:16px;
+  background:#CCFBF1;
+  border-radius:8px;overflow:hidden;
+}
+.bar-inner{
+  height:100%;
+  background:linear-gradient(90deg,var(--primary-light),var(--primary));
+  border-radius:8px;
+  transition:width .4s;
+}
+.bar-inner.cool{
+  background:linear-gradient(90deg,var(--accent-light),var(--accent));
+}
+
+/* divergent-chart（中央起点のプラスマイナスバー） */
+.divergent-chart{margin:24px 0;}
+.div-row{margin-bottom:14px;}
+.div-head{
+  display:flex;justify-content:space-between;
+  font-size:13px;margin-bottom:6px;
+}
+.div-head .name{font-weight:600;color:var(--text);}
+.div-head .val{font-weight:700;}
+.div-head .val.pos{color:var(--accent);}
+.div-head .val.neg{color:#94A3B8;}
+.div-track{
+  position:relative;
+  width:100%;height:16px;
+  background:#E2E8F0;
+  border-radius:8px;
+}
+.div-zero{
+  position:absolute;
+  left:50%;top:-3px;bottom:-3px;
+  width:2px;
+  background:#334155;
+  z-index:2;
+}
+.div-bar{
+  position:absolute;
+  top:0;bottom:0;
+  border-radius:4px;
+}
+.div-bar.pos{
+  left:50%;
+  background:linear-gradient(90deg,var(--accent-light),var(--accent));
+}
+.div-bar.neg{
+  right:50%;
+  background:linear-gradient(270deg,#CBD5E1,#94A3B8);
+}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--accent);}
+.split-cell.right{border-top:4px solid var(--primary);}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell.left h4::before{content:"🧊 ";}
+.split-cell.right h4::before{content:"❄ ";}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--primary-light);
+}
+
+/* journey */
+.journey{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  gap:8px;
+  margin:24px 0;
+}
+.journey-step{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 12px;
+  text-align:center;
+  position:relative;
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.journey-step .icon{font-size:24px;margin-bottom:6px;display:block;}
+.journey-step .name{
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:13px;
+  margin-bottom:4px;
+}
+.journey-arrow{
+  align-self:center;
+  color:var(--primary);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* axis-card（マーケ視点の3軸） */
+.axis-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-left:4px solid var(--primary);
+  border-radius:0 10px 10px 0;
+  padding:20px 22px;
+  margin:18px 0;
+  box-shadow:0 2px 8px rgba(14,138,141,.05);
+}
+.axis-card .axis-no{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+  font-weight:600;
+}
+.axis-card h4{
+  font-size:17px;
+  color:var(--primary-dark);
+  margin-bottom:10px;
+  line-height:1.5;
+}
+.axis-card p{font-size:14px;line-height:1.85;margin-bottom:0;color:var(--text);}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#0F5959 0%,#0E8A8D 50%,#38BDF8 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;}
+.conclusion h2{
+  font-size:26px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.95;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.12);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.9;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--primary);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:28px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .journey{flex-direction:column;}
+  .journey-arrow{transform:rotate(90deg);padding:4px 0;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年5月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#避暑経済</span>
+      <span class="tag">#酷暑日</span>
+      <span class="tag">#夏物展開</span>
+      <span class="tag">#避暑インフラ</span>
+    </div>
+    <h1>今年も避暑経済がアツい</h1>
+    <p class="sub">
+      2025年夏、日経が紙面で「避暑経済」という言葉を使い始めた。<br>
+      2026年、気象庁は40度以上を「酷暑日」と命名し、<br>
+      夏物展開は最大1か月前倒し、街には避暑インフラが広がる。<br>
+      その実態を追う。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">41.8度</div>
+      <div class="lbl">2025年8月・群馬県伊勢崎市<br>国内歴代最高気温</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">5,000カ所</div>
+      <div class="lbl">イオンが今夏開放する<br>全国のクールスポット</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">+51.9%</div>
+      <div class="lbl">2025年6月後半の映画館消費<br>前年同期比（JCB消費NOW）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>2025年夏、紙面に<br>「避暑経済」が登場した</h2>
+    <p>
+      2025年7月、日本経済新聞は経済面で「避暑経済」という言葉を使い始めた。記録的な猛暑が屋外消費を押し下げる一方、空調の効いた屋内施設や、家から一歩も出なくて済むサービスへ需要が向かった。
+    </p>
+    <p>
+      ナウキャストとJCBによる「JCB消費NOW」が、その動きを数字で示している。映画館の消費額は2025年6月後半に前年同期比＋51.9％、フードデリバリーを中心とした飲食料品ECも＋4.9％伸びた一方、屋外娯楽の代表である遊園地は4.6％減、外食の焼き肉は10.4％減と、屋外で過ごすことを控える夏になっていた。
+    </p>
+
+    <div class="divergent-chart">
+      <div class="div-row">
+        <div class="div-head"><span class="name">映画館（屋内）</span><span class="val pos">+51.9%</span></div>
+        <div class="div-track"><div class="div-zero"></div><div class="div-bar pos" style="width:50%"></div></div>
+      </div>
+      <div class="div-row">
+        <div class="div-head"><span class="name">フードデリバリー等EC（屋内）</span><span class="val pos">+4.9%</span></div>
+        <div class="div-track"><div class="div-zero"></div><div class="div-bar pos" style="width:4.7%"></div></div>
+      </div>
+      <div class="div-row">
+        <div class="div-head"><span class="name">遊園地（屋外）</span><span class="val neg">-4.6%</span></div>
+        <div class="div-track"><div class="div-zero"></div><div class="div-bar neg" style="width:4.4%"></div></div>
+      </div>
+      <div class="div-row">
+        <div class="div-head"><span class="name">焼き肉（外食）</span><span class="val neg">-10.4%</span></div>
+        <div class="div-track"><div class="div-zero"></div><div class="div-bar neg" style="width:10.0%"></div></div>
+      </div>
+    </div>
+
+    <p>
+      三菱UFJリサーチ＆コンサルティングが東海3県の施設を対象に行った2024年夏のレジャー動向調査でも、前年に比べ集客が増えた施設は屋内型が72.2％、屋外型は29.4％にとどまった。<strong>暑さが、消費の場所を屋内へ寄せる</strong>という構図は、すでに数字に出ていた。
+    </p>
+
+    <div class="callout">
+      ただし、これは決して景気の良い話ではない。背景にあるのは、熱中症リスクの高まり、電気代の高騰、生鮮品の値上がり、そして「外出を控える」という消極的な選択だ。<strong>避暑経済の正体は、不快からの逃避を企業が拾い上げている経済</strong>──そう前置きしておきたい。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>「酷暑日」命名と、<br>もう一度来る夏</h2>
+    <p>
+      2026年4月17日、気象庁は最高気温40度以上の日を「酷暑日」と呼ぶことを正式に決めた。同庁の予報用語に新たに加わる名称で、今シーズンから天気予報や危険な暑さを伝える場面で使用される。
+    </p>
+    <p>
+      背景にあるのは、ここ数年の極端な高温だ。2018年以降、毎年どこかの観測点で40度以上が記録されている。とくに2025年は、群馬県伊勢崎市で国内歴代最高となる41.8度を観測し、過去最多の延べ30地点で40度以上を記録した。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">30地点</div>
+        <div class="lbl">2025年に40度以上を観測<br>過去最多</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">62日</div>
+        <div class="lbl">東京の「危険なほど高温の日」<br>2025年6〜8月</div>
+      </div>
+    </div>
+
+    <p>
+      米クライメート・セントラルの分析によれば、2025年夏に世界で約9億5500万人が、人為的な気候変動の影響で「危険なほど高温の日」を30日以上経験した。日本でも国内62日、東京は平年から約3度高い水準で推移した。研究組織が「もはや将来の脅威ではない」と表現したのは、こうしたデータの積み上げを踏まえてのことだ。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">FORECAST</span>
+      <p>
+        では2026年はどうなるか。気象庁の2月時点の見通しでは、6〜8月の気温は全国的に平年より高い見込み。日本気象協会も「太平洋高気圧が例年より早く強まり、7月は顕著な暑さになる」と予想する。海洋研究開発機構（JAMSTEC）の土井威志グループリーダーはさらに踏み込み、北太平洋に深さ300メートル級の暖水が「湯たんぽ」状態でたまっていることを挙げ、「これまでの常識が通用しなくなってきた」とコメントしている。
+      </p>
+      <p>
+        重要なのは、教科書的にはエルニーニョが「冷夏」をもたらすとされる年でも、今年は猛暑が見込まれているという点だ。<strong>暑さは予報ではなく、もはや前提として組み込まれている</strong>。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>夏物展開は、<br>最大1か月前倒しになった</h2>
+    <p>
+      暑さが前提になれば、店頭の動きも前にずれる。2026年は、業種を問わず夏物の店頭展開が前倒しされた。
+    </p>
+    <p>
+      青山商事は例年より約1か月早く、男性向け夏物スーツの展開を3月から順次拡大した。新規投入したのは、上下で500グラムと通常の半分ほどの重量に抑えた製品。今夏の夏物スーツの販売数量は前年比で7割増を目標とする。担当者は「夏物の販売期間が長期化しており、いかに早く顧客のニーズをつかむかが重要になっている」と話す。
+    </p>
+    <p>
+      はるやま商事も例年より2週間早い4月中旬に売り場を夏物に転換した。女性向けでは、UVカット・速乾性などの機能を備えたセットアップを前年比5割増の商品数で投入する。三陽商会は、裾や袖を着脱できるアウターの販売数を4割増やし、気温に合わせて調整できるアイテムを並べる。これは、2025年3月以降の急な気温上昇に対応できず春夏商品で苦戦し、業績予想を下方修正した反省の上にある布石だ。
+    </p>
+
+    <p>
+      化粧品も動いた。花王は日焼け止め「ビオレ呼吸感ベールUV」を2月に発売し、店頭展開も例年の3月から2月へ前倒し。さらに2026年は1月から既存のビオレUVシリーズの店頭展開を開始し、1月の出荷数は前年同期比＋57％、販売も＋35％と立ち上がりは好調だった。
+    </p>
+    <p>
+      ユニクロは1月、英国人デザイナーのクレア・ワイト・ケラー氏が監修したサングラス全18品を発売し、自ら「2026年はユニクロのサングラス元年」と宣言した。同社によれば欧州ではサングラス所持率が9割に達するのに対し、日本ではまだ5割を切る。価格は2490円と500円引き上げたが、全商品を刷新して国内での普及を狙う構えだ。
+    </p>
+
+    <div class="callout">
+      ユニ・チャームの担当者の発言が、この動きを端的に言い表している。<strong>「従来の春夏秋冬のイメージではなく、気温によって訴求する商品を変える時代になった」</strong>。日本の1年のうち4割が25度以上の夏日となるなか、商品MDの前提は、暦から気温へと変わりつつある。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>広がる「避暑インフラ」<br>──家・街・身体に冷を配る</h2>
+    <p>
+      前倒しと並ぶもう一つの動きが、暑さからの避難をインフラとして設計する流れだ。「涼める場所」そのものを呼び水に、企業は集客を図ろうとしている。
+    </p>
+    <p>
+      代表例はイオンだ。2026年は全国の商業施設で約5,000カ所をクールスポットとして開放する。前年から500カ所増やした計算で、フードコートや休憩スペースに椅子・テーブルを設置し、暑さをしのぐ場所として活用してもらう構想である。7〜9月には一部施設で来店回数に応じてWAON POINTを付与し、東京ガスとの連携を関東から関西・中部に広げる。さらに、熱中症の予防アドバイスや応急措置ができる「熱中症対策アンバサダー」を、これまでの約1万6,000人から3万人へ増やす。商業施設は買い物の場であると同時に、命を守る公共空間として位置づけ直されつつある。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>身につける避暑</h4>
+        <ul>
+          <li>ワークマン「Xシェルター」278万点・45度対応・目標63億円</li>
+          <li>花王 ビオレ冷タオル（累計1,000万個）</li>
+          <li>カインズ UVカット帽子（前年比+84%）</li>
+          <li>クールリング・冷感タオル類（小売各社）</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>場としての避暑（インフラ避暑）</h4>
+        <ul>
+          <li>イオン クールスポット 全国5,000カ所</li>
+          <li>サンシャインシティ 来館者最多更新（1985年以降）</li>
+          <li>インドアゴルフ「GOLF NEXT 24」夏場稼働率+1〜2割</li>
+          <li>カインズ ペット用ハンモック・クールリング前倒し</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      ベイシアグループのワークマンは、4月の発表会で「45度を前提にした商品」を打ち出した。土屋哲雄専務は「東京でも1カ月近くが猛暑日。40度ではなく45度を考える必要がある」と述べ、独自開発の「Xシェルター」シリーズを278万点投入する。前年の8倍にあたる規模で、目標売り上げは63億円。同社は売上の65％が夏物だ。「45度対応」という規格自体が、メーカー側から市場に提示された新しい温度基準でもある。
+    </p>
+    <p>
+      カインズでは2026年3〜4月のUVカット帽子の販売実績が前年同期比＋84％と好調で、頭頂部に遮熱シートを入れた「かぶる日傘」をうたう。猫用の冷感ハンモック、保冷剤を入れられるドッグウェアまでラインナップを広げ、首回りを冷やすクールリングも平年より前倒しで店頭に並ぶ。ベイシア（前橋市）はそうめんやアイスクリームを春先から秋口まで売る前提でPB商品を強化し、火を使わない冷凍食品の開発も加速している。
+    </p>
+    <p>
+      花王の冷タオルも、避暑インフラの一角になりつつある。23年の猛暑とSNS拡散で出荷が前年比約3倍に拡大し、25年4月には累計出荷数が1,000万個を超えた。25年5〜6月の販売量は前年比で倍増している。「肌温度マイナス3度が1時間続く」という性能で、屋外イベントやスポーツ観戦の場でも使われている。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">INSIGHT</span>
+      <p>
+        これらの商品・施設に共通するのは、<strong>「夏を楽しむ」ではなく「夏を生き延びる」</strong>という前提の置き方だ。クールスポット、45度対応、冷タオル──いずれも快適消費の言葉づかいだが、その奥にあるのは熱中症や電気代といった生活リスクである。避暑インフラとは、企業が消費の枠で「夏のリスクマネジメント」を肩代わりしている状態と読み替えられる。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>マーケ視点で持っておきたい<br>3つの軸</h2>
+    <p>
+      避暑経済が長期化・常態化しつつある以上、マーケティング側もそれを与件として捉える必要がある。ここまでの事実を踏まえ、企業・売場担当者が手元に置いておきたい視点を3つに整理しておく。
+    </p>
+
+    <div class="axis-card">
+      <span class="axis-no">AXIS 1</span>
+      <h4>時期軸を、暦から温度計へ書き換える</h4>
+      <p>
+        「夏物展開は6〜8月」という前提はすでに崩れている。花王のビオレUVは1月から店頭、青山の夏物スーツは3月から、ベイシアのそうめんは秋口まで。「春夏秋冬ではなく気温で訴求する」というユニ・チャームの発言は、業界全体の構造変化を一言で言い当てている。販売計画・広告投下・人員配置を、月ではなく予想気温で並べ直すべき局面に入っている。
+      </p>
+    </div>
+
+    <div class="axis-card">
+      <span class="axis-no">AXIS 2</span>
+      <h4>売場を、夏の生活動線全体に広げる</h4>
+      <p>
+        夏の消費は、屋内に集まる動きと、身体に近い「涼」を持ち運ぶ動きの両方で進んでいる。商業施設の休憩スペース、首回り、衣類、寝室、通勤動線──そのいずれもが「避暑インフラ」の接点だ。イオンの5,000カ所、ワークマンの45度対応衣類、花王の冷タオルは、いずれも<strong>夏の生活時間そのものを事業設計の前提に置いている</strong>。
+      </p>
+    </div>
+
+    <div class="axis-card">
+      <span class="axis-no">AXIS 3</span>
+      <h4>「景気より天気」を、経営指標に組み込む</h4>
+      <p>
+        2025年8月の高温で外出が減り、後半の売り上げが落ち込んだという小売各社の声は、もはや一過性の天候要因では説明できない。三陽商会のように気温の読み違いで業績予想を下方修正する例も出ている。エルニーニョ・酷暑日・湯たんぽ化する北太平洋といった気象用語は、株主向けの説明資料にも入り得る語彙になった。<strong>気象データを参照しないMD・販促計画は、もう成立しない</strong>。中期計画にも「気候適応」の章を設ける段階に来ている。
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>酷暑は、事業設計の前提になった</h2>
+    <p>
+      避暑経済を、ポジティブな盛り上がりとして語るべきではない。それは、暑さで外に出られない人々の不快と、命を守る必要から生まれた、苦い経済である。
+    </p>
+    <p>
+      しかし企業の側は、すでにそれを与件として動いている。「酷暑日」という言葉が予報に組み込まれ、夏物スーツは1か月早く店頭に並び、ショッピングモールは涼み場として開放される。<strong>酷暑を問題のまま放置せず、事業設計の前提として組み込んでいる</strong>。
+    </p>
+    <ul class="pt">
+      <li>🔸 2025年に紙面に登場した「避暑経済」は、2026年の小売・アパレル戦略の前提に格上げされた</li>
+      <li>🔸 気象庁の「酷暑日」命名は、社会が暑さを"事象"から"基準"へ受け止め直した儀式である</li>
+      <li>🔸 夏物展開の前倒しは最大1か月。MDの時間軸は、暦から気温へ書き換えられつつある</li>
+    </ul>
+    <p class="closer">
+      「暑くて家から出られない」を、商品・施設・サービスが下支えする。避暑経済の本当の姿は、消費の派手な数字ではなく、<strong>社会が夏に適応していくプロセスそのもの</strong>である。先にアツくなったのは、市場ではなく地表のほうだ。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日本経済新聞「暑すぎるから…インドア避暑経済がアツい」2025年7月21日</li>
+    <li>日本経済新聞「気温40度以上は『酷暑日』 気象庁が新名称、暑さリスク明確に」2026年4月17日</li>
+    <li>日経MJ「アパレルや日用品、はや猛暑商戦 軽量スーツや通気性高めた紙おむつ」2026年2月23日</li>
+    <li>日本経済新聞「イオン、5000カ所に『涼み場』 来店でWAONポイントも付与」2026年4月16日</li>
+    <li>日本経済新聞 群馬版「ベイシアグループ、猛暑に挑む ワークマンは45度対応の衣類開発」2026年4月22日</li>
+    <li>日本経済新聞 Nikkei Views「エルニーニョ発生でも日本は猛暑？ 『冷夏』の通説に反する予想」2026年5月3日</li>
+    <li>日本経済新聞「25年夏『危険な高温』9.5億人経験、東京は平年約3度超え 気候変動で」2025年9月17日</li>
+    <li>日本経済新聞 サーチライト「花王『冷タオル』が夏の定番に 汗拭きシート活用法が開発のヒント」2025年8月7日</li>
+    <li>JCB消費NOW（ナウキャスト×JCB）2025年6月後半データ</li>
+    <li>クライメート・セントラル 2025年夏 高温日分析レポート</li>
+    <li>三菱UFJリサーチ&コンサルティング 東海3県レジャー動向調査（2024年夏）</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年5月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
