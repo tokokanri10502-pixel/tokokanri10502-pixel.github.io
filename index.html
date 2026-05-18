@@ -218,9 +218,113 @@
       font-size: 0.9rem;
       padding: 20px 0;
     }
+    /* ── LOGIN ── */
+    #login-screen {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #0f0f1a 0%, #16213e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 9999;
+    }
+    .login-card {
+      background: #1a1a2e;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 36px 28px 28px;
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .login-badge {
+      display: inline-block;
+      background: #e53935;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 18px;
+    }
+    .login-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .login-title span { color: #e53935; }
+    .login-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 26px;
+    }
+    .login-label {
+      display: block;
+      text-align: left;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .login-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 14px;
+    }
+    .login-input:focus { border-color: rgba(229,57,53,0.6); }
+    .login-error {
+      display: none;
+      font-size: 0.75rem;
+      color: #ef9a9a;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    .login-error.show { display: block; }
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: #e53935;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .login-btn:hover { background: #d32f2f; }
   </style>
 </head>
 <body>
+
+<!-- ======== LOGIN ======== -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-badge">TOKO WORKS</div>
+    <div class="login-title">社会派 <span>DEEP Lab</span></div>
+    <div class="login-sub">関係者限定 ・ パスワード認証</div>
+    <label class="login-label" for="pw-input">パスワード</label>
+    <input id="pw-input" class="login-input" type="password" placeholder="パスワードを入力" autocomplete="current-password">
+    <div id="login-error" class="login-error">パスワードが違います。もう一度お試しください。</div>
+    <button class="login-btn" type="button" onclick="doLogin()">入室する</button>
+  </div>
+</div>
+
+<!-- ======== MAIN APP ======== -->
+<div id="main-app" style="display:none;">
 <div class="header">
   <div class="header-label">TOKO WORKS</div>
   <h1>社会派 <span>DEEP Lab</span></h1>
@@ -245,6 +349,35 @@
 <div class="footer">
   © 2026 TOKO WORKS — 社会派 DEEP Lab
 </div>
+</div><!-- /#main-app -->
+<script>
+  // ===== AUTH =====
+  const DEEP_LAB_HASH = '8983ee570379fd290b174487885737b384d187d605a02f16b9a8b04bb52ea8b0'; // toko2026
+  async function sha256(str) {
+    const buf = new TextEncoder().encode(str);
+    const hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+  function showApp() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('main-app').style.display = '';
+  }
+  async function doLogin() {
+    const pw = document.getElementById('pw-input').value;
+    if (await sha256(pw) === DEEP_LAB_HASH) {
+      localStorage.setItem('deep-lab-auth', '1');
+      document.getElementById('login-error').classList.remove('show');
+      showApp();
+    } else {
+      document.getElementById('login-error').classList.add('show');
+      document.getElementById('pw-input').select();
+    }
+  }
+  document.getElementById('pw-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+  });
+  if (localStorage.getItem('deep-lab-auth') === '1') showApp();
+</script>
 <script>document.write('<scr'+'ipt src="./articles.js?v=' + Math.floor(Date.now()/60000) + '"><\/scr'+'ipt>');</script>
 <script>
   // ===== 記事カード自動描画 =====
