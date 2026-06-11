@@ -93,7 +93,7 @@ window.ARTICLES = {
         {
           icon: "🛒",
           image: "images/ai-agent-brand.jpg",
-          title: "特集｜AIに\"選ばれる\"ブランド<br>品質No.1が、なぜ推薦リストから消えるのか",
+          title: "特集｜AIが選ぶ時代のブランド戦略<br>「良い商品」だけでは、もう選ばれない",
           url: "https://tokokanri10502-pixel.github.io/ai-agent-brand-tokushu.html",
           desc: "消費者とブランドの間に「AIエージェント」という意思決定層が割り込んだ。AIの情報取得量は人間検索の88%、20代の約5割は検索を使わない──品質で勝つ日本ブランドが\"見えない優位\"を\"見える優位\"に変える3原則を、逆算で読み解く。",
           date: "2026.06.11",
