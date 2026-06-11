@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4EKTRW9RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4EKTRW9RX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIに"選ばれる"ブランド ── 品質No.1が、なぜ推薦リストから消えるのか｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#0E7490;
+  --primary-dark:#0A2E3B;
+  --primary-light:#2BA9C2;
+  --accent:#22D3EE;
+  --accent-light:#A5F3FC;
+  --bg:#EFF4F5;
+  --bg-card:#FFFFFF;
+  --text:#152A31;
+  --text-muted:#557079;
+  --border:#CBDDE1;
+  --up:#0E9F6E;
+  --down:#C2562B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#0A2E3B 0%,#0E7490 58%,#2BA9C2 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(34,211,238,.22) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:50%;height:60%;
+  background:radial-gradient(circle,rgba(165,243,252,.16) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(165,243,252,.4);
+}
+.hero h1{
+  font-size:38px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.95;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:36px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.1;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.85;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(14,116,144,.08);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#EBFAFD 0%,#D2F1F6 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--down);}
+.split-cell.right{border-top:4px solid var(--up);}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell.left h4::before{content:"👁 ";}
+.split-cell.right h4::before{content:"🤖 ";}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--primary-light);
+}
+
+/* principle block */
+.principle{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:18px 0;
+  border-top:4px solid var(--primary);
+}
+.principle .pnum{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  padding:3px 12px;
+  border-radius:999px;
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+.principle h3{
+  font-size:18px;
+  color:var(--primary-dark);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+.principle p{font-size:14px;line-height:1.85;margin-bottom:12px;}
+.principle p:last-child{margin-bottom:0;}
+
+/* journey */
+.journey{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  gap:8px;
+  margin:24px 0;
+}
+.journey-step{
+  flex:1;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 12px;
+  text-align:center;
+  position:relative;
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.journey-step .icon{font-size:24px;margin-bottom:6px;display:block;}
+.journey-step .name{
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:13px;
+  margin-bottom:4px;
+}
+.journey-arrow{
+  align-self:center;
+  color:var(--primary);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* steps (明日からの3歩) */
+.steps{margin:24px 0;}
+.step-row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:18px 20px;
+  margin-bottom:12px;
+}
+.step-row .step-no{
+  flex-shrink:0;
+  width:32px;height:32px;
+  border-radius:50%;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+}
+.step-row .step-text{font-size:14px;line-height:1.8;}
+.step-row .step-text strong{color:var(--primary-dark);}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#0A2E3B 0%,#0E7490 60%,#2BA9C2 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;}
+.conclusion h2{
+  font-size:26px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.95;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.12);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.9;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--primary);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:28px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .journey{flex-direction:column;}
+  .journey-arrow{transform:rotate(90deg);padding:4px 0;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年6月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#AIエージェント</span>
+      <span class="tag">#ブランド戦略</span>
+      <span class="tag">#検索から代行へ</span>
+    </div>
+    <h1>AIには、"品質"が見えない</h1>
+    <p class="sub">
+      良いものを作れば、選ばれる。<br>
+      その前提が、いま通用しなくなりつつある。<br>
+      消費者とブランドの間に「AIエージェント」という<br>
+      新しい意思決定層が入り、<br>
+      品質で世界トップクラスの日本ブランドが、AIに「おすすめ」されない例が出てきた。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">88%</div>
+      <div class="lbl">AIエージェントの情報取得量<br>（対・人間のオーガニック検索）</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">3〜5兆ドル</div>
+      <div class="lbl">エージェンティック・コマース<br>市場規模（2030年予測）</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">65%</div>
+      <div class="lbl">20歳の男女が、スマホの<br>調べものに生成AIを使う割合</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>気づけば、もう<br>「検索」していない</h2>
+    <p>
+      何かを調べるとき、検索窓にキーワードを打ち込む前に、まずAIに「聞いて」みる。プレゼントに迷ったら、相手の好みを伝えて候補を出してもらう。── そんな行動を、特別なことだと感じない人が、もう珍しくない。実際、ある調査では、プレゼント選びで相手の好みのワインの写真を添え、予算内で似た味や産地の商品をChatGPTに相談したという20代の会社員の声が紹介されている。検索・通販サイト・SNSに加えて、生成AIを「商品探しの道具」として使う人が増えている。
+    </p>
+    <p>
+      この変化は、数字にもはっきり表れている。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">65%</div>
+        <div class="lbl">2025年度に20歳になった男女が、スマホの調べものに生成AIを使う（マクロミル調べ）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">約48%</div>
+        <div class="lbl">調べものに検索を「使わない」と答えた20代（ナイル調べ・2000人対象）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">8%</div>
+        <div class="lbl">AIによる回答が表示されたときの、外部リンクのクリック率（15%から低下／ピュー・リサーチ）</div>
+      </div>
+    </div>
+
+    <p>
+      若者の検索離れだけの話ではない。AIが回答そのものを返すようになり、利用者はわざわざ別のサイトを開かなくなった。検索結果のリンクがクリックされない「ゼロクリック」は、すでに現実になっている。知りたいことにAIが直接答えてくれるなら、リンクをたどる理由がない。
+    </p>
+
+    <div class="callout">
+      ここで起きているのは、消費者が「自分で探して、比べて、決める」という行動の<strong>一部を、AIに任せるようになった</strong>ということだ。検索窓に打ち込む前に、まずAIに尋ねる。この習慣が広がるほど、ブランドが消費者に見つけてもらう「入口」そのものが変わっていく。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>「検索」から「代行」へ<br>──2か月で変わった購買の地図</h2>
+    <p>
+      消費者の「相談相手」だったAIは、いまや「購入の代行者」にもなりつつある。この数か月で、その状況は大きく変わった。
+    </p>
+    <p>
+      分かりやすい例がグーグルだ。これまでAIは「この商品がおすすめ」と教えてくれるだけだった。だがグーグルは、AIが店の商品データに直接つながり、<strong>画面の中でそのまま購入まで済ませられる</strong>仕組みを整えた。すでにグーグルのAI検索や対話AI「Gemini（ジェミニ）」で動いていて、ウォルマートをはじめ大手の小売りが次々と参加している。2026年3月には、アパレル大手のギャップが、Geminiの画面から服を直接買えるようにした世界初のファッションブランドになった。
+    </p>
+    <p>
+      ChatGPTを手がける米オープンAIも、同じ方向に動いている。同社の買い物代行AIは、アマゾンやウォルマートといったサイトとつながり、<strong>AIが代わりに商品を探し、カートに入れ、購入まで終わらせる</strong>。化粧品大手のセフォラは、ChatGPTの中で使える自社アプリを出した。AIに話しかけるだけで買い物が終わる。そんな状態が、もう現実になりつつある。
+    </p>
+
+    <div class="callout">
+      米ブライトエッジの2026年4月の調査では、<strong>AIエージェントがウェブサイトに情報を取りに来る量は、すでに人間のオーガニック検索の88%</strong>に達したという。年内には、AIの活動量が人間の検索行動を上回るとも見られている。
+    </div>
+
+    <p>
+      これらの動きが意味するのは一つだ。消費者とブランドの間に、<strong>「AIエージェント」という新しい意思決定層</strong>が割り込んだ、ということである。
+    </p>
+
+    <div class="journey">
+      <div class="journey-step">
+        <span class="icon">🙂</span>
+        <div class="name">消費者</div>
+        「これが欲しい」<br>という要望だけを伝える
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🤖</span>
+        <div class="name">AIエージェント</div>
+        情報を集め、比較し、<br>選び、推薦・購入を代行
+      </div>
+      <div class="journey-arrow">›</div>
+      <div class="journey-step">
+        <span class="icon">🏷</span>
+        <div class="name">ブランド</div>
+        AIに「読まれた」<br>ものだけが候補に残る
+      </div>
+    </div>
+
+    <p>
+      これまでブランドは「人間の目」に訴えてきた。美しいビジュアル、心に響くコピー、五感に届く店舗体験。── だが、その層が間に入ったことで、ブランドの努力が最初に届く相手は、人間ではなくAIになった。そしてAIには、ビジュアルもコピーも、そのままでは見えていない。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>AIは何を「見て」<br>選ぶのか</h2>
+    <p>
+      AIエージェントが購買を代行するとき、何を根拠に「選ぶ」のか。人間とAIでは、見ているものがまるで違う。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>人間が見るもの</h4>
+        <ul>
+          <li>ブランドの世界観・雰囲気</li>
+          <li>友人やSNSでの推薦</li>
+          <li>店頭での偶然の出合い</li>
+          <li>広告から受けた印象</li>
+          <li>「なんとなく好き」という感覚</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>AIが見るもの</h4>
+        <ul>
+          <li>構造化されたデータ</li>
+          <li>明確な属性情報（仕様・価格・在庫）</li>
+          <li>プラットフォーム間で一貫したメタデータ</li>
+          <li>レビューの質と量</li>
+          <li>巡回して取得できる情報の有無</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      人間は、こうした曖昧で非構造的な情報の全体で購買を決める。一方AIエージェントが読み取れるのは、整理され、機械が取得できる形になった情報だけだ。海外では、カテゴリーを代表する実力を持つ製品が、AIの推薦から完全に外れた例が複数報告されている。理由はただ一つ、AIが巡回・取得できる構造化された情報が足りなかったからだ。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">SEOとの決定的な違い</span>
+      <p>
+        検索エンジン最適化（SEO）の時代は、たとえ10位でも検索結果には表示され、利用者の目に触れる機会は残っていた。だがAIエージェントの時代は違う。<strong>エージェントの「推薦リスト」に入るか、入らないか。オール・オア・ナッシングの世界</strong>だ。品質で勝っていても、AIに「読めない」ブランドは、消費者の選択肢に存在しないのと同じになる。
+      </p>
+    </div>
+
+    <p>
+      しかも、選ばれた先で得られるものも大きい。米アドビの報告によれば、AIエージェント経由で流入した顧客は、従来の検索流入と比べてサイト滞在時間が32%長く、閲覧ページ数が10%多く、直帰率は27%低いという。AIに「選ばれた」ブランドは、より購買意欲の高い顧客と接点を持てる。逆に推薦から漏れれば、その質の高い顧客層に届く機会そのものを失うことになる。
+    </p>
+
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>「選ばれる」3原則<br>── 逆算で設計する</h2>
+    <p>
+      では、AIエージェント時代のブランドをどう設計すべきか。コメ兵やユナイテッドアローズでマーケティングの要職を務めた300Bridge代表・藤原義昭氏は、3つの原則を挙げている。
+    </p>
+
+    <div class="principle">
+      <span class="pnum">原則 1</span>
+      <h3>情報を「人間向け」と「機械向け」の2層構造にする</h3>
+      <p>
+        人間の感性に訴える体験設計と並行して、AIが正確に読み取れる「機械向け」の情報層を整える。具体的には、製品の仕様・価格・在庫・レビュー・比較情報を構造化データとして整備すること。FAQ（よくある質問）形式のコンテンツを充実させ、AIが「質問」と「回答」の形で情報を取得できるようにすること。
+      </p>
+      <p>
+        そして、すべてのプラットフォームで情報の一貫性を保つこと。自社サイト、ECモール、SNS、グーグルビジネスプロフィールの間で価格や仕様に矛盾があると、人間なら「サイトによって値段が違うこともある」と受け流すが、<strong>AIは矛盾を「不信」としか処理しない</strong>。
+      </p>
+    </div>
+
+    <div class="principle">
+      <span class="pnum">原則 2</span>
+      <h3>「選ばれる理由」を数値と文脈で言語化する</h3>
+      <p>
+        人間は「なんとなく好き」「雰囲気がいい」で買うことがあるが、AIはその曖昧さを処理できない。「なぜこの製品が、この顧客にとって最適なのか」を、数値と文脈で示す必要がある。
+      </p>
+    </div>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>曖昧な表現（AIに届かない）</h4>
+        <ul>
+          <li>「高性能な掃除機」</li>
+          <li>「コストパフォーマンスがいい」</li>
+          <li>「使いやすい」</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>数値と文脈（AIが評価できる）</h4>
+        <ul>
+          <li>「吸引仕事率600W・PM2.5除去率99.9%」</li>
+          <li>「1回あたり○○円・業界平均比30%低コスト」</li>
+          <li>具体的な根拠で比較・評価が可能に</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      これは「人間にとっても」価値のある情報だ。AIエージェント時代の最適化とは、ブランドの価値を曖昧さから引き出し、顧客にとっての本質的な価値を言語化する作業にほかならない。「なぜ御社の製品を推薦すべきか」とAIに問われたとき、明確に答えられるか。その答えを持っているかどうかが、これからの分かれ目になる。
+    </p>
+
+    <div class="principle">
+      <span class="pnum">原則 3</span>
+      <h3>「どのAI経由で届けるか」を、自分たちで選ぶ</h3>
+      <p>
+        AIエージェント経由のコマースには、複数のオープンな規格が並び立ち始めている。だが、その技術的な中身を自社ですべて理解する必要はない。重要なのは、<strong>「自社の顧客が、どのAIエージェントを使うか」を逆算し、そのAIが参照する場所に自社の商品情報を最適化すること</strong>だ。
+      </p>
+      <p>
+        これは2000年代初頭、「楽天に出すか、アマゾンに出すか、自社ECで売るか」を迫られた状況によく似ている。当時、いち早く最適化した中小ブランドが大手を逆転したように、どのAI経由で顧客に届けるかは、IT部門に任せきりにする話ではなく、どの顧客にどう届けるかという、ブランドづくりそのものの判断だ。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>日本の「見えない優位」を<br>「見える優位」へ</h2>
+    <p>
+      この構造転換は、日本企業にとって大きな勝機でもある。日本のブランドは「モノの品質」で世界的に高い評価を受けてきた。ところが、その品質情報が、構造化データとしてAIに読める形で公開されている例は、ほとんどない。
+    </p>
+    <p>
+      せっかくの品質優位が、デジタル上では「見えない優位」のまま活かされていない。裏を返せば、品質で勝てるからこそ、AIへの「見える化」が最も大きなテコ（レバレッジ）になる。「デジタルでの発信力が弱い」と言われてきた日本企業にとって、差を取り戻せる場面でもある。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">約205億ドル</div>
+        <div class="lbl">2026年のAIプラットフォーム経由・米国EC売上（前年比約4倍のペース）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">3〜5兆ドル</div>
+        <div class="lbl">2030年までにエージェンティック・コマースが動かすと見込まれる売上</div>
+      </div>
+    </div>
+
+    <p>
+      市場が立ち上がりきる前に動けるかどうか。難しいのは、巨額の投資ではなく、視点の転換だ。3つの原則を踏まえ、明日から着手できる最初の一歩を3つに絞る。
+    </p>
+
+    <div class="steps">
+      <div class="step-row">
+        <div class="step-no">1</div>
+        <div class="step-text">
+          <strong>自社の主要商品の情報が、構造化データとして機械に読める状態になっているか</strong>を確認する。
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-no">2</div>
+        <div class="step-text">
+          <strong>主要なAIに自社ブランド名を入力し、どう表示・推薦されるか</strong>を、自分の目で確かめる。
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-no">3</div>
+        <div class="step-text">
+          <strong>「AIエージェントに選ばれるブランドとは何か」を、一度チームで話し合うテーマにする。</strong>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      この3つは、いずれも大きな投資を必要としない。必要なのは、視点の転換だけである。
+    </p>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>「選ばれる前に、選ばせる」<br>── ブランドの再定義</h2>
+    <p>
+      AIエージェント時代のブランドとは、人間の感性に訴えるだけのものではなくなる。機械が読める情報の精度と一貫性、顧客にとっての価値の具体性、そしてAIが「この顧客にはこのブランドが最適だ」と判断できる根拠の明確さ。── これらすべてを備えたものが、これからのブランドだ。ブランドの定義そのものが、いま拡張されようとしている。
+    </p>
+    <ul class="pt">
+      <li>🔹 消費者とブランドの間に「AIエージェント」という意思決定層が割り込んだ</li>
+      <li>🔹 AIが見るのはデータ。品質で勝っても「読めない」ブランドは存在しないのと同じ</li>
+      <li>🔹 選ばれる理由を数値と文脈で言語化することは、人間にとっても価値になる</li>
+      <li>🔹 日本の「見えない品質優位」は、見える化すれば最大のレバレッジになる</li>
+    </ul>
+    <p class="closer">
+      ただし、人間にとっての情緒的な価値が不要になるわけではない。AIエージェントに「選ばれる」土俵に立ったうえで、人間にしか感じ取れない世界観や体験価値で差別化する。「検索から代行へ」は、すでに予測ではなく現実の話だ。逆算の起点は、つねに「未来の顧客接点」にある。そして、その接点の相手は、もう人間だけではない。まずはその事実を確認することから始めればよい。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日経クロストレンド「『AIエージェントに選ばれる』商品　共感より根拠、データ整備がカギ」（300Bridge 藤原義昭、2026年4月21日の記事を再構成）</li>
+    <li>日本経済新聞「調べもので検索エンジン『使わない』20代の約5割　生成AI普及で」（ナイル調査、2026年5月21日）</li>
+    <li>日本経済新聞「20歳の男女、『スマホでの調べ物に生成AI利用』65%　民間調べ」（マクロミル調査、2026年1月7日）</li>
+    <li>日経MJ「通販サイトでもChatGPT　欲しいモノ『何となく』相談で」（2025年12月31日）</li>
+    <li>日本経済新聞「AI検索でアクセス減『AI最適化』に注目　読みやすさ・結論明記が重要」（GMO TECH、2026年3月9日）</li>
+    <li>日本経済新聞「『ググる』は続けど…AI検索が招くゼロクリック　集客支援に商機」（編集委員 奥平和行、2025年8月6日）</li>
+    <li>各種調査：米ブライトエッジ／米アドビ／米ピュー・リサーチ・センター</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年6月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
