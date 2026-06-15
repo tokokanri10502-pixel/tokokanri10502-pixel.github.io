@@ -29,6 +29,17 @@ window.ARTICLES = {
       showSource: true,
       articles: [
         {
+          icon: "♻️",
+          image: "images/reuse-market.jpg",
+          source: "📰 日本経済新聞｜2026年6月8日",
+          title: "特集｜リユースが変える消費<br>3.3兆円に育った「中古市場」の深層",
+          url: "https://tokokanri10502-pixel.github.io/reuse-market-tokushu.html",
+          desc: "国内リユース市場は2024年で約3.3兆円、15年で約3倍に。「いつでも売れる」という前提が消費者の“頭の中の財布”を変え、再販価値の高い商品ほど新品も高く買われる。公式古着やReMUJIなど、企業がリユースを“鏡”と“入り口”に変える動きを、消費者とブランドの両面から読み解く。",
+          date: "2026.06.11",
+          tag: "study",
+          tagLabel: "※画像はイメージです"
+        },
+        {
           icon: "🛢️",
           image: "images/naphtha.png",
           source: "📰 日本経済新聞｜2026年4月30日",
