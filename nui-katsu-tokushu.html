@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4EKTRW9RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4EKTRW9RX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ今、「ぬい活」は広がったのか ── 450億円に育った市場の背景｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#C2576B;
+  --primary-dark:#7E3344;
+  --primary-light:#D98599;
+  --accent:#E0A55B;
+  --accent-light:#F2D6A8;
+  --bg:#F8F0EE;
+  --bg-card:#FFFFFF;
+  --text:#33232A;
+  --text-muted:#7A6169;
+  --border:#EAD8DA;
+  --up:#2E7D5C;
+  --down:#B7472A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#7E3344 0%,#C2576B 58%,#D98599 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(242,214,168,.22) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:50%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.20);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(242,214,168,.45);
+}
+.hero h1{
+  font-size:38px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.96;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:36px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.1;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.88;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(194,87,107,.08);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#FCEFEF 0%,#F6DEE2 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--text-muted);}
+.split-cell.right{border-top:4px solid var(--primary);}
+.split-cell.left h4::before{content:"🏨 ";}
+.split-cell.right h4::before{content:"🧸 ";}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--primary-light);
+}
+
+/* reason block */
+.principle{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:18px 0;
+  border-top:4px solid var(--primary);
+}
+.principle .pnum{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  padding:3px 12px;
+  border-radius:999px;
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+.principle h3{
+  font-size:18px;
+  color:var(--primary-dark);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+.principle p{font-size:14px;line-height:1.85;margin-bottom:0;}
+
+/* subhead inside chapter */
+.subhead{
+  font-size:17px;
+  font-weight:700;
+  color:var(--primary-dark);
+  margin:26px 0 12px;
+  padding-left:12px;
+  border-left:4px solid var(--accent);
+}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#7E3344 0%,#C2576B 60%,#D98599 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;}
+.conclusion h2{
+  font-size:26px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.96;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.14);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.9;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--primary);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:28px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年6月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#ぬい活</span>
+      <span class="tag">#推し活</span>
+      <span class="tag">#消費トレンド</span>
+    </div>
+    <h1>「ぬい活」は、<br>なぜ広がったのか</h1>
+    <p class="sub">
+      ぬいぐるみを「相棒」や「家族」のように大切にする気持ちは、昔からあった。<br>
+      近年は、それを外に連れ出して、堂々と楽しむ人が増えた。<br>
+      カフェ、旅、ホテル、そして修繕まで。<br>
+      ぬいぐるみ市場は、いま450億円にまで拡大。その深層を追う。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">450億円</div>
+      <div class="lbl">ぬいぐるみ市場規模<br>（2024年度・前年度比+15%）</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">34万件</div>
+      <div class="lbl">Instagramの<br>「#ぬい活」投稿数</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">約4割</div>
+      <div class="lbl">「機能性ぬい」などで<br>男性が占める購入者の割合</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>昔からある愛着が、<br>いま外へ</h2>
+    <p>
+      ぬいぐるみを大切にする人は、昔からいた。子どもの頃からの相棒を、大人になっても手放せない人は少なくない。近年の傾向は、そのぬいぐるみを<strong>外に連れ出して楽しむ人が増えた</strong>ことだ。
+    </p>
+    <p>
+      東京都内のカフェ。神奈川県の自宅から連れてきたぬいぐるみの席に、小さいサイズのプリンのセットが置かれる。30代の女性は写真を撮りながら「この子と一緒にお茶を楽しめるなんて、夢みたいです」と笑う。バッグにぬいぐるみをつけて持ち歩き、旅先やカフェで一緒に写真を撮ってSNSに投稿する「ぬい撮り」。こうした楽しみ方が、世代を超えて広がっている。
+    </p>
+
+    <div class="callout">
+      かつては人前ではばかられることもあった行動が、いまは「すてきな趣味」として受け入れられている。この<strong>受け止め方の変化</strong>が、「ぬい活」という言葉とともに、人々の背中を押している。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>数字で見る<br>「ぬい活」</h2>
+    <p>
+      ぬいぐるみ市場は、少子化が進むなかでも拡大している。日本玩具協会によると、2024年度の市場規模は450億円で、前年度比15%増。前の2023年度も391億円と、前年度比2割増えていた。海外の調査会社の見通しでは、日本市場は2029年に約10億ドル（約1,570億円）と、2025年推定比で5割伸びるとされる。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">450億円</div>
+        <div class="lbl">ぬいぐるみ市場規模<br>（2024年度・前年度比+15%）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">約1,570億円</div>
+        <div class="lbl">2029年の市場予測<br>（25年推定比+5割）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">34万件超</div>
+        <div class="lbl">Instagramの<br>「#ぬい活」投稿数</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">59%</div>
+        <div class="lbl">ぬいを「バッグにつける」<br>（15〜24歳女性／SHIBUYA109調べ）</div>
+      </div>
+    </div>
+
+    <p>
+      「ぬい活」という言葉は2025年度の新語・流行語大賞にノミネートされた。SHIBUYA109エンタテイメントが15〜24歳の女性約500人に楽しみ方を聞いた調査では、「バッグにつける」が59%で最多。「日常的に持ち歩いたりお出かけしたりする」39%、「モノや景色と一緒に写真撮影する」38%と続いた。とくにZ世代にとって、ぬいぐるみは日常や旅行に欠かせない存在になりつつある。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>なぜ今、<br>広がったのか</h2>
+    <p>
+      ぬいぐるみへの愛着そのものは、新しいものではない。では、なぜ今これだけ広がったのか。専門家は、行動の中身よりも「<strong>周囲の受け止め方</strong>」が変わった点を指摘する。後押しになった理由は、大きく3つある。
+    </p>
+
+    <div class="principle">
+      <span class="pnum">理由 1</span>
+      <h3>SNSで、発信しやすくなった</h3>
+      <p>
+        ぬいぐるみと出かけた様子を写真に撮り、共有する「ぬい撮り」。同じ趣味の人とつながり、楽しみ方を見せ合える場がSNSにできた。人形文化に詳しい早稲田大学の菊地浩平准教授は「SNSなどの影響で、ぬいぐるみを大切にする人の行動を否定的に捉えられることが減ったのではないか」と分析する。
+      </p>
+    </div>
+    <div class="principle">
+      <span class="pnum">理由 2</span>
+      <h3>「推し活」が市民権を得た</h3>
+      <p>
+        俳優やアニメのキャラクター、アイドルを応援する「推し活」が一般的になった。人気アイドルをキャラクター化したぬいぐるみを手にする人も目立ち、推し活の流れからぬい活に入る例も多い。好きなものを大切にする行動が、当たり前のものになった。
+      </p>
+    </div>
+    <div class="principle">
+      <span class="pnum">理由 3</span>
+      <h3>好みを尊重し合う価値観が広がった</h3>
+      <p>
+        ニッセイ基礎研究所の久我尚子上席研究員は「推し活が趣味として認知され、好きなものを大事にする行動が『すてきなこと』だと受け取られるようになった。人それぞれの好みを尊重し合う動きも広がっている」と話す。
+      </p>
+    </div>
+
+    <p>
+      こうした変化のなかで、ぬい活は大人にも、そして男性にも広がった。ずっしりした2キロのぬいぐるみや機能性ぬいの購入者は、3〜5割が男性だ。「大人だってぬいぐるみが好き!」をうたうムックは発売後に2度の重版がかかった。子ども向けにとどまらない、大人の趣味として市民権を得つつある。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>"連れ"だから<br>生まれるサービス</h2>
+    <p>
+      ぬいぐるみが「連れ」になると、これまで人間向けだったサービスが、そのままぬいぐるみにも向けられるようになる。ぬい活の広がりは、多彩なサービスを生んでいる。
+    </p>
+    <p>
+      「ぬいぐるみが楽しむためのカフェ」では、ぬい用に小さいサイズのメニューや食器が用意される。開店を告知するたびに応募が定員を上回り、ある回は席数の5倍以上が集まった。預かったぬいぐるみが観光地を巡る「ぬいぐるみツアー」（参加費4,000〜5,000円前後）は、毎回定員6体ほどがすぐ満員になる。朝に預けたぬいぐるみが身体測定や給食を「体験」する「ぬいぐるみ保育園」（1日8,800円〜）も登場した。事前に性格や好きな遊びを聞き取り、園での過ごし方を演出する。雑貨店の3COINSは、ぬい用のベッドや机、ポーチを発売し、即完売する品も出た。
+    </p>
+    <p>
+      観光・宿泊の事業者も動いている。東横インは「ぬいと一緒にお泊り会プラン」を全国で展開。宿泊費に300円を足すと、ぬいぐるみ用の布団や枕、パジャマを借りられる。大阪の1店舗で試験的に始めたところSNSで人気に火が付き、60店舗に拡大した。JR西日本も、ぬいぐるみが新幹線に乗っているかのような記念カードがもらえる「ぬい撮りプラン」を企画した。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>東横INNの通常の利用者</h4>
+        <ul>
+          <li>約8割が男性</li>
+          <li>年齢構成は40〜50代が大半</li>
+          <li>20代は1割程度</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>「ぬい活プラン」の利用者</h4>
+        <ul>
+          <li>女性が6割と男女が逆転</li>
+          <li>20〜30代が半数以上</li>
+          <li>新しい客層の入り口に</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      注目したいのは、ぬい活が<strong>新しい客層を呼び込んでいる</strong>点だ。東横INNの利用者は通常、約8割が男性で40〜50代が中心。ところが「ぬい活プラン」では女性が6割を占め、20〜30代が半数以上になった。サービス一つで、これまで届かなかった層との接点が生まれている。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>「癒やし」も<br>「お世話」も</h2>
+    <p>
+      ぬい活の広がりは、ぬいぐるみそのものの進化と、ぬいぐるみを支えるサービスの両方を後押ししている。
+    </p>
+
+    <div class="subhead">かわいいだけでなく、役に立つ「機能性ぬい」</div>
+    <p>
+      デスクとおなかで挟むと背筋が伸びる「ふんばるず」は、2023年の発売以降、累計40万個を出荷した。太ももで挟んで内転筋を鍛える「MUGYUUUS」、布団で使えるぬいぐるみ型の湯たんぽ、なでると安心感が増す2キロの「omonui」もある。omonuiは応援購入サイトで目標額の13倍を超えた。入眠をサポートする商品も増えている。あるムック編集長は、機能性ぬいの魅力を「かわいい見た目に癒やし効果、科学的な機能と、一粒で三度おいしい」と表現する。
+    </p>
+
+    <div class="subhead">家族だから、直す「修繕・ケア」</div>
+    <p>
+      ぬいぐるみを「家族」と捉える人が増えたことで、洗浄や修繕の中小企業に商機が広がっている。宅配クリーニングのある企業は、ぬいぐるみの依頼を3年で月50件から800件前後へと約17倍に増やした。修繕サービス「ぬいぐるみのお医者さん」は、累計約1万3,000体を手がけた。修繕の平均単価は4万円前後と安くはないが、客の3〜4割がリピートする。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">40万個</div>
+        <div class="lbl">猫背を防ぐぬいぐるみ<br>「ふんばるず」の累計出荷</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">3〜4割</div>
+        <div class="lbl">平均4万円の修繕でも<br>リピートする客の割合</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      修繕で大切にされているのは、新品のように戻すことではない。持ち主がぬいぐるみに触れてできた表情や感触、思い出を残すことだ。ある事業者は方針を<strong>「ぬいの汚れは落とし、思い出は消さない」</strong>と表現する。500円のぬいぐるみを50万円かけて修繕した例もある。専門性が高く、価格競争に陥りにくいのも特徴だ。
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>「好き」を大事にする<br>消費へ</h2>
+    <p>
+      ぬい活は、推し活の延長線にある。好きなものを大切にし、その気持ちを互いに尊重し合う。その価値観が広がったからこそ、昔からあったぬいぐるみへの愛着が、外に出て「ぬい活」になった。
+    </p>
+    <ul class="pt">
+      <li>🧸 ぬいぐるみへの愛着は昔からあった。広がったのは、それを外で楽しめるようになったから</li>
+      <li>🧸 後押ししたのはSNS・推し活の浸透・好みを尊重し合う価値観</li>
+      <li>🧸 ぬいぐるみが「連れ」「家族」になり、体験やお世話にお金が払われる</li>
+      <li>🧸 サービスは、女性・若年層など新しい客層への入り口にもなっている</li>
+    </ul>
+    <p class="closer">
+      一方で、課題もある。飲食店にぬいぐるみを持ち込んで繰り返し撮影する行為が、ほかの客の迷惑になるという声も聞かれる。一過性の流行で終わらせないためには、愛好家ではない人への配慮も欠かせない。ぬいぐるみは、持ち主にとって単なるモノではなく、一緒に時間を過ごす相棒であり家族だ。その気持ちにどう寄り添い、周囲とどう折り合うか。「ぬい活」の広がりは、いまその問いの前にある。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日本経済新聞 トレンド「『ぬい活』サービス多彩　一緒にカフェ、旅行『代行』も」（2025年5月10日）</li>
+    <li>日経MJ「『機能性ぬいぐるみ』職場で家で活躍　背筋ピン、脚筋トレ」（2025年4月13日）</li>
+    <li>日経MJ「旅先でも『ぬい活』、東横インが専用ベッド　JR西は撮影用に記念品」（2026年1月25日）</li>
+    <li>日本経済新聞「ぬいぐるみは『家族』、4万円修繕にリピート4割」（小さくても勝てる・2026年1月13日）</li>
+    <li>日本経済新聞「NiziUの『ぬい活』イベント　ソニーG、東京ドームシティで開催」（2026年5月8日）</li>
+    <li>各種調査：日本玩具協会／SHIBUYA109エンタテイメント／グローバルインフォメーション・テクナビオ</li>
+    <li>専門家コメント：早稲田大学 菊地浩平准教授／ニッセイ基礎研究所 久我尚子上席研究員</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年6月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>

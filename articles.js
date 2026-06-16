@@ -149,6 +149,16 @@ window.ARTICLES = {
       showSource: false,
       articles: [
         {
+          icon: "🧸",
+          image: "images/nui-katsu.jpg",
+          title: "特集｜なぜ今、「ぬい活」は広がったのか<br>450億円に育った市場の背景",
+          url: "https://tokokanri10502-pixel.github.io/nui-katsu-tokushu.html",
+          desc: "ぬいぐるみ市場は450億円（2024年度+15%）に拡大。ぬいぐるみへの愛着は昔からあったが、SNS・推し活の浸透・好みを尊重し合う価値観が、それを“外”へ押し出した。カフェ・旅・保育・修繕まで、“相棒”や“家族”に払われる体験とお世話の経済を読み解く。",
+          date: "2026.06.16",
+          tag: "study",
+          tagLabel: "※画像はイメージです"
+        },
+        {
           icon: "☀️",
           image: "images/hisho.png",
           title: "特集｜今年も避暑経済がアツい<br>──「酷暑日」命名と、夏物展開の前倒し・広がる避暑インフラ",
