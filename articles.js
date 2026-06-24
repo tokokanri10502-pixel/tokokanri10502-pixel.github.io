@@ -29,6 +29,17 @@ window.ARTICLES = {
       showSource: true,
       articles: [
         {
+          icon: "🍽️",
+          image: "images/gaishoku-genzei.png",
+          source: "📰 日本経済新聞｜2026年6月24日",
+          title: "特集｜食料品1%・外食10%<br>消費税減税に揺れる外食業界",
+          url: "https://tokokanri10502-pixel.github.io/gaishoku-genzei-tokushu.html",
+          desc: "2027年4月から2年間、食料品の消費税率を1%に下げる案が調整されている。スーパーの食料品や持ち帰りは安くなるが、店内飲食は10%のまま。外食631社の約7割が業績にマイナスと答え、各社はテイクアウトの拡大や店内の価値向上で対応を急ぐ。内食・中食・外食の需要がどう動くかを整理する。",
+          date: "2026.06.24",
+          tag: "study",
+          tagLabel: "※画像はイメージです"
+        },
+        {
           icon: "♻️",
           image: "images/reuse-market.jpg",
           source: "📰 日本経済新聞｜2026年6月8日",
