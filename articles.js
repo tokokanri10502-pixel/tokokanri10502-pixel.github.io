@@ -160,6 +160,15 @@ window.ARTICLES = {
       showSource: false,
       articles: [
         {
+          icon: "🎁",
+          title: "特集｜ソーシャルギフトは、<br>なぜ広がったのか",
+          url: "https://tokokanri10502-pixel.github.io/social-gift-tokushu.html",
+          desc: "住所を知らなくてもSNSやメールで贈れるソーシャルギフト。利用経験者はいまや6人に1人、20代では4人に1人。国内ギフト市場は11兆円超に拡大し、儀礼ギフトが縮む一方で個人的な感謝ギフトが伸びている。住所を知らない関係の増加、贈り物の「儀礼から気持ちへ」の変化という社会背景と、いまの贈り合いとの相性の良さを整理する。",
+          date: "2026.06.24",
+          tag: "study",
+          tagLabel: "※画像はイメージです"
+        },
+        {
           icon: "🧸",
           image: "images/nui-katsu.jpg",
           title: "特集｜なぜ今、「ぬい活」は広がったのか<br>450億円に育った市場の背景",

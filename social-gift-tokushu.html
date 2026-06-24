@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4EKTRW9RX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4EKTRW9RX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ソーシャルギフトは、なぜ広がったのか ── 住所を知らない時代の贈り物｜TOKO WORKS 社会派 DEEP Lab 特集</title>
+<style>
+:root{
+  --primary:#C75D4A;
+  --primary-dark:#8F3D2E;
+  --primary-light:#E0917E;
+  --accent:#D9A441;
+  --accent-light:#F2DCA6;
+  --bg:#FAF4EF;
+  --bg-card:#FFFFFF;
+  --text:#3A2A24;
+  --text-muted:#806258;
+  --border:#EBD9CF;
+  --up:#2E7D5C;
+  --down:#B7472A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ===== site-header ===== */
+.site-header{
+  background:var(--primary-dark);
+  color:#fff;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.site-header a{color:#fff;text-decoration:none;transition:opacity .15s;}
+.site-header a:hover{opacity:.75;}
+.site-header .sep{opacity:.5;margin:0 10px;}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(135deg,#8F3D2E 0%,#C75D4A 58%,#E0917E 100%);
+  color:#fff;
+  padding:60px 24px 72px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(circle,rgba(242,220,166,.24) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;right:-10%;
+  width:50%;height:60%;
+  background:radial-gradient(circle,rgba(255,255,255,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.tags{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{
+  background:rgba(255,255,255,.20);
+  backdrop-filter:blur(6px);
+  padding:5px 14px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.04em;
+  border:1px solid rgba(242,220,166,.45);
+}
+.hero h1{
+  font-size:38px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.hero .sub{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.96;
+  max-width:560px;
+  margin:0 auto;
+}
+
+/* ===== summary-bar ===== */
+.summary-bar{
+  background:var(--primary-dark);
+  color:#fff;
+  padding:36px 24px;
+}
+.summary-inner{
+  max-width:720px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.stat-big{text-align:center}
+.stat-big .num{
+  font-size:36px;font-weight:700;
+  color:var(--accent-light);
+  line-height:1.1;margin-bottom:8px;
+  letter-spacing:.01em;
+}
+.stat-big .lbl{
+  font-size:12px;
+  opacity:.88;
+  line-height:1.6;
+}
+
+/* ===== content wrapper ===== */
+.content{max-width:720px;margin:0 auto;padding:56px 24px;}
+.chapter{margin-bottom:56px;}
+.chapter-label{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  padding:4px 12px;
+  border-radius:4px;
+  letter-spacing:.1em;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.chapter h2{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.5;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:12px;
+}
+.chapter p{margin-bottom:18px;}
+.chapter p + p{margin-top:0;}
+
+/* callout */
+.callout{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:20px 22px;
+  margin:24px 0;
+  border-radius:0 8px 8px 0;
+  font-size:15px;
+  line-height:1.85;
+  color:var(--text);
+  box-shadow:0 2px 8px rgba(199,93,74,.08);
+}
+.callout strong{color:var(--primary-dark);}
+
+/* insight */
+.insight{
+  background:linear-gradient(135deg,#FBEDE7 0%,#F6DED2 100%);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:24px 0;
+}
+.insight .insight-label{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+}
+.insight p{font-size:15px;line-height:1.85;margin-bottom:10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* stat-grid */
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.stat-cell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.stat-cell .num{
+  font-size:28px;font-weight:700;
+  color:var(--primary-dark);
+  line-height:1.1;margin-bottom:6px;
+}
+.stat-cell .lbl{font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+/* split-card */
+.split-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:24px 0;
+}
+.split-cell{
+  border-radius:10px;
+  padding:22px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+.split-cell.left{border-top:4px solid var(--down);}
+.split-cell.right{border-top:4px solid var(--up);}
+.split-cell.left h4::before{content:"📦 ";}
+.split-cell.right h4::before{content:"🎁 ";}
+.split-cell h4{
+  font-size:15px;margin-bottom:12px;
+  color:var(--primary-dark);
+}
+.split-cell ul{list-style:none;padding:0;}
+.split-cell li{
+  font-size:13px;line-height:1.7;
+  padding-left:14px;position:relative;
+  margin-bottom:6px;color:var(--text-muted);
+}
+.split-cell li::before{
+  content:"—";position:absolute;left:0;color:var(--primary-light);
+}
+
+/* reason block */
+.principle{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 24px;
+  margin:18px 0;
+  border-top:4px solid var(--primary);
+}
+.principle .pnum{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  padding:3px 12px;
+  border-radius:999px;
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+.principle h3{
+  font-size:18px;
+  color:var(--primary-dark);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+.principle p{font-size:14px;line-height:1.85;margin-bottom:0;}
+
+/* subhead inside chapter */
+.subhead{
+  font-size:17px;
+  font-weight:700;
+  color:var(--primary-dark);
+  margin:26px 0 12px;
+  padding-left:12px;
+  border-left:4px solid var(--accent);
+}
+
+/* ===== conclusion ===== */
+.conclusion{
+  background:linear-gradient(135deg,#8F3D2E 0%,#C75D4A 60%,#E0917E 100%);
+  color:#fff;
+  padding:50px 24px;
+  margin-top:24px;
+}
+.conclusion-inner{max-width:720px;margin:0 auto;}
+.conclusion h2{
+  font-size:26px;line-height:1.5;
+  margin-bottom:20px;
+  font-weight:700;
+}
+.conclusion p{margin-bottom:18px;opacity:.96;line-height:1.9;}
+.conclusion .pt{
+  list-style:none;
+  padding:0;margin:20px 0;
+}
+.conclusion .pt li{
+  padding:12px 16px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.14);
+  border-left:3px solid var(--accent-light);
+  border-radius:0 6px 6px 0;
+  font-size:14px;
+  line-height:1.8;
+  backdrop-filter:blur(4px);
+}
+.conclusion .closer{
+  font-size:15px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.3);
+  font-weight:500;
+  line-height:1.9;
+}
+
+/* ===== sources ===== */
+.sources{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+}
+.sources h3{
+  font-size:14px;
+  color:var(--primary-dark);
+  margin-bottom:14px;
+  letter-spacing:.08em;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}
+.sources ul{list-style:none;padding:0;}
+.sources li{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  line-height:1.7;
+}
+.sources li::before{content:"・ ";color:var(--primary);}
+
+/* ===== footer ===== */
+.footer{
+  text-align:center;
+  padding:36px 24px 48px;
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.9;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+.footer a{
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  margin-top:8px;
+  border-bottom:1px dotted var(--primary);
+  padding-bottom:2px;
+}
+.footer a:hover{color:var(--accent);border-bottom-style:solid;}
+
+/* ===== responsive ===== */
+@media (max-width:540px){
+  .hero{padding:44px 20px 56px;}
+  .hero h1{font-size:28px;}
+  .hero .sub{font-size:14px;}
+  .summary-inner{grid-template-columns:1fr;gap:18px;}
+  .stat-big .num{font-size:30px;}
+  .content{padding:40px 20px;}
+  .chapter h2{font-size:21px;}
+  .stat-grid{grid-template-columns:1fr;}
+  .split-card{grid-template-columns:1fr;}
+  .conclusion h2{font-size:21px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <a href="https://tokokanri10502-pixel.github.io">TOKO WORKS ー 社会派DEEP Lab特集<span class="sep">｜</span>2026年6月</a>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="tags">
+      <span class="tag">#ソーシャルギフト</span>
+      <span class="tag">#贈り物</span>
+      <span class="tag">#消費トレンド</span>
+    </div>
+    <h1>ソーシャルギフトは、<br>なぜ広がったのか</h1>
+    <p class="sub">
+      住所を知らなくても、SNSやメールで贈れる。<br>
+      ソーシャルギフトの利用経験者は、いまや6人に1人。<br>
+      なぜ、これだけ広がったのか。<br>
+      背景には、人とのつながり方と、贈り物に求めるものの変化がある。
+    </p>
+  </div>
+</section>
+
+<!-- ===== summary-bar ===== -->
+<section class="summary-bar">
+  <div class="summary-inner">
+    <div class="stat-big">
+      <div class="num">11兆円超</div>
+      <div class="lbl">国内ギフト市場の規模（2025年予測）。<br>儀礼ギフトは縮小、個人的な感謝ギフトは拡大</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">6人に1人</div>
+      <div class="lbl">ソーシャルギフトの利用経験<br>（2023年・10〜50代）。20代は4人に1人</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">6割増</div>
+      <div class="lbl">2024年の母の日・父の日<br>「当日」流通額（前年比・LINEギフト）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== content ===== -->
+<div class="content">
+
+  <!-- ===== 序 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">序</span>
+    <h2>住所を知らない時代の<br>贈り物</h2>
+    <p>
+      親しい友人や同僚でも、相手の住所は知らない。そんなことが、いまは珍しくない。SNSではつながっていても、住所や本名までは知らない。個人情報に気をつかう時代でもある。
+    </p>
+    <p>
+      そのなかで広がったのが「ソーシャルギフト」だ。住所を知らなくても、SNSやメールで贈り物を届けられる。利用経験者はすでに6人に1人。20代では4人に1人にのぼる。
+    </p>
+
+    <div class="callout">
+      なぜ、これだけ広がったのか。便利だから、というだけではない。人とのつながり方が変わり、贈り物に求めるものも変わった。ソーシャルギフトは、その両方にうまく合っている。本稿では、社会背景と「いまの贈り合いとの相性」を整理する。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 1 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 1</span>
+    <h2>まず、どれだけ<br>広がったか</h2>
+    <p>
+      ソーシャルギフトは、住所が分からない相手にも贈り物を届けられるサービスだ。贈り手がオンラインで商品を買うとURLが発行され、それをメールやSNSのDMで送る。受け取った側が、自分で送り先や受け取り日を指定する。住所や電話番号は、贈り手には通知されない。
+    </p>
+    <p>
+      矢野経済研究所によると、国内のギフト市場規模は2021年以降ふえ続け、2025年は前年比1%増の11兆3510億円になる見通しだ。儀礼的な冠婚葬祭や中元・歳暮は縮小する一方、親しい間柄で個人的な感謝を伝えるギフトの需要が高まっている。
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="num">11兆3510億円</div>
+        <div class="lbl">国内ギフト市場規模<br>（2025年予測・前年比+1%）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">2.5倍</div>
+        <div class="lbl">ソーシャルギフト利用経験者<br>（コロナ前比／2023年）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">約1,900万人</div>
+        <div class="lbl">LINEギフトの年間利用者<br>（2024年3月・利用者の5人に1人）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="num">20代の4人に1人</div>
+        <div class="lbl">ソーシャルギフトの利用経験<br>（50代後半でも1割弱が経験）</div>
+      </div>
+    </div>
+
+    <p>
+      その広がりは世代を超えている。オンラインギフト総研の調査では、コロナ前と比べて2023年に「利用したことがある」と答えた人は2.5倍。20代では4人に1人が使い、50代後半でも1割弱が経験している。対話アプリ「LINE」のソーシャルギフト「LINEギフト」は、2024年3月時点で年間約1,900万人が利用。LINE利用者の5人に1人にあたる。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 2 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 2</span>
+    <h2>なぜ広がったのか<br>変わる人間関係</h2>
+    <p>
+      ソーシャルギフトが広がった背景には、暮らしと人間関係の変化がある。大きく3つに整理できる。
+    </p>
+
+    <div class="principle">
+      <span class="pnum">背景 1</span>
+      <h3>「住所を知らない関係」が増えた</h3>
+      <p>
+        個人情報に気をつかう時代になり、親しくても相手の住所を知らないことが増えた。卒業アルバムの住所録はなくなり、企業も自宅住所入りの名簿を不用意に作らなくなった。SNSだけでつながり、本名も住所も知らない友人も珍しくない。住所を聞かずに贈れるソーシャルギフトは、こうした関係と相性がよい。
+      </p>
+    </div>
+    <div class="principle">
+      <span class="pnum">背景 2</span>
+      <h3>贈り物が「儀礼」から「気持ち」へ</h3>
+      <p>
+        中元や歳暮、冠婚葬祭といった儀礼的な贈り物は縮小している。代わりに伸びているのが、親しい間柄で「ありがとう」「おめでとう」を伝える個人的なギフトだ。とくに若い世代は伝統的な贈答文化になじみが薄く、形式ばらないパーソナルな贈り方を選びやすい。
+      </p>
+    </div>
+    <div class="principle">
+      <span class="pnum">背景 3</span>
+      <h3>コロナ禍が後押しした</h3>
+      <p>
+        外出を控えるなかで、非対面の贈り方として認知が広がった。市場に参入する事業者も増え、コロナ後も若年層を中心に、全世代の選択肢として定着した。
+      </p>
+    </div>
+
+    <p>
+      さらに、年賀状をやめる「年賀状じまい」が広がり、2024年10月にははがき代も63円から85円に上がった。住所を知っていて手紙でやりとりする関係は、今後さらに減るとみられる。住所に頼らない贈り方の出番は、これからも増えていきそうだ。
+    </p>
+  </section>
+
+  <!-- ===== Chapter 3 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 3</span>
+    <h2>いまの贈り合いと、<br>どこが合うのか</h2>
+    <p>
+      贈り物には、昔から難しさがあった。相手の住所がいる。高価だとお返しを気づかわせる。当日に間に合わせにくい。好みに合わないと使われずに終わる。ソーシャルギフトは、その一つひとつをほどいていく。
+    </p>
+
+    <div class="split-card">
+      <div class="split-cell left">
+        <h4>従来のギフトの難点</h4>
+        <ul>
+          <li>相手の住所を聞く必要がある</li>
+          <li>高価だと「お返し」を気づかわせる</li>
+          <li>当日に間に合わせにくい</li>
+          <li>好みに合わず使われないことも</li>
+        </ul>
+      </div>
+      <div class="split-cell right">
+        <h4>ソーシャルギフトの答え</h4>
+        <ul>
+          <li>住所を知らなくても贈れる</li>
+          <li>5000円前後で気負わせない</li>
+          <li>URLをその場で発行、当日でも</li>
+          <li>受け手が選ぶ／選び直せる</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subhead">その場で、当日に贈れる</div>
+    <p>
+      URLは購入してすぐ発行できるため、メッセージを添えてその場で送れる。「父の日や母の日の当日に気づいて贈る人が多い」という。実際、2024年の母の日・父の日は、当日の流通額が前年より6割ふえた。母の日には、夜9〜11時に注文が集中したという。
+    </p>
+
+    <div class="subhead">受け手が「選べる」「選び直せる」</div>
+    <p>
+      受け取った側が送り先や受け取り日を選べるだけでなく、商品そのものを選び直せるサービスも出てきた。GiftXの「GIFTFUL」は、贈られた人が好きな商品に交換できる仕組みだ。同社の調査では、贈り手の喜びは「選んだものを相手が喜んでくれたとき」が約5割、「選んでいるとき」が約4割。一方で受け取る側には「好みに合わない」「自分では使わない」というミスマッチも3割前後あった。選び直しの機能は、この食い違いを埋める。実際に、4〜5割の人が選び直しを使ったという。
+    </p>
+
+    <div class="callout">
+      贈り物の弱点だった「ミスマッチ」が減ると、贈り物は一方通行で終わらない。お礼のメッセージや「これに替えたよ」というやりとりが生まれ、贈ること自体が会話のきっかけになる。気持ちを伝える手段としてのギフトに、ソーシャルギフトはよく合っている。
+    </div>
+  </section>
+
+  <!-- ===== Chapter 4 ===== -->
+  <section class="chapter">
+    <span class="chapter-label">CHAPTER 4</span>
+    <h2>百貨店もアプリも<br>力を入れる</h2>
+    <p>
+      新しい客層との接点として、企業も動いている。
+    </p>
+    <p>
+      三越伊勢丹のオンラインギフト「ムードマーク バイ イセタン」は、2019年に百貨店として初めてソーシャルギフト機能を導入した。利用者は20〜30代が中心で、ソーシャルギフトが全体の半数を占める。扱う商品は約4000点で、5000円前後が中心。「お返しをしなきゃと気負わずに受け取れる価格帯」を意識するという。花の入浴剤やバスエッセンスなど、癒やしや健康を気づかうアイテムが人気だ。漫画・ゲーム・アニメのファン向けに数量限定で売る「コミュニティギフト」も伸びている。
+    </p>
+    <p>
+      高島屋も2023年に参入した。当初3000点ほどだった商品は、お歳暮の時期には最大1万点に増えた。利用の半数は「のし」をかけたもので、結婚の内祝いや出産祝いが多い。利用者は20〜30代の女性が中心で、新規顧客の開拓につながっている。決済アプリも加わり、PayPayは2025年10月、シャトレーゼや上島珈琲店などのデジタル商品券を、メッセージを添えて友人や家族に送れる機能を始めた。
+    </p>
+
+    <div class="insight">
+      <span class="insight-label">一例：父の日</span>
+      <p>
+        ソーシャルギフトがはまる場面の一例が、父の日だ。母の日のカーネーションのような定番がなく、当日になって気づいて贈る人が多い。父親が望むのは品物より「ありがとう」という調査もある（インテージ調べ）。気軽に、その日のうちに、気持ちを伝える——ソーシャルギフトが得意とする形と、よく重なる。
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== conclusion ===== -->
+<section class="conclusion">
+  <div class="conclusion-inner">
+    <h2>贈り物が、特別な日から<br>「日常の気持ち」へ</h2>
+    <p>
+      ソーシャルギフトの広がりは、便利な仕組みが登場したから、というだけではない。住所を知らない関係が増え、贈り物が儀礼から日常の気持ちへと変わる——その流れに、ぴたりと合っていた。
+    </p>
+    <ul class="pt">
+      <li>🎁 利用経験はすでに6人に1人、20代では4人に1人。世代を超えて定着しつつある</li>
+      <li>🏠 背景にあるのは「住所を知らない関係」の増加と、中元・歳暮など儀礼ギフトの縮小</li>
+      <li>💬 住所不要・気軽さ・当日に贈れる・受け手が選べる——いまの贈り合いの不満を一つずつ解消している</li>
+      <li>🛍️ 百貨店もPayPayも参入。日ごろ来ない若い客層との新しい接点になっている</li>
+    </ul>
+    <p class="closer">
+      年賀状じまいが広がり、住所でつながる関係はこれからも減っていく。だからこそ、住所を知らなくても気持ちを贈れる仕組みは、今後さらに使われていきそうだ。贈り物は、特別な日の儀礼から、何でもない日に「ありがとう」を伝える手段へと、少しずつ役割を変えている。
+    </p>
+  </div>
+</section>
+
+<!-- ===== sources ===== -->
+<section class="sources">
+  <h3>SOURCES｜参考データ出典</h3>
+  <ul>
+    <li>日経MJ「父の日予算、2000円台が最多　母の日の半分『好みわからず』」（2026年6月21日）</li>
+    <li>日本経済新聞「三越伊勢丹、ソーシャルギフト堅調　贈答文化になじみない若者利用」（2025年12月14日）</li>
+    <li>日本経済新聞「PayPay、ギフト機能を追加　上島珈琲店などのデジタル商品券」（2025年10月16日）</li>
+    <li>日本経済新聞「ソーシャルギフト、すでに6人に1人が使用　50代にも拡大」（くらしの数字考・2024年10月12日）</li>
+    <li>日本経済新聞「受け手が『選び直せる』まさかのギフト　嫌われない？」（2023年7月8日）</li>
+    <li>調査・統計：矢野経済研究所（国内ギフト市場規模）／オンラインギフト総研・ギフトモール／LINEヤフー（LINEギフト）／GiftX（GIFTFUL）／グルーヴ「父の日.jp」／インテージ</li>
+    <li>複数の公開情報をもとに独自に編集・再構成</li>
+  </ul>
+</section>
+
+<!-- ===== footer ===== -->
+<div class="footer">
+  萬財塾 2026年6月｜東光印刷株式会社 制作本部<br>
+  <a href="https://tokokanri10502-pixel.github.io">← 社会派 DEEP Lab に戻る</a>
+</div>
+
+</body>
+</html>
